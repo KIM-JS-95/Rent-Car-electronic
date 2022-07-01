@@ -14,9 +14,15 @@
 
 #mainReservationTable{
   border: 2px solid #EAEAEA;
-  height: 
+  height: 600px;
+  width: 750px;
 }
 
+#mainBottomDiv{
+  border: 2px;
+  float: left;
+  width: 33%;
+}
 
     </style>
 </head>
@@ -139,7 +145,32 @@
 
         </div>
 
+        <div class="container" id="mainBottomDiv">
+          <div>
+						<h3>2022입고 차량랜트 하기</h3>
+						<p>
+							2022 신형 전기차<BR>
+              체험할 절호의 기회!!
+						</p>
+						<div>
+							<a href="">바로가기</a>
+        </div>
+        
 
+        <div class="container" id="mainBottomDiv">
+          <div>
+						<h3>후기 남기러 가기</h3>
+						<p>
+							후기작성하고<BR>
+              선물 받아가세요<BR>
+              
+						</p>
+						<div>
+							<a href="">바로가기</a>
+        </div>
+        </div>
+
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="findReservation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
