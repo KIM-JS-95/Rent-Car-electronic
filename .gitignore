@@ -1,8 +1,5 @@
 **/build/
 .gradle
-#
-<<<<<<< HEAD
 /src/main/resources/application.properties
-=======
-/src/main/resources/application.properties
->>>>>>> 03ba8b7a5ae630d7565f9d7afa5bc996a4df82d8
+
+
