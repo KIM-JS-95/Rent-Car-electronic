@@ -14,6 +14,7 @@
 
 #mainReservationTable{
   border: 2px solid #EAEAEA;
+  height: 
 }
 
 
@@ -39,7 +40,17 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">차량대여 <span class="sr-only">(current)</span></a></li>
           <li><a href="#">충전소위치</a></li>
-       
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">커뮤니티<span class="caret"></span></a>
+            
+          <ul class="dropdown-menu" role="menu">
+              <li><a href="#">자유게시판</a></li>
+              <!-- <li><a href="#">실시간채팅</a></li> -->
+              <li><a href="#">event</a></li>
+              <li><a href="#">Q&A</a></li>
+            </li>
+            </ul>
+          
         </ul>
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
