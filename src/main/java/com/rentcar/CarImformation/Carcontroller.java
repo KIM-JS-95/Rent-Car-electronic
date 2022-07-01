@@ -1,12 +1,12 @@
-package com.rentcar.member;
+package com.rentcar.CartImformation;
 
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-public class controller {
+@RestController
+public class Carcontroller {
 
     @GetMapping("/{id}")
     public String hello(@PathVariable("id") int id){
