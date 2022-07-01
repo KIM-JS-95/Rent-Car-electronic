@@ -1,4 +1,4 @@
-#**/build/
-#.gradle
+**/build/
+.gradle
 #
 #/src/main/resources/application.properties
