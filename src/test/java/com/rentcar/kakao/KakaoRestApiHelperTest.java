@@ -12,8 +12,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,8 +29,12 @@ class KakaoRestApiHelperTest {
 
         urlBuilder.append("?" + URLEncoder.encode("page", "UTF-8") + "=" + 1);
         urlBuilder.append("&" + URLEncoder.encode("sort", "UTF-8") + "=" + "accuracy");
-        urlBuilder.append("&" + URLEncoder.encode("query", "UTF-8") + "=" + URLEncoder.encode("주유소", "UTF-8"));
-        urlBuilder.append("&" + URLEncoder.encode("size", "UTF-8") + "=" + 2);
+        urlBuilder.append("&" + URLEncoder.encode("query", "UTF-8") + "=" + URLEncoder.encode("전기차충전소", "UTF-8"));
+        urlBuilder.append("&" + URLEncoder.encode("x", "UTF-8") + "=" + 37.769976567342);
+        urlBuilder.append("&" + URLEncoder.encode("y", "UTF-8") + "=" + 126.693326928942);
+        urlBuilder.append("&" + URLEncoder.encode("radius", "UTF-8") + "=" + 1000); // 1km
+        // 최대 15 여야합니다.
+        urlBuilder.append("&" + URLEncoder.encode("size", "UTF-8") + "=" + 15);
 
         System.out.println(urlBuilder);
 
@@ -65,14 +67,14 @@ class KakaoRestApiHelperTest {
         Object obj = parser.parse(sb.toString());
         JSONObject jsonObject = (JSONObject) obj;
         JSONArray array = (JSONArray) jsonObject.get("documents");
-
+        System.out.println(array);
         // x,y 값을 여기서 계산하자
-        Map<String, byte[]> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>();
         for(int i=0; i<array.size(); i++){
             JSONObject obj1 = (JSONObject) array.get(i);
-            System.out.println(obj1.get("x"));
+            map.put("x", obj1.get("x"));
+            map.put("y", obj1.get("y"));
         }
-
     }
 
 }

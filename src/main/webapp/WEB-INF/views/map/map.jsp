@@ -10,6 +10,11 @@
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6eae01749ed46288f45cd68bb87a3238"></script>
 <script>
+
+    fetch("/kakao_url")
+    .then(res => res.json())
+    .then(data => console.log(data));
+
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
     mapOption = {
         center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
