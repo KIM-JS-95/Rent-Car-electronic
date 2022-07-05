@@ -13,9 +13,9 @@
     </c:otherwise>
 </c:choose>
 <!DOCTYPE html> 
-<html> 
+<html>
+   
 <head>
-  <title>memo</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -28,24 +28,7 @@
   }  
   </style>
   <script>
-  $(function(){
-      $.ajax({
-          url: "/contents/getCategory",
-          type: "GET",
-          //data: JSON.stringify(),
-          //contentType: "application/json; charset=utf-8;",
-          dataType: "json",
-          success: function(data){
-          for (var i = 0; i < data.length; i++) {
-          		$('#pmenu').append("<li><a href='/contents/mainlist/"+data[i].cateno+"'>" + data[i].catename + "</a></li>");
-          }                  
 
-          },
-          error: function(request,status,error){
-             alert("code = "+ request.status + " message = " + request.responseText + " error = " + error); // 실패 시 처리
-          }                
-      });//ajax end
-});//페이지로딩
   </script>
 </head>
 <body> 
@@ -70,7 +53,7 @@
         <ul class="dropdown-menu">
           <li><a href="${root}/member/mypage">Mypage</a></li>
           <li><a href="${root}/contents/detail">Review</a></li>
-          <li><a href="/notice/list">Notice</a></li>
+          <li><a href="/map/map">Map</a></li>
           <li><a href="/naver_chatting">Q&A</a></li>
         </ul>
       </li>
@@ -78,10 +61,12 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
      <c:choose>
+
     <c:when test="${empty sessionScope.id }">
       <li><a href="${root}/member/agree"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="${root}/member/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </c:when>
+
     <c:when test="${not empty sessionScope.id && sessionScope.grade == 'A'}">
     <li><a href="${root}/admin/contents/create"><span class="glyphicon glyphicon-plus-sign"></span> 상품등록</a></li>
     <li><a href="${root}/contents/list"><span class="glyphicon glyphicon-list"></span> 상품목록</a></li>
@@ -89,6 +74,7 @@
     <li><a href="${root}/admin/order/list"><span class="glyphicon glyphicon-list"></span> 주문목록</a></li>
     <li><a href="${root}/member/logout"><span class="glyphicon glyphicon-log-out"></span> 로그아웃</a></li>
     </c:when>
+
     <c:otherwise>
     <li><a href="${root}/cart/list"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
     <li><a href="${root}/member/update"><span class="glyphicon glyphicon-edit"></span> 회원수정</a></li>

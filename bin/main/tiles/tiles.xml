@@ -9,15 +9,20 @@
         <put-attribute name="header" value="/WEB-INF/views/template/top.jsp" />
     </definition>
 
-    <definition name="/" extends="main">
-        <put-attribute name="map" value="show_map" ></put-attribute>
-        <put-attribute name="body" value="/WEB-INF/views/map.jsp" />
-    </definition>
 
     <definition name="/home" extends="main">
+        <put-attribute name="title" value="EV Rent"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/index.jsp" />
+    </definition>
+
+    <definition name="/map" extends="main">
         <put-attribute name="title" value="기본페이지"></put-attribute>
-        <put-attribute name="body"
-                       value="/WEB-INF/views/index.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/map/map.jsp" />
+    </definition>
+
+    <definition name="/test" extends="main">
+        <put-attribute name="title" value="기본페이지"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/test.jsp" />
     </definition>
 
 </tiles-definitions>
