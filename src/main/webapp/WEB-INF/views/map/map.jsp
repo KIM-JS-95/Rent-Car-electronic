@@ -5,21 +5,24 @@
     <head>
         <meta charset="utf-8">
         <title>마커 생성하기</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Project Two</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="/resources/css/common.css">
+        <link rel="stylesheet" type="text/css" href="/resources/css/map.css">
 
     </head>
 
     <body>
-        <div id="map" style="width:100%;height:350px;"></div>
+        <div id="map"></div>
 
+        
         <script type="text/javascript"
             src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6eae01749ed46288f45cd68bb87a3238"></script>
         <script>
 
-            function log(url) {
-                var title = "";
-                var style = "width=940, height=644, top=10, left=10";
-                window.open(url, title,style);
-            }
 
             async function fetchData(position) {
 
@@ -53,11 +56,52 @@
                     // 거리 정보 추가 지역 이름 
                     // * 이름을 클릭하면 링크로 이동합니다
                     // 추가
-                    
-                    var name = itemlist[i].place_name;
-                    var url = itemlist[i].place_url;
 
-                    var iwContent = `<div style="width=400px height:100px"; onclick=log(\`` + url + `\`);>` + name + `</div>`, // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+
+                    var iwContent =
+                        `
+                        <div class="info-wrap bg-primary w-100 p-md-5 p-4">
+                            <h3>` + itemlist[i].place_name + `</h3>
+                            <p class="mb-4">실시간 충전소 현황은 아래 링크를 클릭해주세요.</p>
+                            <div class="dbox w-100 d-flex align-items-start">
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <span class="fa fa-map-marker"></span>
+                                </div>
+                                <div class="text pl-3">
+                                    <p>` + itemlist[i].road_address_name + `</p>
+                                </div>
+                            </div>
+		
+                            <div class="dbox w-100 d-flex align-items-center">
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <span class="fa fa-phone"></span>
+                                </div>
+                                <div class="text pl-3">
+                                    <p>+ ` + itemlist[i].phone + `</p>
+                                </div>
+                            </div>
+
+                            <div class="dbox w-100 d-flex align-items-center">
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <span class="fa fa-car"></span>
+                                </div>
+                                <div class="text pl-3">
+                                    <p> `+ itemlist[i].distance + ` 미터</p>
+                                </div>
+                            </div>
+
+                            <div class="dbox w-100 d-flex align-items-center">
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <span class="fa fa-globe"></span>
+                                </div>
+                                <div class="text pl-3">
+                                    <p><a href="`+ itemlist[i].place_url + `" onclick="window.open(this.href, '_blank', 'width=930, height=700'); return false;">` + itemlist[i].place_url + `</a></p>
+                                </div>
+                            </div>
+	                    </div>
+
+                                `,
+
                         iwRemoveable = true;
                     position = {
                         content: iwContent,

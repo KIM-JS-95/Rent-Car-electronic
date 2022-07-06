@@ -1,78 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<!DOCTYPE html> 
-<html>
-   
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <style type="text/css">
-  #grade{
-  
-   color :white;
-  }  
-  </style>
-  <script>
-
-  </script>
-</head>
-<body> 
-<!--상단메뉴-->
-<div class="container-fluid">
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="${root}/">Shop</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="${root}/">Home</a></li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Product
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu" id="pmenu">
-        </ul>
-      </li>
-            <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">community
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="${root}/member/mypage">Mypage</a></li>
-          <li><a href="${root}/contents/detail">Review</a></li>
-          <li><a href="/map/map">Map</a></li>
-          <li><a href="/naver_chatting">Q&A</a></li>
-        </ul>
-      </li>
-    <li><a id="grade"><span class="glyphicon glyphicon-grain"></span> ${str}</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-     <c:choose>
-
-    <c:when test="${empty sessionScope.id }">
-      <li><a href="${root}/member/agree"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="${root}/member/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </c:when>
-
-    <c:when test="${not empty sessionScope.id && sessionScope.grade == 'A'}">
-    <li><a href="${root}/admin/contents/create"><span class="glyphicon glyphicon-plus-sign"></span> 상품등록</a></li>
-    <li><a href="${root}/contents/list"><span class="glyphicon glyphicon-list"></span> 상품목록</a></li>
-    <li><a href="${root}/admin/member/list"><span class="glyphicon glyphicon-list"></span> 회원목록</a></li>
-    <li><a href="${root}/admin/order/list"><span class="glyphicon glyphicon-list"></span> 주문목록</a></li>
-    <li><a href="${root}/member/logout"><span class="glyphicon glyphicon-log-out"></span> 로그아웃</a></li>
-    </c:when>
-
-    <c:otherwise>
-    <li><a href="${root}/cart/list"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-    <li><a href="${root}/member/update"><span class="glyphicon glyphicon-edit"></span> 회원수정</a></li>
-    <li><a href="${root}/member/logout"><span class="glyphicon glyphicon-log-out"></span> 로그아웃</a></li>
-        </c:otherwise>
-    </c:choose> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="test.css">
     
-    </ul>
-  </div>
-</nav>
- 
-</div>
+
+</head>
+
+
+<body>
+
+
+    <div class="EVInfo"></div>
+
+
+
+
 </body>
+
+<script>
+    const EV = document.querySelector(".EVInfo");
+    console.log(EV);
+
+    var position = {
+        address_name: "충북 청주시 서원구 수곡동 77-2",
+        distance: "997",
+        place_name: "LH 충북본부 전기차충전소"
+    };
+
+    // var content = `
+    //     "위치": ${position.place_name}<br/>
+    //     "주소": ${position.address_name}<br/>
+    //     "거리": ${position.distance} M
+    //     `;
+
+
+        var content = `
+        <div class="align-items-stretch">
+		<div class="info-wrap bg-primary w-100 p-md-5 p-4">
+			<h3>Let's get in touch</h3>
+			<p class="mb-4">We're open for any suggestion or just to have a chat</p>
+			<div class="dbox w-100 d-flex align-items-start">
+				<div class="icon d-flex align-items-center justify-content-center">
+					<span class="fa fa-map-marker"></span>
+				</div>
+				<div class="text pl-3">
+					<p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016
+					</p>
+				</div>
+			</div>
+			<div class="dbox w-100 d-flex align-items-center">
+				<div class="icon d-flex align-items-center justify-content-center">
+					<span class="fa fa-phone"></span>
+				</div>
+				<div class="text pl-3">
+					<p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+				</div>
+			</div>
+			<div class="dbox w-100 d-flex align-items-center">
+				<div class="icon d-flex align-items-center justify-content-center">
+					<span class="fa fa-paper-plane"></span>
+				</div>
+				<div class="text pl-3">
+					<p><span>Email:</span> <a
+							href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+				</div>
+			</div>
+			<div class="dbox w-100 d-flex align-items-center">
+				<div class="icon d-flex align-items-center justify-content-center">
+					<span class="fa fa-globe"></span>
+				</div>
+				<div class="text pl-3">
+					<p><span>Website</span> <a href="#">yoursite.com</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+        `;
+
+    const info = document.createElement('div');
+    info.innerHTML = content;
+
+    EV.appendChild(info);
+</script>
+
+
 </html>

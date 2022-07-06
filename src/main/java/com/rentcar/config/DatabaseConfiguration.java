@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @PropertySource("classpath:/application.properties")  // 설정 파일 위치
-@MapperScan(basePackages= {"com.rentcar.model"})
+@MapperScan(basePackages= {"com.rentcar.*"})
 public class DatabaseConfiguration {
     @Autowired
     private ApplicationContext applicationContext;
