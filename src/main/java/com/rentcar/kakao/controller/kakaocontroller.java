@@ -44,15 +44,15 @@ public class kakaocontroller {
         return kakaoservice.getMap(urlBuilder);
     }
 
-    @GetMapping("map/{id}")
-    public void charge_info(@PathVariable("id") String id) throws IOException {
-        // 크롤링으로  http://place.map.kakao.com/id 의 페이지 일부만 가져옴.
-        String URL = "http://place.map.kakao.com/9122692";
-        Document doc = Jsoup.connect(URL).get();
-
-        Elements imageUrlElements = doc.getElementsByClass("electricChargingStation");
-
-        System.out.println(doc.html());  //html 출력
-    }
+//    @GetMapping("map/{id}")
+//    public void charge_info(@PathVariable("id") String id) throws IOException {
+//        // 크롤링으로  http://place.map.kakao.com/id 의 페이지 일부만 가져옴.
+//        String URL = "http://place.map.kakao.com/9122692";
+//        Document doc = Jsoup.connect(URL).get();
+//
+//        Elements imageUrlElements = doc.getElementsByClass("electricChargingStation");
+//
+//        System.out.println(doc.html());  //html 출력
+//    }
 
 }
