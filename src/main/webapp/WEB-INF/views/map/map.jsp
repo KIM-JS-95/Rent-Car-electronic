@@ -53,11 +53,6 @@
                 positions = []
                 for (let i = 0; i < len; i++) {
 
-                    // 거리 정보 추가 지역 이름 
-                    // * 이름을 클릭하면 링크로 이동합니다
-                    // 추가
-
-
                     var iwContent =
                         `
                         <div class="info-wrap bg-primary w-100 p-md-5 p-4">
@@ -98,9 +93,7 @@
                                     <p><a href="`+ itemlist[i].place_url + `" onclick="window.open(this.href, '_blank', 'width=930, height=700'); return false;">` + itemlist[i].place_url + `</a></p>
                                 </div>
                             </div>
-	                    </div>
-
-                                `,
+	                    </div>`,
 
                         iwRemoveable = true;
                     position = {
@@ -155,11 +148,7 @@
 
         <script>
 
-            function onGeoOk(position) {
-                const lat = position.coords.latitude;
-                const lng = position.coords.longitude;
-                console.log("You live in", lat, lng);
-            }
+
             function onGeoError() {
                 alert("Can't find you. No weather for you.");
             }
