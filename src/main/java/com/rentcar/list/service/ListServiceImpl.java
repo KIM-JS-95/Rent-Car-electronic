@@ -1,7 +1,8 @@
 package com.rentcar.list.service;
 
-import com.rentcar.list.ListDTO;
-import com.rentcar.list.ListMapper;
+
+import com.rentcar.list.mapper.ListMapper;
+import com.rentcar.list.model.ListDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

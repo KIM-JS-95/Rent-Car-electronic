@@ -1,6 +1,7 @@
 package com.rentcar.list.mapper;
 
-import com.rentcar.list.ListDTO;
+
+import com.rentcar.list.model.ListDTO;
 
 import java.util.List;
 import java.util.Map;

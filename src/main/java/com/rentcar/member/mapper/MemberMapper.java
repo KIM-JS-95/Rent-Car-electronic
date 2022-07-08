@@ -1,6 +1,9 @@
-package com.rentcar.member;
+package com.rentcar.member.mapper;
 
 
+import com.rentcar.member.model.CarConditionDTO;
+import com.rentcar.member.model.CarInfo1DTO;
+import com.rentcar.member.model.MemberDTO;
 import org.springframework.stereotype.Repository;
 
 @Repository
