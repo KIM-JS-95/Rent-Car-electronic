@@ -14,11 +14,9 @@ public class TilesConfiguration {
     public TilesConfigurer tilesConfigurer() {
         final TilesConfigurer configurer = new TilesConfigurer();
 
-        //해당 경로에 map.xml 파일을 넣음
-        configurer.setDefinitions(new String[]{"classpath:/tiles/map.xml"});
-
         //해당 경로에 tiles.xml 파일을 넣음
-        configurer.setDefinitions(new String[]{"classpath:/tiles/member.xml"});
+        configurer.setDefinitions(new String[]{"classpath:/tiles/member.xml",
+                "classpath:/tiles/map.xml", "classpath:/tiles/list.xml", "classpath:/tiles/tiles_login.xml"});
 
         configurer.setCheckRefresh(true);
         return configurer;
