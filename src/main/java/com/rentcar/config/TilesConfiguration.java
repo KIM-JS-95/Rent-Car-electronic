@@ -1,4 +1,7 @@
+
 package com.rentcar.config;
+
+ 
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,4 +31,5 @@ public class TilesConfiguration {
         tilesViewResolver.setViewClass(TilesView.class);
         return tilesViewResolver;
     }
+
 }

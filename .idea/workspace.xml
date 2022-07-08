@@ -5,19 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2f54c7a1-3fc5-4f71-9d62-8ade45f32cdc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/config/DatabaseConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/config/DatabaseConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/config/ServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/config/ServletInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/carinfo/controller/CarinfoCarcontroller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/carinfo/mapper/CarinfoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/carinfo/model/CarinfoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/carinfo/service/CarinfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/carinfo/service/CarinfoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/carinfo.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/style2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/svg/arrow-return-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/svg/bag-heart-fill.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/svg/box2-heart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/svg/cart4.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/svg/rulers.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/svg/wallet.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/config/TilesConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/config/TilesConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/list/controller/ListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/list/controller/ListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/list/mapper/ListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/list/mapper/ListMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/list/service/ListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/list/service/ListService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/list/service/ListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/list/service/ListServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/member/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/member/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/member/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/member/service/MemberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/member/service/MemberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/member/service/MemberServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/utility/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/utility/Utility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/member.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/member.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/template/top.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/template/top.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
