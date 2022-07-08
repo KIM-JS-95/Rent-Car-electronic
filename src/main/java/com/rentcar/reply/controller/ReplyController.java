@@ -1,9 +1,11 @@
-package com.rentcar.reply;
+package com.rentcar.reply.controller;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.rentcar.reply.model.ReplyDTO;
+import com.rentcar.reply.service.ReplyService;
 import com.rentcar.utility.Utility;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,7 +28,7 @@ public class ReplyController {
   private static final Logger log = LoggerFactory.getLogger(ReplyController.class);
 
   @Autowired
-  @Qualifier("com.rentcar.reply.ReplyServiceImpl")
+  @Qualifier("com.rentcar.reply.service.ReplyServiceImpl")
   private ReplyService service;
   
   @GetMapping("/list/reply/list/{listno}/{sno}/{eno}")
