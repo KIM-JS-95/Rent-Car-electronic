@@ -1,5 +1,9 @@
-package com.rentcar.member;
+package com.rentcar.member.controller;
 
+import com.rentcar.member.model.CarConditionDTO;
+import com.rentcar.member.model.CarInfo1DTO;
+import com.rentcar.member.model.MemberDTO;
+import com.rentcar.member.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -14,7 +18,7 @@ import javax.servlet.http.HttpSession;
 public class MemberController {
 
     @Autowired
-    @Qualifier("com.rentcar.member.MemberServiceImpl")
+    @Qualifier("com.rentcar.member.service.MemberServiceImpl")
     private MemberService service;
 
     @GetMapping("/reservation")

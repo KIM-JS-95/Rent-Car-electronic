@@ -1,7 +1,13 @@
 package com.rentcar.config;
 
+
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+
+import javax.sql.DataSource;
+
+import org.mybatis.spring.annotation.MapperScan;
+
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -13,12 +19,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
+
 import javax.sql.DataSource;
 
 @Configuration
 @PropertySource("classpath:/application.properties")  // 설정 파일 위치
 @MapperScan(basePackages= {"com.rentcar.*"})
-public class DatabaseConfiguration1 {
+
+public class DatabaseConfiguration {
+
     @Autowired
     private ApplicationContext applicationContext;
 
@@ -31,7 +40,11 @@ public class DatabaseConfiguration1 {
     @Bean
     public DataSource dataSource() throws Exception{
         DataSource dataSource = new HikariDataSource(hikariConfig());
+
         System.out.println(dataSource.toString());  // 정상적으로 연결 되었는지 해시코드로 확인
+
+        System.out.println(dataSource.toString());
+
         return dataSource;
     }
 
@@ -40,6 +53,7 @@ public class DatabaseConfiguration1 {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource);
         sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:/mybatis/**/*.xml"));
+
         return sqlSessionFactoryBean.getObject();
     }
 

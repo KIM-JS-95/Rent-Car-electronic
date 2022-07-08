@@ -1,9 +1,11 @@
 package com.rentcar.list.controller;
 
 
-import com.rentcar.list.ListDTO;
-import com.rentcar.list.ListService;
-import com.rentcar.reply.ReplyService;
+import com.rentcar.list.model.ListDTO;
+
+import com.rentcar.list.service.ListService;
+
+import com.rentcar.reply.service.ReplyService;
 import com.rentcar.utility.UploadList;
 import com.rentcar.utility.Utility;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,15 +25,15 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-@RestController("/contents")
+@RequestMapping("/contents")
 public class ListController {
 
     @Autowired
-    @Qualifier("com.rentcar.list.ListServiceImpl")
+    @Qualifier("com.rentcar.list.service.ListServiceImpl")
     private ListService service;
 
     @Autowired
-    @Qualifier("com.rentcar.reply.ReplyServiceImpl")
+    @Qualifier("com.rentcar.reply.service.ReplyServiceImpl")
     private ReplyService rservice;
 
     @GetMapping("/list")

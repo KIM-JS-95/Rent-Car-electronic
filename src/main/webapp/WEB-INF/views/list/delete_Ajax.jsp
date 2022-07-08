@@ -14,11 +14,11 @@
                 $('#btn1').on('click',function(){
                         
                    var form = {
-                        bbsno : $('#bbsno').val(),
+                        listno : $('#listno').val(),
                         passwd : $('#passwd').val(),
                         filename : $('#oldfile').val()            
                     }
-                  alert(form.bbsno)  
+                  alert(form.listno)  
                         //비공기 통신
                         $.ajax({
                     url: "./delete_Ajax",
@@ -43,7 +43,7 @@
 <body> 
 <div class="container">
 <h1 class="col-sm-offset-2 col-sm-10">삭제</h1>
-  <input type="hidden" name="bbsno" id="bbsno" value="${param.bbsno}">
+  <input type="hidden" name="listno" id="listno" value="${param.listno}">
   <input type="hidden" name="oldfile" id="oldfile" value="${param.oldfile}">
   <div class="form-group">
     <label class="control-label col-sm-2" for="passwd">비밀번호</label>

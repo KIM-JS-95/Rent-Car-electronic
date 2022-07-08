@@ -1,7 +1,10 @@
 <%@ page contentType="text/html; charset=UTF-8" %> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<!DOCTYPE html> 
+<%
+    boolean flag = (Boolean)request.getAttribute("flag");
+%>
+<!DOCTYPE html>
 <html> 
 <head>
   <title>homepage</title>
@@ -14,6 +17,15 @@
 </head>
 <body> 
 <div class="container">
+<%
+  if(flag){
+  out.print("<div class='well well-lg'>");
+  out.print("답변있는 글이므로 삭제할 수 없습니다.<br><br>");
+  out.print("<button class='btn' onclick='history.back()'>다시시도</button>");
+      out.print("<br></div>");
+  }else{
+
+%>
 <c:choose>
 <c:when test="${flag }">
 <div class='well well-lg'>
@@ -25,11 +37,11 @@
 <c:otherwise>
 <h1 class="col-sm-offset-2 col-sm-10">삭제</h1>
 <form class="form-horizontal" 
-      action="/bbs/delete"
+      action="/list/delete"
       method="post"
       >
  
- <input type="hidden" name="bbsno" value="${bbsno }">
+ <input type="hidden" name="listno" value="${listno }">
  <input type="hidden" name="oldfile" value="${oldfile }">
   <div class="form-group">
     <label class="control-label col-sm-2" for="passwd">비밀번호</label>
@@ -51,6 +63,7 @@
 </form>
  </c:otherwise>
 </c:choose>
+<%} %>
 </div>
 </body> 
 </html> 

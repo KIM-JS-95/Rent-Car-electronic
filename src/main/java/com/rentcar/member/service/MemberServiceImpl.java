@@ -1,10 +1,13 @@
-package com.rentcar.member;
+package com.rentcar.member.service;
 
-
+import com.rentcar.member.model.CarConditionDTO;
+import com.rentcar.member.model.CarInfo1DTO;
+import com.rentcar.member.model.MemberDTO;
+import com.rentcar.member.mapper.MemberMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("com.rentcar.member.MemberServiceImpl")
+@Service("com.rentcar.member.service.MemberServiceImpl")
 public class MemberServiceImpl implements MemberService {
 
     @Autowired

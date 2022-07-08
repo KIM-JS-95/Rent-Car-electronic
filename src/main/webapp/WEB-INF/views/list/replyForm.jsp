@@ -9,18 +9,18 @@
 <div class="container">
 <h1 class="col-sm-offset-2 col-sm-10">게시판 답변</h1>
 <form class="form-horizontal" 
-      action="/bbs/reply"
+      action="/list/reply"
       method="post"
         enctype="multipart/form-data"
       >
- <input type="hidden" name="bbsno" value="${dto.bbsno}">
+ <input type="hidden" name="listno" value="${dto.listno}">
  <input type="hidden" name="grpno" value="${dto.grpno}">
  <input type="hidden" name="indent" value="${dto.indent}">
  <input type="hidden" name="ansnum" value="${dto.ansnum}">
    <div class="form-group">
-    <label class="control-label col-sm-2" for="wname">작성자</label>
+    <label class="control-label col-sm-2" for="mname">작성자</label>
     <div class="col-sm-6">
-      <input type="text" name="wname" id="wname" class="form-control">
+      <input type="text" name="mname" id="mname" class="form-control">
     </div>
   </div>
   <div class="form-group">

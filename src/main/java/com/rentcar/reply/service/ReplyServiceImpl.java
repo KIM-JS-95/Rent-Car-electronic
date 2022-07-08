@@ -1,12 +1,15 @@
-package com.rentcar.reply;
+package com.rentcar.reply.service;
+
+
+import com.rentcar.reply.mapper.ReplyMapper;
+import com.rentcar.reply.model.ReplyDTO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-@Service("com.rentcar.reply.ReplyServiceImpl")
+@Service("com.rentcar.reply.service.ReplyServiceImpl")
 public class ReplyServiceImpl implements ReplyService {
   
   @Autowired

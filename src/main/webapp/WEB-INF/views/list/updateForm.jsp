@@ -14,11 +14,11 @@
 <div class="container">
 <h1 class="col-sm-offset-2 col-sm-10">게시판 수정</h1>
 <form class="form-horizontal" 
-      action="/bbs/update"
+      action="/list/update"
       method="post"
       enctype="multipart/form-data"
       >
-  <input type="hidden" name='bbsno' value="${dto.bbsno}">
+  <input type="hidden" name='listno' value="${dto.listno}">
    <input type="hidden" name='oldfile' value="${dto.filename}">
   <div class="form-group">
     <label class="control-label col-sm-2" for="wname">작성자</label>

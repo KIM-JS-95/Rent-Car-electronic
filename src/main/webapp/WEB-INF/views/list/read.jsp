@@ -10,28 +10,28 @@
   <script>
   
   function list(){//답변 페이지 이동
-      let url = '/bbs/list';
+      let url = '/list/list';
   url +="?nowPage=${param.nowPage}"
   url +="&col=${param.col}"
   url +="&word=${param.word}"
      location.href = url;
     }
     function update1(){//수정페이지 이동
-      let url = '/bbs/update/${dto.bbsno}';
+      let url = '/list/update/${dto.listno}';
       location.href = url;
     }
     function del(){//삭제 페이지 이동
-        let url = '/bbs/delete/${dto.bbsno}';
+        let url = '/list/delete/${dto.listno}';
          url+="?oldfile=${dto.filename}"; 
         location.href = url;
       }
     function reply(){//답변 페이지 이동
-         let url = '/bbs/reply/${dto.bbsno}';
+         let url = '/list/reply/${dto.listno}';
         location.href = url;
        }
     function delete_Ajax(){
-        var url = "/bbs/delete_Ajax";
-        url += "?bbsno=${dto.bbsno}";
+        var url = "/list/delete_Ajax";
+        url += "?listno=${dto.listno}";
         url += "&oldfile=${dto.filename}";
         //alert(url);    
         location.href=url;
@@ -46,7 +46,7 @@
 <h2>조회</h2>
 <div class="panel panel-default">
 <div class="panel-heading">작성자</div>
-<div class="panel-body">${dto.wname}</div>
+<div class="panel-body">${dto.mname}</div>
  
 <div class="panel-heading">제목</div>
 <div class="panel-body">${dto.title}</div>
@@ -65,7 +65,7 @@
 </div>
 
 <div>
-  <button onclick="lacation.href='/bbs/create'">등록</button>
+  <button onclick="lacation.href='/list/create'">등록</button>
   <button onclick="update1()">수정</button>
   <button onclick="del()">삭제</button>
   <button onclick="reply()">답변</button>
@@ -147,7 +147,7 @@ aria-labelledby="myModalLabel" aria-hidden="true">
  <!-- 페이지 로딩시 댓글 목록 처리-->
  <!-- jstl는 internal javascript에서 사용가능 -->
  <script>
-  let bbsno = "${dto.bbsno}"; 
+  let listno = "${dto.listno}"; 
   let sno = "${sno}";
   let eno = "${eno}";
  <!-- 댓글용 paging, 게시판 검색 -->

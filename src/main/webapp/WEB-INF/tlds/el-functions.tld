@@ -14,17 +14,17 @@
 		<description>댓글 수 보여주기</description>
 		<name>rcount</name>
 		<function-class>
-			com.study.utility.Utility
+			com.rentcar.utility.Utility
 		</function-class>
 		<function-signature>
-			int rcount(int, com.study.model.ReplyService )
+			int rcount(int, com.rentcar.reply.service.ReplyService )
 		</function-signature>
 	</function>
 	<function>
 		<description>new 이미지 출력</description>
 		<name>newImg</name>
 		<function-class>
-			com.study.utility.Utility
+			com.rentcar.utility.Utility
 		</function-class>
 		<function-signature>
 			boolean compareDay(java.lang.String)

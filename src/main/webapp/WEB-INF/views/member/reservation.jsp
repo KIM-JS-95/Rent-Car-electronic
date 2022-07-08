@@ -1,3 +1,5 @@
+
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,15 +49,13 @@
 	.section input[id="slide03"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(3) > label {background:#999;}
 	</style>
 </head>
-<body>
+
 <body class="wrapper lnbWrapper">
 <p class="skip"><a href="#container">본문 바로가기</a></p>
 
 <section id="wrapper">
 
-  <header>
 
-</header>
 
   <div id="container" class="container">
 
@@ -66,9 +66,10 @@
                 <a href="/web/signup/pass/usermodify" class="imgArea">
                     <div><img src="/resource/PC/images/mypage/img_profile_big.png" alt=""></div>
                 </a>
-                <div class="txtArea">
-                    <h2 class="titDep2 name" profileLinkArea> ???님의<br><span>예약 차량 정보</span> </h2>
-                </div>
+                 <div class="txtArea">
+                 <h2 class="titDep2 name" profileLinkArea> ${dto.mname}님의<br><span>회원정보</span> </h2>
+                 </div>
+
 
                 <div class="btnArea">
                  <button type="button" class="btnDefault btnS btnLineG" onclick="jppJs.go('/update')">나의 정보</button>
@@ -77,7 +78,7 @@
 
            <div class="txtArea">
              <div id="carnameTOP">
-                    <h2 class="titDep2 name" profileLinkArea> <br><span></span> ${dto.carname}</h2>
+                    <h2 class="titDep2 name" profileLinkArea> <br><span>${dto1.carname}</span> </h2>
              </div>
 
 
@@ -148,20 +149,24 @@
               <table class="table table-bordered" style="font-size: 100px">
             <tr>
 
-                <th class="col-sm-2">대여일</th>
-                <td class="col-sm-8"><a href="javascript:read('${dto.id}')">${dto.rentDate}</a></td>
+                <th class="col-sm-2">차 종</th>
+                <td class="col-sm-8">${dto1.carname}</td>
+            </tr>
+            <tr>
+                <th class="col-sm-2">차 번호</th>
+                <td class="col-sm-8">${dto1.carnumber}</td>
+            </tr>
+            <tr>
+                <th class="col-sm-2">승차인원</th>
+                <td class="col-sm-8">${dto1.carseate}</td>
             </tr>
             <tr>
                 <th class="col-sm-2"></th>
-                <td class="col-sm-8">${dto.}</td>
+                <td class="col-sm-8">${dto1.carname}</td>
             </tr>
             <tr>
                 <th class="col-sm-2"></th>
-                <td class="col-sm-8">${dto.}</td>
-            </tr>
-            <tr>
-                <th class="col-sm-2"></th>
-                <td class="col-sm-8">${dto.}</td>
+                <td class="col-sm-8">${dto1.carname}</td>
             </tr>
 
             </table>

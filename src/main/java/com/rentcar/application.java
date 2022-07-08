@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("com.in28minutes.springboot")
+//@ComponentScan("com.rentcar.member.MemberMapper")
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 public class application {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.study.utility;
+package com.rentcar.utility;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -9,9 +9,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import com.rentcar.reply.service.ReplyService;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.study.model.ReplyService;
+
 
 public class Utility {
   /**
@@ -219,7 +220,7 @@ public class Utility {
             file.delete();
 
 }
-  public static int rcount(int bbsno,ReplyService rservice){
-    return rservice.total(bbsno);
+  public static int rcount(int listno, ReplyService rservice){
+    return rservice.total(listno);
 }
 }
