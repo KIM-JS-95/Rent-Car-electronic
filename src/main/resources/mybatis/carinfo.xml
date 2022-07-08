@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.rentcar.member.MemberMapper">
+
+    <select id="total" parameterType="Map" resultType="int">
+        select count(*) from carinfo
+        <where>
+            <choose>
+                <when test="col=='carname'">
+                    carname like concat('%', #{word} ,'%')
+                </when>
+                <when test="col=='carsetae'">
+                    carsetae like concat('%', #{word} ,'%')
+                </when>
+                <when test="col=='carpoint'">
+                    carpoint = #{word}
+                </when>
+            </choose>
+        </where>
+    </select>
+
+    <select id="list" parameterType="Map"
+            resultType="com.rentcar.CarInfo.CarInfoDTO">
+
+        select carname, carimage, carseate, carnumber, carpoint
+        from
+        carinfo
+        <where>
+            <choose>
+                <when test="col=='carname'">
+                    carname like concat('%', #{word} ,'%')
+                </when>
+                <when test="col=='carsetae'">
+                    carsetae like concat('%', #{word} ,'%')
+                </when>
+                <when test="col=='carpoint'">
+                    carpoint = #{word}
+                </when>
+            </choose>
+        </where>
+        order by carnumber desc
+        limit #{sno}, #{eno}
+
+    </select>
+
+</mapper>

@@ -1,12 +1,21 @@
 package com.rentcar.list.controller;
 
 
+<<<<<<< HEAD
 import com.rentcar.list.model.ListDTO;
 
 import com.rentcar.list.service.ListService;
 
 import com.rentcar.reply.service.ReplyService;
 import com.rentcar.utility.UploadList;
+=======
+
+import com.rentcar.list.UploadList;
+import com.rentcar.list.model.ListDTO;
+import com.rentcar.list.service.ListService;
+import com.rentcar.reply.ReplyService;
+
+>>>>>>> bad000463133901f31a3de4210065a3e003691c8
 import com.rentcar.utility.Utility;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

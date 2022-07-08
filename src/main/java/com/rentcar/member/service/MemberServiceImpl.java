@@ -1,9 +1,18 @@
 package com.rentcar.member.service;
+<<<<<<< HEAD
 
 import com.rentcar.member.model.CarConditionDTO;
 import com.rentcar.member.model.CarInfo1DTO;
 import com.rentcar.member.model.MemberDTO;
 import com.rentcar.member.mapper.MemberMapper;
+=======
+
+
+import com.rentcar.member.mapper.MemberMapper;
+import com.rentcar.member.model.CarConditionDTO;
+import com.rentcar.member.model.CarInfo1DTO;
+import com.rentcar.member.model.MemberDTO;
+>>>>>>> bad000463133901f31a3de4210065a3e003691c8
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -5,7 +5,11 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 import javax.sql.DataSource;
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> bad000463133901f31a3de4210065a3e003691c8
 import org.mybatis.spring.annotation.MapperScan;
 
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -27,27 +31,35 @@ import javax.sql.DataSource;
 @MapperScan(basePackages= {"com.rentcar.*"})
 
 public class DatabaseConfiguration {
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> bad000463133901f31a3de4210065a3e003691c8
     @Autowired
     private ApplicationContext applicationContext;
-
+    
     @Bean
     @ConfigurationProperties(prefix="spring.datasource.hikari") // 설정 파일의 접두사 선언
     public HikariConfig hikariConfig() {
         return new HikariConfig();
     }
-
+    
     @Bean
     public DataSource dataSource() throws Exception{
         DataSource dataSource = new HikariDataSource(hikariConfig());
 
         System.out.println(dataSource.toString());  // 정상적으로 연결 되었는지 해시코드로 확인
 
+<<<<<<< HEAD
         System.out.println(dataSource.toString());
+=======
+        System.out.println(dataSource.toString()); 
+>>>>>>> bad000463133901f31a3de4210065a3e003691c8
 
         return dataSource;
     }
-
+    
     @Bean
     public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception{
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
@@ -56,7 +68,7 @@ public class DatabaseConfiguration {
 
         return sqlSessionFactoryBean.getObject();
     }
-
+    
     @Bean
     public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory){
         return new SqlSessionTemplate(sqlSessionFactory);

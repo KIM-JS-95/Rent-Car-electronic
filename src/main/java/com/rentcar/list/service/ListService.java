@@ -1,6 +1,9 @@
 package com.rentcar.list.service;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> bad000463133901f31a3de4210065a3e003691c8
 import com.rentcar.list.model.ListDTO;
 
 import java.util.List;
