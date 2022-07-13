@@ -1,12 +1,8 @@
 package com.rentcar.support.controller;
 
 import com.rentcar.support.model.Supporter;
-import com.rentcar.support.service.RequestServiceImpl;
 import com.rentcar.support.service.SupportServiceImpl;
 import com.rentcar.utility.Utility;
-import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -16,28 +12,54 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 /*
-요청 페이지
+    지원 차량 정보 저장 및 관리
  */
 
-@Slf4j
 @Controller
-@RequestMapping("/request")
-public class RequestandController {
-
-    Logger logger = LoggerFactory.getLogger(RequestandController.class);
-
-    @Autowired
-    private RequestServiceImpl requestService;
+@RequestMapping("/support")
+public class SupporterController {
 
     @Autowired
     private SupportServiceImpl supportService;
 
-    /*
-   검색 기능 구현
-   col : select tag 성택 요소
-   word : 검색어
-    */
+    // 서포터 정보 읽어오기
+    @GetMapping("/read")
+    public Supporter sup(){
+        String  carnum = "12가1234";
+
+        return supportService.read(carnum);
+    }
+
+    @PostMapping("/create_supporter")
+    @ResponseBody
+    public Boolean create_supporter(@RequestBody Supporter surpport){
+
+        return supportService.create(surpport);
+    }
+
+
+    @PostMapping("/update")
+    @ResponseBody
+    public Boolean update(@RequestBody Supporter surpport){
+
+        return supportService.update(surpport);
+    }
+
+    @GetMapping("/delete/{no}")
+    @ResponseBody
+    public Boolean delete(@PathVariable("no") String no){
+
+        return supportService.delete(Integer.parseInt(no));
+    }
+
+
+    @GetMapping("/create")
+    public String create(){
+        return "/supporter/create";
+    }
+
     @GetMapping("/list")
     public String list(HttpServletRequest request){
 
@@ -51,12 +73,11 @@ public class RequestandController {
         int nowPage = 1;// 현재 보고있는 페이지 (처음들어왔을때 페이지??)
         if (request.getParameter("nowPage") != null) {
             nowPage = Integer.parseInt(request.getParameter("nowPage"));
-        }//null을 정수형으로바꿔라 안쓰면 Nullpoint 익셉션뜸 !!!!!!
-        int recordPerPage = 3;// 한페이지당 보여줄 레코드갯수
+        }
+        int recordPerPage = 3;
 
         // DB에서 가져올 순번-----------------
         int sno = ((nowPage - 1) * recordPerPage) ;
-        // int eno = nowPage * recordPerPage;
 
         Map map = new HashMap();
         map.put("col", col); // select tag
@@ -76,13 +97,6 @@ public class RequestandController {
         request.setAttribute("word", word);
         request.setAttribute("paging", paging);
 
-        return "/list";
+        return "/supporter/list";
     }
-
-
-    @GetMapping("/request")
-    public String repuest(){
-        return "/request";
-    }
-
 }

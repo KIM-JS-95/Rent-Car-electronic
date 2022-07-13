@@ -32,8 +32,8 @@
         <h1 class="header__title">EV Rent Car</h1>
       </header>
 
-      <nav class="navigaiton">
-        <ul class="navigation__list">
+      <nav class="navigaiton" style="z-index: 2;">
+        <ul class="navigation__list" style="z-index: 1;">
 
           <div class="dropdown">
             <li class="navigation__item"><span class="item__icon"><span class="icon__emoji">🌇</span></span><span

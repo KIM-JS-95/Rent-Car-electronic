@@ -3,6 +3,8 @@
 <!--<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>-->
 <!--<%@ taglib prefix="util" uri="/ELFunctions" %>-->
 
+<!-- 리스트 상에서 생성, 삭제, 수정 기능을 심플하게 구현하자 -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,31 +25,38 @@
 <body>
 <div class="container">
 
-    <h2>공지 사항</h2>
+    <h2>Surpporter</h2>
     <form class="form-inline" action="/notice/list">
         <div class="form-group">
             <select class="form-control" name="col">
                 <option value="wname"
                 <c:if test= "${col=='wname'}"> selected </c:if>
                 >성명</option>
+
                 <option value="title"
                 <c:if test= "${col=='title'}"> selected </c:if>
                 >제목</option>
+
                 <option value="content"
                 <c:if test= "${col=='content'}"> selected </c:if>
                 >내용</option>
+
                 <option value="title_content"
                 <c:if test= "${col=='title_content'}"> selected</c:if>
                 >제목+내용</option>
+
                 <option value="total"
                 <c:if test= "${col=='total'}"> selected </c:if>
                 >전체출력</option>
+
             </select>
         </div>
+
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Enter 검색어"
                    name="word" value="${word}">
         </div>
+
         <button type="submit" class="btn btn-default" >검색</button>
         <c:if test="${sessionScope.grade=='A' }">
             <button type="button" class="btn btn-default" onclick="location.href='/admin/notice/create'">등록</button>
@@ -57,7 +66,7 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>산고차량</th>
+            <th>신고차량</th>
             <th>신고사유</th>
             <th>차량번호</th>
             <th>위치</th>

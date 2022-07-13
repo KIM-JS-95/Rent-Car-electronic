@@ -2,10 +2,8 @@ package com.rentcar.support.service;
 
 
 import com.rentcar.support.mapper.RequestMapper;
-import com.rentcar.support.mapper.SurpportMapper;
 import com.rentcar.support.model.Request;
-import com.rentcar.support.model.State;
-import com.rentcar.support.model.Surpport;
+import com.rentcar.support.model.Supporter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,15 +22,14 @@ public class RequestServiceImpl implements RequestService {
     on going => 이동중
     done => 처리 완료
      */
-
     @Override
-    public Surpport read(String carnum) {
+    public Supporter read(String carnum) {
         return mapper.read(carnum);
     }
 
     @Override
     public Boolean create(Request request) {
-        request.setState(State.valueOf("request"));
+        // TODO: 요정정보 저장 및 상태 정보 저장
         return mapper.create(request);
     }
 
@@ -42,8 +39,24 @@ public class RequestServiceImpl implements RequestService {
     }
 
     @Override
-    public List<Surpport> list(Map map) {
+    public List<Supporter> list(Map map) {
         return mapper.list(map);
+    }
+
+
+    //TODO: 실시간으로 상태를 업데이트 해줘야한다.
+    @Override
+    public Boolean update_state(Map<String, String> map) {
+        String carnum = map.get("carnum");
+        String state = map.get("state");
+
+        return mapper.update_state(map);
+    }
+
+
+    @Override
+    public Boolean readmock(String carnum) {
+        return mapper.readmock(carnum);
     }
 
 
