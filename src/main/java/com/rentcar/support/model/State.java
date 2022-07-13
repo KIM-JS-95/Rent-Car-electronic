@@ -2,5 +2,5 @@ package com.rentcar.support.model;
 
 public enum State {
 
-    request ,accept,going,done
+    request, accept, going, done
 }

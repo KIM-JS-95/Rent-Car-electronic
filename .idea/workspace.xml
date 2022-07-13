@@ -4,7 +4,71 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="2f54c7a1-3fc5-4f71-9d62-8ade45f32cdc" name="Changes" comment="" />
+=======
+    <list default="true" id="2f54c7a1-3fc5-4f71-9d62-8ade45f32cdc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/com/rentcar/application.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/com/rentcar/application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/com/rentcar/config/DatabaseConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/com/rentcar/config/DatabaseConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/com/rentcar/config/ServletInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/com/rentcar/config/ServletInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/com/rentcar/config/TilesConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/com/rentcar/config/TilesConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/com/rentcar/support/controller/RequestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/com/rentcar/support/controller/RequestandController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/com/rentcar/support/controller/RequestandController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/com/rentcar/support/controller/SurpportController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/com/rentcar/support/mapper/RequestMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/com/rentcar/support/mapper/RequestMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/com/rentcar/support/mapper/SurpportMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/com/rentcar/support/model/Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/com/rentcar/support/model/Request.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/com/rentcar/support/model/Surpport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/com/rentcar/support/model/Surpport_log.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/com/rentcar/support/service/RequestService.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/com/rentcar/support/service/RequestService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/com/rentcar/support/service/RequestServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/com/rentcar/support/service/RequestServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/com/rentcar/support/service/SurpportService.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/com/rentcar/support/service/SurpportService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/com/rentcar/support/service/SurpportServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/kakao.properties" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/kakao.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/mybatis/surpport.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/static/css/map.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/tiles/map.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/tiles/map.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/test/com/rentcar/support/controller/SurpportControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/test/com/rentcar/support/controller/SurpportControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/test/com/rentcar/support/mapper/SurpportMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/test/com/rentcar/support/mapper/SurpportMapperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/test/com/rentcar/support/service/SerpportServiceImplTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/config/TilesConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/config/TilesConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/support/controller/RequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/support/controller/RequestRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/support/controller/RequestandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/support/controller/RequestandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/support/controller/SurpportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/support/controller/SupporterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/support/mapper/RequestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/support/mapper/RequestMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/support/mapper/SurpportMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/support/mapper/SupporterMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/support/model/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/support/model/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/support/model/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/support/model/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/support/model/Surpport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/support/model/Supporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/support/model/Surpport_log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/support/model/Support_log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/support/service/RequestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/support/service/RequestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/support/service/RequestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/support/service/RequestServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/support/service/SurpportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/support/service/SurpportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/support/service/SurpportServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/support/service/SupportServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/surpport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/supporter.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/map.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/map/map.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/map/map.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/surpport/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/support/HelpRequest/help_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/surpport/request.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/support/HelpRequest/request.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/template/top.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/template/top.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/rentcar/support/controller/SurpportControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/rentcar/support/controller/SurpportControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/rentcar/support/mapper/SurpportMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/rentcar/support/mapper/SurpportMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/rentcar/support/service/SerpportServiceImplTest.java" beforeDir="false" />
+    </list>
+>>>>>>> a936ea90b81fd6274edc24d4be683b2d9aa0b705
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,11 +92,6 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="RentCar" type="f1a62948:ProjectNode" />
               </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="RentCar" type="f1a62948:ProjectNode" />
-                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
-              </path>
             </expand>
             <select />
           </tree_state>
@@ -45,10 +104,10 @@
       <list>
         <option value="Interface" />
         <option value="Kotlin Class" />
-        <option value="JUnit5 Test Class" />
         <option value="HTML File" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -79,7 +138,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java/com/rentcar/support" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Surpport" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/support/supporter" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -88,25 +147,26 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\webapp\WEB-INF\views\Surpport" />
-      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\webapp\WEB-INF\views" />
+      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\webapp\WEB-INF\views\support\supporter" />
+      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\resources\tiles" />
+      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\webapp\WEB-INF\views\surpport\supporter" />
+      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\resources\mybatis" />
       <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\resources" />
-      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\config" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\webapp\WEB-INF\views\support" />
+      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\webapp\WEB-INF\views" />
+      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\webapp\WEB-INF\views\surpport\HelpRequest" />
       <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\resources\static" />
       <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\resources\static\css" />
-      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\webapp\WEB-INF\views" />
-      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\resources\templates" />
-      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\webapp\WEB-INF\views\map" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.rentcar.support.service" />
       <recent name="com.rentcar.support.controller" />
       <recent name="com.rentcar.support.mapper" />
-      <recent name="com.rentcar.support.service" />
       <recent name="com.rentcar.kakao.controller" />
       <recent name="com.rentcar.kakao" />
     </key>
@@ -131,12 +191,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KakaoRestApiHelperTest.local_find_path" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RequestRestControllerTest.getMemberListTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.rentcar.kakao.controller.KakaoRestApiHelperTest.local_find_path&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.rentcar.support.controller.RequestRestControllerTest.getMemberListTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -152,12 +212,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SerpportServiceImplTest.support_find" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RequestRestControllerTest.request" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.rentcar.support.service.SerpportServiceImplTest.support_find&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.rentcar.support.controller.RequestRestControllerTest.request&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -173,12 +233,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SurpportControllerTest.list" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SupportServiceImplTest.list" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.rentcar.support.controller.SurpportControllerTest.list&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.rentcar.support.service.SupportServiceImplTest.list&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -194,12 +254,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SurpportMapperTest.test1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SupportServiceImplTest.support_find" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.rentcar.support.mapper.SurpportMapperTest.test1&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.rentcar.support.service.SupportServiceImplTest.support_find&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -230,11 +290,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.KakaoRestApiHelperTest.local_find_path" />
         <item itemvalue="Application.application" />
-        <item itemvalue="Gradle.SurpportControllerTest.list" />
-        <item itemvalue="Gradle.SerpportServiceImplTest.support_find" />
-        <item itemvalue="Gradle.SurpportMapperTest.test1" />
+        <item itemvalue="Gradle.SupportServiceImplTest.list" />
+        <item itemvalue="Gradle.SupportServiceImplTest.support_find" />
+        <item itemvalue="Gradle.RequestRestControllerTest.request" />
+        <item itemvalue="Gradle.RequestRestControllerTest.getMemberListTest" />
       </list>
     </recent_temporary>
   </component>

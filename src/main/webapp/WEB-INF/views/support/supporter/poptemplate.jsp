@@ -8,7 +8,6 @@
 <title><tiles:getAsString name="title"/></title>
 </head>
 <body>
-<tiles:insertAttribute name="header"/>
 
 <tiles:insertAttribute name="body"/>
 

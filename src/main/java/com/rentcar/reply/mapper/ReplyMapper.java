@@ -1,5 +1,7 @@
-package com.rentcar.reply;
+package com.rentcar.reply.mapper;
  
+import com.rentcar.reply.model.ReplyDTO;
+
 import java.util.List;
 import java.util.Map;
  

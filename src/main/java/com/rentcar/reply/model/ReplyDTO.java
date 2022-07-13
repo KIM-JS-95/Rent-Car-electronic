@@ -1,4 +1,4 @@
-package com.rentcar.reply;
+package com.rentcar.reply.model;
 
 import lombok.Data;
 

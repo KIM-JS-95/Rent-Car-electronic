@@ -7,7 +7,7 @@ import lombok.Data;
 도움 요청에 관한 기록 보관 Table
  */
 @Data
-public class Surpport_log {
+public class Support_log {
 
     private int no;
 

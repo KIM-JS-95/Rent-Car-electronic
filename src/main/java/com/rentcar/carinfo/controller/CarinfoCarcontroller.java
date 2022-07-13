@@ -22,7 +22,7 @@ import java.util.Map;
 public class CarinfoCarcontroller {
 
     @Autowired
-    @Qualifier("com.rentcar.carinfo.CarinfoServiceImpl")
+    @Qualifier("com.rentcar.carinfo.service.CarinfoServiceImpl")
     private CarinfoService service;
 
 
@@ -98,14 +98,7 @@ public class CarinfoCarcontroller {
 
         return "/carinfo/list";
     }
-    @GetMapping("/")
-    public String home(){
-        return "/home";
-    }
 
 
-//    @GetMapping("/{id}")
-//    public String hello(@PathVariable("id") int id){
-//        return id + "입니다.";
-//    }
+
 }

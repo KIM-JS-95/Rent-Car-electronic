@@ -10,6 +10,7 @@
     <put-attribute name="header"
       value="/WEB-INF/views/template/top.jsp" />
   </definition>
+
   <definition name="/home" extends="main">
     <put-attribute name="title" value="기본페이지"></put-attribute>
     <put-attribute name="body"
@@ -21,16 +22,19 @@
 		<put-attribute name="body"
 			value="/WEB-INF/views/login/loginForm.jsp" />
 	</definition>
+
 	<definition name="/user/agree" extends="main">
 		<put-attribute name="title" value="약관동의"></put-attribute>
 		<put-attribute name="body"
 			value="/WEB-INF/views/login/agreement.jsp" />
 	</definition>
+
 	<definition name="/user/create" extends="main">
 		<put-attribute name="title" value="회원가입"></put-attribute>
 		<put-attribute name="body"
 			value="/WEB-INF/views/login/createForm.jsp" />
 	</definition>
+
 	<definition name="/user/idfind" extends="main">
 		<put-attribute name="title" value="아이디찾기"></put-attribute>
 		<put-attribute name="body"
