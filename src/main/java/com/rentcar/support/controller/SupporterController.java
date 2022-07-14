@@ -8,10 +8,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.UnsupportedEncodingException;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import java.net.URLDecoder;
 
 /*
     지원 차량 정보 저장 및 관리
@@ -34,9 +36,9 @@ public class SupporterController {
 
     @PostMapping("/create_supporter")
     @ResponseBody
-    public Boolean create_supporter(@RequestBody Supporter surpport){
-
-        return supportService.create(surpport);
+    public Boolean create_supporter(@RequestBody Map map){
+        Boolean answer = supportService.create(map);
+        return answer;
     }
 
 
@@ -47,11 +49,11 @@ public class SupporterController {
         return supportService.update(surpport);
     }
 
-    @GetMapping("/delete/{no}")
+    @GetMapping("/delete/{carnum}")
     @ResponseBody
-    public Boolean delete(@PathVariable("no") String no){
-
-        return supportService.delete(Integer.parseInt(no));
+    public Boolean delete(@PathVariable("carnum") String carnum) throws UnsupportedEncodingException {
+        String supporter = URLDecoder.decode(carnum,"utf-8");
+        return supportService.delete(supporter);
     }
 
 

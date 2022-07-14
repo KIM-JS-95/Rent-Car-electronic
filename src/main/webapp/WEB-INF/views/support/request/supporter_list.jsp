@@ -11,10 +11,11 @@
                     <meta charset="utf-8">
 
                     <script type="text/javascript">
-                        function deletefun(carnum) {
+                        function deletefun(carnum, no) {
+                            console.log(carnum);
                             alert(carnum + " 차량을 삭제 하시겠습니까?")
 
-                            let response = fetch(`./delete/` + encodeURI(encodeURIComponent(carnum)));
+                            let response = fetch(`./delete/` + no);
                             if (response == true) {
                                 alert("삭제하였습니다.")
                             }
@@ -84,19 +85,11 @@
                         <table class="styled-table">
                             <thead>
                                 <tr>
-                                    <th>차량번호</th>
-                                    <th>등록일</th>
-                                    <th>생산일</th>
-                                    <th>브렌드</th>
-                                    <th>모델</th>
-
-                                    <th>dccombo</th>
-                                    <th>dcdemo</th>
-                                    <th>ac</th>
-                                    <th>fullcharge</th>
-
+                                    <th>차량</th>
+                                    <th>요청위치x</th>
+                                    <th>요청위치y</th>
                                     <th>상태</th>
-                                    <th>비고</th>
+                                    <th>폐차</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -111,19 +104,10 @@
 
                                             <tr class="active-row">
                                                 <td>${dto.carnum}</td>
-                                                <td>${dto.registed}</td>
-                                                <td>${dto.production}</td>
-
-                                                <td>${dto.brand}</td>
-                                                <td>${dto.model}</td>
-
-                                                <td>${dto.dccombo}</td>
-                                                <td>${dto.dcdemo}</td>
-                                                <td>${dto.ac}</td>
-                                                <td>${dto.fullcharge}</td>
-
+                                                <td>${dto.rx}</a></td>
+                                                <td>${dto.ry}</td>
                                                 <td>${dto.state}</td>
-                                                <td><a onclick="deletefun(`${dto.carnum}`)"> 폐차</td>
+                                                <td><a onclick="deletefun(`${dto.carnum}`,`${dto.no}`)"> 폐차</td>
                                             </tr>
 
                                         </c:forEach>

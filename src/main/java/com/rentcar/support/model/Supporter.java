@@ -1,5 +1,6 @@
 package com.rentcar.support.model;
 
+import lombok.Builder;
 import lombok.Data;
 
 
@@ -7,23 +8,21 @@ import lombok.Data;
 서포트 차량 테이블
  */
 @Data
+@Builder
 public class Supporter {
 
-    private String no;
-    /*
-     견인 및 이동식 충전 서비스 지원
-     */
     private String carnum;
+    private String registed;
+    private String production;
 
-    /*
-    현재 위치(x,y) 및 요청 좌표(rx,ry)
-     */
-//    private String x;
-//    private String y;
+    private String brand;
+    private String model;
 
-    private String rx;
-    private String ry;
+    private String dccombo;
+    private String dcdemo;
+    private String ac;
+    private String fullcharge;
+
     private String state;
-
 
 }

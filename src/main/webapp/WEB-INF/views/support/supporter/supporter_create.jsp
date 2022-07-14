@@ -4,7 +4,6 @@
 <!--<%@ taglib prefix="util" uri="/ELFunctions" %>-->
 
 <!DOCTYPE html>
-<!--=== Coding by CodingLab | www.codinglabweb.com === -->
 <html lang="en">
 
 <head>
@@ -27,10 +26,10 @@
                 <div class="details personal">
                     <span class="title">Vehicle Info</span>
 
-                    <div class="fields">
+                    <div class="fields" id="vehicle">
                         <div class="input-field">
                             <label>Vehicle Number</label>
-                            <input type="text" placeholder="Enter your name" required>
+                            <input type="text" placeholder="Enter your Number" required>
                         </div>
 
                         <div class="input-field">
@@ -40,12 +39,12 @@
 
                         <div class="input-field">
                             <label>Brand</label>
-                            <input type="text" placeholder="Enter your email" required>
+                            <input type="text" placeholder="Enter your brad" required>
                         </div>
 
                         <div class="input-field">
                             <label>Model</label>
-                            <input type="number" placeholder="Enter mobile number" required>
+                            <input type="text" placeholder="Enter mobile Model" required>
                         </div>
 
                     </div>
@@ -55,25 +54,25 @@
                 <div class="details ID">
                     <span class="title">Register Info</span>
 
-                    <div class="fields" id="tblFruits">
+                    <div class="fields" id="charge">
                         <div class="input-field">
                             <label>DC 콤보</label>
                             <input type="checkbox" name="checkbox" class="cm-toggle" value="1">
                         </div>
-                        
+
                         <div class="input-field">
                             <label>DC차 데모</label>
-                            <input type="checkbox" name="checkbox" class="cm-toggle" value="2">
+                            <input type="checkbox" name="checkbox" class="cm-toggle" value="1">
                         </div>
 
                         <div class="input-field">
                             <label>AC 3상</label>
-                            <input type="checkbox" name="checkbox" class="cm-toggle" value="3">
+                            <input type="checkbox" name="checkbox" class="cm-toggle" value="1">
                         </div>
 
                         <div class="input-field">
                             <label>완속</label>
-                            <input type="checkbox" name="checkbox" class="cm-toggle" value="4">
+                            <input type="checkbox" name="checkbox" class="cm-toggle" value="1">
                         </div>
 
                     </div>
@@ -89,33 +88,27 @@
                 <div class="details address">
                     <span class="title">Register Details</span>
 
-                    <div class="fields">
+                    <div class="fields" id="register">
                         <div class="input-field">
-                            <label>branch</label>
-                            <input type="text" placeholder="Permanent or Temporary" required>
+                            <label>Branch</label>
+                            <input type="text" placeholder="Enter Branch" required>
                         </div>
 
                         <div class="input-field">
                             <label>Cheif</label>
-                            <input type="text" placeholder="Enter nationality" required>
+                            <input type="text" placeholder="Enter Cheif" required>
                         </div>
 
                         <div class="input-field">
                             <label>Branch Phone Number</label>
-                            <input type="text" placeholder="Enter your state" required>
+                            <input type="text" placeholder="Enter Branch Phone Number" required>
                         </div>
 
                         <div class="input-field">
                             <label>Address</label>
-                            <input type="text" placeholder="Enter your district" required>
+                            <input type="text" placeholder="Enter your Branch Address" required>
                         </div>
                     </div>
-                </div>
-
-                <div class="details family">
-                    <span class="title">Family Details</span>
-
-                
 
                     <div class="buttons">
                         <div class="backBtn">
@@ -123,13 +116,18 @@
                             <span class="btnText">Back</span>
                         </div>
 
-                        <button class="sumbit" onclick="GetSelected()">
+                        <button class="sumbit" onclick="getInfo()">
                             <span class="btnText">Submit</span>
                             <i class="uil uil-navigator"></i>
                         </button>
                     </div>
 
                 </div>
+
+                <!-- <div class="details family">
+                    <span class="title">Family Details</span>
+                </div> -->
+
             </div>
         </form>
     </div>
@@ -153,34 +151,76 @@
         backBtn.addEventListener("click", () => form.classList.remove('secActive'));
     </script>
 
-<script type="text/javascript">
-    function GetSelected() {
-        //Create an Array.
-        var selected = new Array();
- 
-        //Reference the Table.
-        var tblFruits = document.getElementById("tblFruits");
- 
-        //Reference all the CheckBoxes in Table.
-        var chks = tblFruits.getElementsByTagName("INPUT");
- 
-        // Loop and push the checked CheckBox value in Array.
-        for (var i = 0; i < chks.length; i++) {
-            if (chks[i].checked) {
-                selected.push(chks[i].value);
+    <script type="text/javascript">
+        async function getInfo() {
+            const answer = GetWrited();
+            const selected = GetSelected();
+            const registe = GetRegiste();
+
+            data = {
+                answer: answer,
+                selected: selected,
+                registe: registe
+            };
+
+            var url = "/support/create_supporter";
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+                .then((res) => { if (res.ok) { window.close(); } })
+                .catch("잠시후 다시 시도해 보세요.");
+        }
+
+        function GetWrited() {
+            const answer = new Array();
+            var vehicle = document.getElementById("vehicle");
+            //Reference all the CheckBoxes in Table.
+            var res = vehicle.getElementsByTagName("INPUT");
+
+            // Loop and push the checked CheckBox value in Array.
+            for (var i = 0; i < res.length; i++) {
+                answer.push(res[i].value);
             }
+            return answer;
         }
- 
-        //Display the selected CheckBox values.
-        if (selected.length > 0) {
-            alert("Selected values: " + selected.join(","));
+
+        function GetRegiste() {
+            const answer = new Array();
+            var register = document.getElementById("register");
+            //Reference all the CheckBoxes in Table.
+            var res = register.getElementsByTagName("INPUT");
+
+            // Loop and push the checked CheckBox value in Array.
+            for (var i = 0; i < res.length; i++) {
+                answer.push(res[i].value);
+            }
+            return answer;
         }
-    };
-</script>
+
+        function GetSelected() {
+            var selected = new Array();
+            //Reference the Table.
+            var tblFruits = document.getElementById("charge");
+
+            //Reference all the CheckBoxes in Table.
+            var chks = tblFruits.getElementsByTagName("INPUT");
+
+            // Loop and push the checked CheckBox value in Array.
+            for (var i = 0; i < chks.length; i++) {
+                if (chks[i].checked) {
+                    selected.push(chks[i].value);
+                }
+            }
+
+            return selected;
+        };
+
+    </script>
 
 </body>
 
 </html>
-
-
-

@@ -12,9 +12,15 @@
     </definition>
 
     <definition name="/supporter/create" extends="baseEmpty">
-        <put-attribute name="title" value="차량 등록"></put-attribute>
+        <put-attribute name="title" value="서포터 등록"></put-attribute>
         <put-attribute name="body"
                        value="/WEB-INF/views/support/supporter/supporter_create.jsp" />
+    </definition>
+
+    <definition name="/request/supporter" extends="baseEmpty">
+        <put-attribute name="title" value="서포터 지정"></put-attribute>
+        <put-attribute name="body"
+                       value="/WEB-INF/views/support/request/supporter_list.jsp" />
     </definition>
 
 

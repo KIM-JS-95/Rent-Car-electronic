@@ -10,7 +10,7 @@
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="/resources/css/request.css">
+        <link rel="stylesheet" type="text/css" href="/css/support/request.css">
 
     </head>
 
@@ -18,9 +18,6 @@
         <section class="ftco-section">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-6 text-center mb-5">
-                        <h2 class="heading-section">Contact Form #02</h2>
-                    </div>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-md-12">
@@ -101,7 +98,6 @@
                 const carnum = document.getElementById("carnum").value;
                 const reason = document.getElementById("reason").value;
 
-                console.log(name);
 
                 data = {
                     x: lat,
@@ -120,7 +116,7 @@
                     },
                     body: JSON.stringify(data)
                 })
-                    .then((res) => {if(!res.ok){alert("성공")}})
+                    .then((res) => {if(res.ok){alert("성공")}})
                     .catch("잠시후 다시 시도해 보세요.");
 
             }

@@ -9,10 +9,18 @@ public interface SurpportService {
 
 
     Supporter read(String carnum);
-    Boolean create(Supporter carnum);
+
+    Boolean create(Map map);
+
     Boolean update(Supporter carnum);
+
+    // 서포터 차량 전제
     List<Supporter> list(Map map);
+
+    // 지원 가능한 차량
+    List<Supporter> cansurpport(Map map);
+
     int total(Map map);
 
-    Boolean delete(int no);
+    Boolean delete(String carnum);
 }

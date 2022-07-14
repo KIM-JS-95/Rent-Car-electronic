@@ -12,8 +12,11 @@ public interface RequestService {
     Supporter read(String carnum);
     Boolean create(Request request);
     Boolean update(Request request);
-    Boolean update_state(Map<String, String> map);
+
+    Boolean accept_request(Map<String, String> map);
+
     List<Supporter> list(Map map);
+
 
     Boolean readmock(String carnum);
 

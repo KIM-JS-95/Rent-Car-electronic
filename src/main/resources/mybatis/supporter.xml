@@ -5,11 +5,9 @@
 
 <mapper namespace="com.rentcar.support.mapper.SupporterMapper">
 
-<!--    검색기능?-->
     <select id="list" parameterType="Map" resultType="com.rentcar.support.model.Supporter">
         select *
         from supporter
-        where carnum like concat('%', #{word} ,'%')
             <where>
                 <choose>
                     <when test="col=='carnum'">
@@ -20,7 +18,15 @@
                     </when>
                 </choose>
             </where>
-        order by carnum
+        order by carnum;
+    </select>
+
+
+    <select id="cansurpport" parameterType="Map" resultType="com.rentcar.support.model.Supporter">
+        select *
+        from supporter
+        where state = "stay"
+        order by carnum;
     </select>
 
     <select id="total" parameterType="Map" resultType="Integer">
@@ -39,8 +45,10 @@
 
 <!--    차량만 들록해 줄 것-->
     <insert id="create" parameterType="com.rentcar.support.model.Supporter">
-        insert into supporter(carnum)
-        values(#{carnum});
+        insert into supporter
+        (carnum, registed, production, brand, model, dccombo, dcdemo, ac, fullcharge, state)
+        values( #{carnum},Sysdate(), #{production}, #{brand}, #{model},
+        #{dccombo}, #{dcdemo}, #{ac}, #{fullcharge}, #{state} );
     </insert>
 
 <!--    출동시 요청자의 위치 정보를 저장한다.-->
@@ -50,8 +58,8 @@
         WHERE carnum = #{carnum};
     </update>
 
-    <delete id="delete" parameterType="int">
-        delete from supporter where no = #{no};
+    <delete id="delete" parameterType="String">
+        delete from supporter where carnum = #{supporter};
     </delete>
 
 </mapper>

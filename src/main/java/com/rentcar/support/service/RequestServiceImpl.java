@@ -46,14 +46,12 @@ public class RequestServiceImpl implements RequestService {
 
     //TODO: 실시간으로 상태를 업데이트 해줘야한다.
     @Override
-    public Boolean update_state(Map<String, String> map) {
-        String carnum = map.get("carnum");
-        String state = map.get("state");
-
-        return mapper.update_state(map);
+    public Boolean accept_request(Map<String, String> map) {
+        return mapper.accept_request(map);
     }
 
 
+//    예약 상태에 있는 차량 check
     @Override
     public Boolean readmock(String carnum) {
         return mapper.readmock(carnum);

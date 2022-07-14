@@ -16,14 +16,16 @@ public interface RequestMapper {
 
     Supporter read(String carnum);
 
+    // 도움 요청
     Boolean create(Request request);
 
     Boolean update(Request request);
 
     List<Supporter> list(Map map);
 
-    Boolean update_state(Map map);
+    Boolean accept_request(Map<String, String> map);
 
+//     예약된 차량 check
     Boolean readmock(String carnum);
 
 }

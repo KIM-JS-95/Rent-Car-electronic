@@ -24,8 +24,8 @@ public class SupportServiceImpl implements SurpportService {
     }
 
     @Override
-    public Boolean create(Supporter carnum) {
-        return mapper.create(carnum);
+    public Boolean create(Map map) {
+        return mapper.create(MaptoModel(map));
     }
 
     @Override
@@ -38,13 +38,51 @@ public class SupportServiceImpl implements SurpportService {
         return mapper.list(map);
     }
 
+    @Override
+    public List<Supporter> cansurpport(Map map) {
+        return mapper.cansurpport(map);
+    }
+
 
     public int total(Map map) {
         return mapper.total(map);
     }
 
     @Override
-    public Boolean delete(int no) {
-        return mapper.delete(no);
+    public Boolean delete(String carnum) {
+        return mapper.delete(carnum);
     }
+
+
+    public Supporter MaptoModel(Map map){
+
+        List<String> answer= (List<String>) map.get("answer");
+        List<String> selected= (List<String>) map.get("selected");
+        //List<String> registe= (List<String>) map.get("registe");
+
+        System.out.println(answer); // ex. [1123123123, 2022-07-04, 1, 1]
+        System.out.println(selected); // ex. [1,2,3,4]
+        //System.out.println(registe); // ex. ["강서점", "홍길동", "지점 번호", "주소"]
+
+        Supporter supporter = Supporter.builder()
+                .carnum(answer.get(0))
+                .production(answer.get(1))
+                .brand(answer.get(2))
+                .model(answer.get(3))
+
+                .dccombo(selected.get(0))
+                .dcdemo(selected.get(1))
+                .ac(selected.get(2))
+                .fullcharge(selected.get(3))
+
+                .state("stay")
+                .build();
+
+        return supporter;
+    }
+
 }
+
+//class answer{
+//    private String
+//}

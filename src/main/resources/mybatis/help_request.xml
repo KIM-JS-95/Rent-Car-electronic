@@ -8,7 +8,7 @@
 
 <!--    출동시 요청자 정보, 위치 정보 저장한다. -->
     <insert id="create" parameterType="com.rentcar.support.model.Supporter">
-        insert into help_request(rx,ry,reason,carnum)
+        insert into help_request(rx, ry, reason, carnum)
         values(#{rx}, #{ry}, #{reason}, #{carnum});
     </insert>
 
@@ -16,6 +16,13 @@
     <update id="update" parameterType="com.rentcar.support.model.Supporter">
         UPDATE help_request
         SET rx = #{rx}, ry = #{ry}
+        WHERE carnum = #{carnum};
+    </update>
+
+<!--    요청 접수 및 지원 차량 등록-->
+    <update id="accept_request" parameterType="Map">
+        UPDATE help_request
+        SET support_carnum = #{supporter}
         WHERE carnum = #{carnum};
     </update>
 
