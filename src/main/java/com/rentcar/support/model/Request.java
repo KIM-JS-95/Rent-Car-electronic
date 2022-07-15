@@ -23,4 +23,6 @@ public class Request {
     private String rx;
     private String ry;
     private State state;
+
+    private String supporter_carnum;
 }

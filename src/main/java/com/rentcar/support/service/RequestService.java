@@ -15,7 +15,7 @@ public interface RequestService {
 
     Boolean accept_request(Map<String, String> map);
 
-    List<Supporter> list(Map map);
+    List<Request> list(Map map);
 
 
     Boolean readmock(String carnum);

@@ -5,30 +5,29 @@
 
 <mapper namespace="com.rentcar.support.mapper.RequestMapper">
 
-
-<!--    출동시 요청자 정보, 위치 정보 저장한다. -->
-    <insert id="create" parameterType="com.rentcar.support.model.Supporter">
-        insert into help_request(rx, ry, reason, carnum)
-        values(#{rx}, #{ry}, #{reason}, #{carnum});
+<!--    요청자 정보 저장 -->
+    <insert id="create" parameterType="com.rentcar.support.model.Request">
+        insert into help(carnum, rx, ry, reason)
+        values(#{carnum}, #{rx}, #{ry}, #{reason});
     </insert>
 
 <!--    출동시 요청자의 위치 정보를 저장한다.-->
-    <update id="update" parameterType="com.rentcar.support.model.Supporter">
-        UPDATE help_request
+    <update id="update" parameterType="com.rentcar.support.model.Request">
+        UPDATE help
         SET rx = #{rx}, ry = #{ry}
         WHERE carnum = #{carnum};
     </update>
 
 <!--    요청 접수 및 지원 차량 등록-->
     <update id="accept_request" parameterType="Map">
-        UPDATE help_request
-        SET support_carnum = #{supporter}
+        UPDATE help
+        SET supporter_carnum = #{supporter}, state=#{state}
         WHERE carnum = #{carnum};
     </update>
 
     <update id="update_state" parameterType="Map">
-        UPDATE help_request
-        SET state = #{state}
+        UPDATE help
+        SET state = #{state}, supporter_carnum =#{supporter}
         WHERE carnum = #{carnum};
     </update>
 
@@ -37,5 +36,22 @@
         select IF(COUNT(*) = 1, true, false)
         from booking where reserved_car = #{carnum};
     </select>
+
+    <select id="list" parameterType="Map" resultType="com.rentcar.support.model.Request">
+        select *
+        from help
+        <where>
+            <choose>
+                <when test="col=='carnum'">
+                    carnum like CONCAT('%',#{word},'%')
+                </when>
+                <when test="col=='state'">
+                    state like CONCAT('%',#{word},'%')
+                </when>
+            </choose>
+        </where>
+        order by carnum;
+    </select>
+
 
 </mapper>

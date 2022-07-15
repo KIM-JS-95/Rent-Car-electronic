@@ -21,7 +21,7 @@ public interface RequestMapper {
 
     Boolean update(Request request);
 
-    List<Supporter> list(Map map);
+    List<Request> list(Map map);
 
     Boolean accept_request(Map<String, String> map);
 

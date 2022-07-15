@@ -1,5 +1,6 @@
 package com.rentcar.support.controller;
 
+import com.rentcar.support.model.Request;
 import com.rentcar.support.model.Supporter;
 import com.rentcar.support.service.RequestServiceImpl;
 import com.rentcar.support.service.SupportServiceImpl;
@@ -67,7 +68,7 @@ public class RequestController {
         Map map = SQLWhereSet(request, col, word);
 
         int total = supportService.total(map);
-        List<Supporter> list = supportService.list(map);
+        List<Request> list = requestService.list(map);
 
         String paging = Utility.paging(total, nowPage, recordPerPage, col, word);
 
@@ -78,7 +79,7 @@ public class RequestController {
         request.setAttribute("word", word);
         request.setAttribute("paging", paging);
 
-        return "/list";
+        return "/request/list";
     }
 
     // help 요청에 대한 지원 차량 선택 페이지

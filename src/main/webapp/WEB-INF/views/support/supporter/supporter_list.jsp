@@ -28,25 +28,6 @@
                         }
                     </script>
 
-
-                    <!-- <style>
-                        .container .form-inline {
-                            display: flex;
-                            justify-content: center;
-                            flex-direction: row;
-                            align-items: center;
-                            margin-bottom: 50px;
-                        }
-
-                        .table {
-                            display: flex;
-                            justify-content: center;
-                            flex-direction: row;
-                            align-items: center;
-                            margin-bottom: 50px;
-                        }
-                    </style> -->
-
                     <link rel="stylesheet" type="text/css" href="/css/support/style.css">
                 </head>
 

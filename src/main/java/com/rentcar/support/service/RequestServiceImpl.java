@@ -39,7 +39,7 @@ public class RequestServiceImpl implements RequestService {
     }
 
     @Override
-    public List<Supporter> list(Map map) {
+    public List<Request> list(Map map) {
         return mapper.list(map);
     }
 

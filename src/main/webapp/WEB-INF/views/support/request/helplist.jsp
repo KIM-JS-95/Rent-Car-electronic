@@ -47,13 +47,14 @@
                         <table class="styled-table">
                             <thead>
                                 <tr>
-                                    <th>CARNUM</th>
-                                    <th>DC Combo</th>
-                                    <th>DC Demo</th>
-                                    <th>AC</th>
-                                    <th>Full Charge</th>
-                                    <th>STATE</th>
-                                    <th>선택</th>
+                                    <th>Car Number</th>
+                                    <th>요청위치 - x</th>
+                                    <th>요청위치 - y</th>
+                                    <th>사유</th>
+                                    <th>상태</th>
+                                    <th>지원차량</th>
+                                    <th>지원</th>
+                                    <th>취소</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -68,12 +69,13 @@
 
                                             <tr class="active-row">
                                                 <td>${dto.carnum}</td>
-                                                <td>${dto.dccombo}</td>
-                                                <td>${dto.dcdemo}</td>
-                                                <td>${dto.ac}</td>
-                                                <td>${dto.fullcharge}</td>
+                                                <td>${dto.rx}</a></td>
+                                                <td>${dto.ry}</td>
+                                                <td>${dto.reason}</td>
                                                 <td>${dto.state}</td>
-                                                <td><a onclick="accept(`${dto.carnum}`)"> ⭕</td>
+                                                <td>${dto.supporter_carnum}</td>
+                                                <td><a onclick="createwindow(`${dto.carnum}`);"> accept</td>
+                                                <td><a onclick="delete_help(`${dto.carnum}`)"> cancle</td>
                                             </tr>
 
                                         </c:forEach>
@@ -82,31 +84,30 @@
                             </tbody>
                         </table>
                     </div>
-
                     <div>
                         ${paging}
                     </div>
                     </div>
 
                     <script>
-                        async function accept(supporter){
-                            var url = new URL(window.location.href);
-                            const urlParams = url.searchParams;
-                            var carnum = urlParams.get('carnum');
-                            var new_url = "/request/help/accept?carnum=" + carnum;
-                            new_url += "&supporter=" + supporter;
 
-                            alert(new_url);
-                            let response = await fetch(new_url);
-                            
-                            if(response.ok){
-                                alert("등록되었습니다.")
-                                window.close();
-                            }else{
-                                alert("HTTP-Error: " + response.status);
+                        function createwindow(carnum) {
+                            let windowObjectReference;
+                            let windowFeatures = "left=100,top=100,width=320,height=900, width=640";
+                            windowObjectReference = window.open("/request/supporter?carnum=" + carnum, "mozillaTab", windowFeatures);
+
+                        }
+
+                        function deletefun(carnum) {
+                            alert("요청을 취소 하시겠습니까?")
+
+                            let response = fetch(`/help/delete` + encodeURI(encodeURIComponent(carnum)));
+                            if (response == true) {
+                                alert("삭제하였습니다.")
                             }
                         }
                     </script>
+
                 </body>
 
                 </html>

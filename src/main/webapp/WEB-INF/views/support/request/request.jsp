@@ -31,7 +31,7 @@
                                             Your message was sent, thank you!
                                         </div>
 
-                                        <form id="contactForm" name="contactForm" class="contactForm">
+                                        <form>
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
@@ -61,12 +61,17 @@
                                                             cols="30" rows="4" placeholder="Message"></textarea>
                                                     </div>
                                                 </div>
+
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <input onclik="help" type="submit" value="Send Message"
-                                                            class="btn btn-primary" style="left: 80%; margin-top: 5%;">
-                                                        <div class="submitting"></div>
+
+                                                        <button class="sumbit" onclick="help()">
+                                                            <span class="btnText">Submit</span>
+                                                            <i class="uil uil-navigator"></i>
+                                                        </button>
+
                                                     </div>
+
                                                 </div>
                                             </div>
 
@@ -87,6 +92,12 @@
         </section>
 
         <script>
+
+            function help() {
+                navigator.geolocation.getCurrentPosition(helpMe, onGeoError);
+                // 충전소 위치 표시
+            }
+
             async function helpMe(position) {
                 // Geolocation  and send
 
@@ -100,13 +111,13 @@
 
 
                 data = {
-                    x: lat,
-                    y: lng,
-                    name: name,
-                    email: email,
+                    rx: lat,
+                    ry: lng,
                     carnum: carnum,
                     reason: reason
                 };
+
+                alert(data);
 
                 var url = "/request/help";
                 const response = await fetch(url, {
@@ -116,19 +127,18 @@
                     },
                     body: JSON.stringify(data)
                 })
-                    .then((res) => {if(res.ok){alert("성공")}})
-                    .catch("잠시후 다시 시도해 보세요.");
+                    .then((res) => { if (res==true) { 
+                        window.location("/");
+                    }else{
+                        alert(res);
+                    } })
+                    .catch(err => alert(err));
 
             }
 
 
             function onGeoError() {
                 alert("Can't find you. No weather for you.");
-            }
-
-            function help() {
-                navigator.geolocation.getCurrentPosition(helpMe, onGeoError);
-                // 충전소 위치 표시
             }
 
         </script>
