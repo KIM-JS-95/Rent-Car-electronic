@@ -6,6 +6,7 @@
 
 <mapper namespace="com.rentcar.list.mapper.ListMapper">
 
+<<<<<<< HEAD
     <insert id="createReply" parameterType="com.rentcar.list.model.ListDTO">
         INSERT INTO list(mname, title,content, wdate, grpno,
         indent, ansnum,filename,filesize,refnum)
@@ -54,10 +55,37 @@
     <select id="passCheck" parameterType="Map" resultType="int">
         SELECT
         COUNT(listno) as cnt
+=======
+    <delete id="delete" parameterType="int">
+        DELETE FROM list
+        WHERE listno=#{listno}
+    </delete>
+
+
+
+    <!-- 수정 -->
+    <update id="update"  parameterType="com.rentcar.list.model.ListDTO">
+        UPDATE list
+        SET title=#{title}, content=#{content}
+        WHERE listno=#{listno}
+    </update>
+
+    <!-- 조회수 증가 -->
+    <update id="upCnt" parameterType="int">
+        update list
+        set cnt = cnt + 1
+        where listno = #{listno}
+    </update>
+
+    <!-- 조회 -->
+    <select id="read" resultType="com.rentcar.list.model.ListDTO"  parameterType="int">
+        SELECT listno, title, content, wname, cnt, rdate
+>>>>>>> ef8db476309123585ff1cbfc0044a0080c84c9c4
         FROM list
         WHERE listno=#{listno}
     </select>
 
+<<<<<<< HEAD
     <update id="update" parameterType="com.rentcar.list.model.ListDTO">
         UPDATE list
 
@@ -119,4 +147,57 @@
     </select>
 
 
+=======
+    <insert id="create" parameterType="com.rentcar.list.model.ListDTO">
+        INSERT INTO list(title,content, wname, cnt, rdate)
+        VALUES(#{title}, #{content},#{wname},  0, NOW())
+    </insert>
+    <select id="list" parameterType="Map"
+            resultType="com.rentcar.list.model.ListDTO">
+        SELECT listno, title, wname, cnt, rdate
+        FROM list
+        <where>
+            <choose>
+                <when test="col=='wname'">
+                    wname like CONCAT('%',#{word},'%')
+                </when>
+                <when test="col=='title'">
+                    title like CONCAT('%',#{word},'%')
+                </when>
+                <when test="col=='content'">
+                    content like CONCAT('%',#{word},'%')
+                </when>
+                <when test="col=='title_content'">
+                    title like CONCAT('%',#{word},'%')
+                    or
+                    content like CONCAT('%',#{word},'%')
+                </when>
+            </choose>
+        </where>
+        ORDER BY listno DESC
+        limit #{sno} , #{cnt}
+    </select>
+
+    <select id="total" parameterType="Map" resultType="int">
+        select count(*) from list
+        <where>
+            <choose>
+                <when test="col=='wname'">
+                    wname like CONCAT('%',#{word},'%')
+                </when>
+                <when test="col=='title'">
+                    title like CONCAT('%',#{word},'%')
+                </when>
+                <when test="col=='content'">
+                    content like CONCAT('%',#{word},'%')
+                </when>
+                <when test="col=='title_content'">
+                    title like CONCAT('%',#{word},'%')
+                    or
+                    content like CONCAT('%',#{word},'%')
+                </when>
+            </choose>
+        </where>
+    </select>
+>>>>>>> ef8db476309123585ff1cbfc0044a0080c84c9c4
 </mapper>

@@ -19,7 +19,7 @@ import java.net.URLEncoder;
 @RestController
 public class Kakaocontroller {
 
-    @Value("${kakao.url}")
+//    @Value("${kakao.url}")
     private String url;
 
     @Autowired

@@ -5,7 +5,12 @@ import org.slf4j.LoggerFactory;
 import com.rentcar.carinfo.model.CarinfoDTO;
 import com.rentcar.carinfo.model.CaroptionDTO;
 import com.rentcar.carinfo.service.CarinfoService;
+<<<<<<< HEAD
 import com.rentcar.utility.UploadCon;
+=======
+
+import com.rentcar.utility.UploadList;
+>>>>>>> ef8db476309123585ff1cbfc0044a0080c84c9c4
 import com.rentcar.utility.Utility;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -151,10 +156,14 @@ public class CarinfoCarcontroller {
 
         return "/carinfo/list";
     }
+<<<<<<< HEAD
    @GetMapping("/")
    public String home(){
        return "/home";
    }
+=======
+
+>>>>>>> ef8db476309123585ff1cbfc0044a0080c84c9c4
 
 
 //    @GetMapping("/{id}")

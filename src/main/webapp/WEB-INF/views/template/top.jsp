@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <%@ page contentType="text/html; charset=UTF-8" %>
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <c:set var="root" value="${pageContext.request.contextPath }" />
@@ -119,6 +119,7 @@
     </body>
 
     </html>
+<<<<<<< HEAD
 =======
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -228,3 +229,8 @@
 </div>
 </body>
 </html>
+=======
+
+
+
+>>>>>>> ef8db476309123585ff1cbfc0044a0080c84c9c4

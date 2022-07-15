@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+<<<<<<< HEAD
 <mapper namespace="com.rentcar.carinfo.mapper.CarinfoMapper">
 
     <update id="updateFile" parameterType="Map">
@@ -42,6 +43,9 @@
         order by carnumber desc
         limit ${sno}, #{eno}
     </select>
+=======
+<mapper namespace="com.rentcar.member.mapper.MemberMapper">
+>>>>>>> ef8db476309123585ff1cbfc0044a0080c84c9c4
 
     <select id="total" parameterType="Map" resultType="int">
         select count(*) from carinfo
@@ -60,10 +64,35 @@
         </where>
     </select>
 
+<<<<<<< HEAD
     <select id="read" parameterType="String" resultType="com.rentcar.carinfo.model.CarinfoDTO">
         select carnumber, carname, category, carseate, carimage, carpoint
         from carinfo
         where carnumber = #{carnumber}
+=======
+    <select id="list" parameterType="Map"
+            resultType="com.rentcar.carinfo.model.CarinfoDTO">
+
+        select carname, carimage, carseate, carnumber, carpoint
+        from
+        carinfo
+        <where>
+            <choose>
+                <when test="col=='carname'">
+                    carname like concat('%', #{word} ,'%')
+                </when>
+                <when test="col=='carsetae'">
+                    carsetae like concat('%', #{word} ,'%')
+                </when>
+                <when test="col=='carpoint'">
+                    carpoint = #{word}
+                </when>
+            </choose>
+        </where>
+        order by carnumber desc
+        limit #{sno}, #{eno}
+
+>>>>>>> ef8db476309123585ff1cbfc0044a0080c84c9c4
     </select>
 
     <update id="update" parameterType="com.rentcar.carinfo.model.CarinfoDTO">

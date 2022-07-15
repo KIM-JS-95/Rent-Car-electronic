@@ -1,8 +1,19 @@
 package com.rentcar.config;
 
+<<<<<<< HEAD
 import javax.sql.DataSource;
 
 import org.mybatis.spring.annotation.MapperScan;
+=======
+
+
+
+
+
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+import javax.sql.DataSource;
+>>>>>>> ef8db476309123585ff1cbfc0044a0080c84c9c4
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -13,8 +24,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
+<<<<<<< HEAD
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+=======
+
+
+>>>>>>> ef8db476309123585ff1cbfc0044a0080c84c9c4
 
 @Configuration
 @PropertySource("classpath:/application.properties")
@@ -33,7 +49,15 @@ public class DatabaseConfiguration {
     @Bean
     public DataSource dataSource() throws Exception{
         DataSource dataSource = new HikariDataSource(hikariConfig());
+<<<<<<< HEAD
         System.out.println(dataSource.toString());
+=======
+
+        System.out.println(dataSource.toString());  // 정상적으로 연결 되었는지 해시코드로 확인
+
+
+
+>>>>>>> ef8db476309123585ff1cbfc0044a0080c84c9c4
         return dataSource;
     }
 
