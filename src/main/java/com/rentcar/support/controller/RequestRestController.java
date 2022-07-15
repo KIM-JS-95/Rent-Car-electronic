@@ -36,7 +36,6 @@ public class RequestRestController {
     @PostMapping("/help")
     public Boolean create(@RequestBody Request request) {
 
-        System.out.println(request);
         // 예약 되어진 차량 check
         if (requestService.readmock(request.getCarnum()) == null) {
             return false;
