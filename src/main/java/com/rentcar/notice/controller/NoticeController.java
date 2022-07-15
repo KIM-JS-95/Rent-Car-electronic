@@ -29,7 +29,8 @@ public class NoticeController {
 
     @GetMapping
     public String home() {
-      return"/home";
+
+        return "/home";
     }
 
     @PostMapping("/notice/delete")
