@@ -69,7 +69,7 @@
               </table>
 
               <!-- -------------------------------------------------------------------------  -->
-              <!-- <form action="/review/create" method="post"> -->
+
              <table  style=" width:930px; height:150px; margin:0 auto;">
              <th>
                 <textarea id="content" name="content" class="content" rows="3" tabindex="99" placeholder="명예훼손,개인정보 유출,분쟁,허위사실 유포 등의 글은 이용약관에 의해 제재는
@@ -79,7 +79,7 @@
              <button id='addreviewBtn' class='btn btn-primary btn-xs pull-right' type="submit">등 록</button>
              </th>
              </table>
-            <!-- </form> -->
+
 
 
 

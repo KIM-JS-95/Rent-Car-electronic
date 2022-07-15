@@ -1,7 +1,6 @@
 package com.rentcar.config;
 
 
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
@@ -15,10 +14,7 @@ public class TilesConfiguration {
         final TilesConfigurer configurer = new TilesConfigurer();
 
         //해당 경로에 tiles.xml 파일을 넣음
-        configurer.setDefinitions(new String[]{"classpath:/tiles/member.xml",
-                "classpath:/tiles/map.xml",
-                "classpath:/tiles/list.xml",
-                "classpath:/tiles/tiles_login.xml"});
+        configurer.setDefinitions(new String[]{"classpath:/tiles/*.xml",});
 
         configurer.setCheckRefresh(true);
         return configurer;

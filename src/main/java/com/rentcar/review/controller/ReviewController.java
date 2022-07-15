@@ -42,7 +42,7 @@ public class ReviewController {
 
   @GetMapping("/review/page")
   public ResponseEntity<String> getPage(
-     int nPage, int listno) {
+     int nPage, int listno , int nowPage, String col, String word) {
 
     System.out.println("listno:  "+listno);
     int total = service.total(listno);
@@ -50,7 +50,7 @@ public class ReviewController {
 
     int recordPerPage = 10; // 한페이지당 출력할 레코드 갯수
 
-    String paging = Utility.rpaging(total, recordPerPage, url, nPage);
+    String paging = Utility.rpaging(total, nowPage,recordPerPage, col, word, url, nPage);
 
     return new ResponseEntity<>(paging, HttpStatus.OK);
 
