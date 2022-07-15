@@ -1,8 +1,5 @@
 package com.rentcar.member.controller;
-<<<<<<< HEAD
-=======
 
->>>>>>> ef8db476309123585ff1cbfc0044a0080c84c9c4
 import com.rentcar.member.model.CarConditionDTO;
 import com.rentcar.member.model.CarInfo1DTO;
 import com.rentcar.member.model.MemberDTO;

@@ -1,19 +1,18 @@
 package com.rentcar.review.controller;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.rentcar.review.model.ReviewDTO;
-import com.rentcar.review.service.ReviewService;
+import com.rentcar.review.service.ReviewServiceImpl;
 import com.rentcar.utility.Utility;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 @RestController
@@ -21,8 +20,7 @@ public class ReviewController {
   private static final Logger log = LoggerFactory.getLogger(ReviewController.class);
 
   @Autowired
-  @Qualifier("com.rentcar.review.service.ReviewServiceImpl")
-  private ReviewService service;
+  private ReviewServiceImpl service;
 
   @GetMapping("/review/list/{listno}/{sno}/{eno}")
   public ResponseEntity<List<ReviewDTO>> getList(
@@ -41,8 +39,7 @@ public class ReviewController {
   }
 
   @GetMapping("/review/page")
-  public ResponseEntity<String> getPage(
-     int nPage, int listno) {
+  public ResponseEntity<String> getPage(int nPage, int listno, int nowPage, String col, String word) {
 
     System.out.println("listno:  "+listno);
     int total = service.total(listno);
@@ -50,7 +47,7 @@ public class ReviewController {
 
     int recordPerPage = 10; // 한페이지당 출력할 레코드 갯수
 
-    String paging = Utility.rpaging(total, recordPerPage, url, nPage);
+    String paging = Utility.rpaging(total, nowPage, recordPerPage, col, word, url, nPage);
 
     return new ResponseEntity<>(paging, HttpStatus.OK);
 
