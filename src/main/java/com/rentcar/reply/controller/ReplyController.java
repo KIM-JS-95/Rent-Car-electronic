@@ -2,7 +2,6 @@ package com.rentcar.reply.controller;
 
 import com.rentcar.reply.model.ReplyDTO;
 import com.rentcar.reply.service.ReplyService;
-import com.rentcar.reply.service.ReplyServiceImpl;
 import com.rentcar.utility.Utility;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
