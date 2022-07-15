@@ -1,24 +1,17 @@
 package com.rentcar.list.controller;
 
 import com.rentcar.list.model.ListDTO;
-import com.rentcar.list.service.ListService;
-<<<<<<< HEAD
-
-import com.rentcar.reply.service.ReplyService;
-=======
 import com.rentcar.list.service.ListServiceImpl;
 import com.rentcar.review.model.ReviewDTO;
-import com.rentcar.review.service.ReviewService;
 import com.rentcar.review.service.ReviewServiceImpl;
->>>>>>> 46356a484a6a804c164d0363a2722019d4bd8afd
 import com.rentcar.utility.Utility;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
@@ -29,20 +22,11 @@ import java.util.Map;
 public class ListController {
 
     @Autowired
-<<<<<<< HEAD
-    @Qualifier("com.rentcar.list.service.ListServiceImpl")
-    private ListService service;
-
-    @Autowired
-    @Qualifier("com.rentcar.reply.service.ReplyServiceImpl")
-    private ReplyService rservice;
-=======
     private ListServiceImpl service;
-
 
     @Autowired
     private ReviewServiceImpl rservice;
->>>>>>> 46356a484a6a804c164d0363a2722019d4bd8afd
+
 
 
     @GetMapping("/list/delete")

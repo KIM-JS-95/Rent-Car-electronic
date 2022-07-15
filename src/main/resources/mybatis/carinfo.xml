@@ -3,9 +3,6 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<<<<<<< HEAD
-<mapper namespace="com.rentcar.member.mapper.MemberMapper">
-=======
 <mapper namespace="com.rentcar.carinfo.mapper.CarinfoMapper">
 
     <update id="updateFile" parameterType="Map">
@@ -21,12 +18,12 @@
 
     <insert id="create" parameterType="com.rentcar.carinfo.model.CarinfoDTO">
         insert into carinfo
-        (carnumber, carname, carimage, carseate, carpoint, category)
-        values(#{carnumber}, #{carname}, #{carimage}, #{carseate}, #{carpoint}, #{category})
+        (carnumber, carname, carimage, carseate, carpoint, category,rdate)
+        values(#{carnumber}, #{carname}, #{carimage}, #{carseate}, #{carpoint}, #{category},sysdate())
     </insert>
 
     <select id="list" parameterType="Map" resultType="com.rentcar.carinfo.model.CarinfoDTO">
-        select carnumber, carname, carimage, carseate, carpoint, category
+        select carnumber, carname, carimage, carseate, carpoint, category, rdate
         from
         carinfo
         <where>
@@ -45,7 +42,6 @@
         order by carnumber desc
         limit ${sno}, #{eno}
     </select>
->>>>>>> 46356a484a6a804c164d0363a2722019d4bd8afd
 
     <select id="total" parameterType="Map" resultType="int">
         select count(*) from carinfo
@@ -64,35 +60,10 @@
         </where>
     </select>
 
-<<<<<<< HEAD
-    <select id="list" parameterType="Map"
-            resultType="com.rentcar.carinfo.model.CarinfoDTO">
-
-        select carname, carimage, carseate, carnumber, carpoint
-        from
-        carinfo
-        <where>
-            <choose>
-                <when test="col=='carname'">
-                    carname like concat('%', #{word} ,'%')
-                </when>
-                <when test="col=='carsetae'">
-                    carsetae like concat('%', #{word} ,'%')
-                </when>
-                <when test="col=='carpoint'">
-                    carpoint = #{word}
-                </when>
-            </choose>
-        </where>
-        order by carnumber desc
-        limit #{sno}, #{eno}
-
-=======
     <select id="read" parameterType="String" resultType="com.rentcar.carinfo.model.CarinfoDTO">
         select carnumber, carname, category, carseate, carimage, carpoint
         from carinfo
         where carnumber = #{carnumber}
->>>>>>> 46356a484a6a804c164d0363a2722019d4bd8afd
     </select>
 
     <update id="update" parameterType="com.rentcar.carinfo.model.CarinfoDTO">

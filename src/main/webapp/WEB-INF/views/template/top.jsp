@@ -67,10 +67,11 @@
 
           <c:choose>
 
-          <c:when test="${empty sessionScope.id }">
+            <c:when test="${empty sessionScope.id }">
               <div class="dropdown">
                 <li class="navigation__item"><span class="item__icon"><span class="icon__emoji">🙋‍♂️</span></span>
-                <span class="item__text"> <a id="grade">${str}</span></li>
+                  <span class="item__text"> <a id="grade">${str}</span>
+                </li>
                 <div class="dropdown-content">
                   <a href="#">Log In Page</a>
                   <a href="#">My Page</a>
@@ -103,10 +104,11 @@
                   <a href="#">Link 3</a>
                 </div>
               </div>
-             </c:otherwise>
+            </c:otherwise>
           </c:choose>
 
         </ul>
       </nav>
     </body>
+
     </html>

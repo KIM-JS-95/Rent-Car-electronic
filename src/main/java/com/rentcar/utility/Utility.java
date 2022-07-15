@@ -1,5 +1,8 @@
 package com.rentcar.utility;
 
+import com.rentcar.review.service.ReviewService;
+import org.springframework.web.multipart.MultipartFile;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -7,16 +10,7 @@ import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-<<<<<<< HEAD
-import com.rentcar.reply.service.ReplyService;
-=======
-import com.rentcar.review.service.ReviewService;
->>>>>>> 46356a484a6a804c164d0363a2722019d4bd8afd
-import org.springframework.web.multipart.MultipartFile;
 
 public class Utility {
     /**

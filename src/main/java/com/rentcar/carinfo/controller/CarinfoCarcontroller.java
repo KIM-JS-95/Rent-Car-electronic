@@ -1,18 +1,20 @@
 package com.rentcar.carinfo.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import com.rentcar.carinfo.model.CarinfoDTO;
 import com.rentcar.carinfo.model.CaroptionDTO;
 import com.rentcar.carinfo.service.CarinfoService;
 import com.rentcar.utility.UploadCon;
-import com.rentcar.utility.UploadList;
 import com.rentcar.utility.Utility;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -152,18 +154,5 @@ public class CarinfoCarcontroller {
 
         return "/carinfo/list";
     }
-<<<<<<< HEAD
-=======
-
-   @GetMapping("/")
-   public String home(){
-       return "/home";
-   }
-
-
-
->>>>>>> 46356a484a6a804c164d0363a2722019d4bd8afd
-
-
 
 }

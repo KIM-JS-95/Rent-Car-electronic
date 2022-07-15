@@ -1,20 +1,14 @@
 package com.rentcar.list.service;
 
 
-import java.util.List;
-import java.util.Map;
-
 import com.rentcar.list.mapper.ListMapper;
 import com.rentcar.list.model.ListDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-<<<<<<< HEAD
 import java.util.List;
 import java.util.Map;
 
-=======
->>>>>>> 46356a484a6a804c164d0363a2722019d4bd8afd
 @Service("com.rentcar.list.service.ListServiceImpl")
 public class ListServiceImpl implements ListService {
   
