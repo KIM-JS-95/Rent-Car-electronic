@@ -6,6 +6,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.rentcar.login.mapper.LoginMapper">
 
+	<select id="pwFind" parameterType="Map" resultType="String">
+		select passwd 
+		from user
+		where id = #{id}
+		and mname = #{mname}
+	</select>
+
 	<select id="idFind" parameterType="Map" resultType="String">
 		select id 
 		from user

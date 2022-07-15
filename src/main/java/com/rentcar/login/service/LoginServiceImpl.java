@@ -50,6 +50,12 @@ public class LoginServiceImpl implements LoginService {
     return mapper.idFind(map);
   }
 
+  @Override
+  public String pwFind(Map<String, String> map) {
+    // TODO Auto-generated method stub
+    return mapper.pwFind(map);
+  }
+
 
   
 }

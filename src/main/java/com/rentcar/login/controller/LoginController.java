@@ -11,6 +11,9 @@ import javax.servlet.http.HttpSession;
 import com.rentcar.login.model.LoginDTO;
 import com.rentcar.login.service.LoginService;
 import com.rentcar.utility.UploadLicense;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -24,13 +27,17 @@ import com.rentcar.utility.Utility;
 
 @Controller
 public class LoginController {
-
+  private static final Logger log = LoggerFactory.getLogger(LoginController.class);
   
   @Autowired
   @Qualifier("com.rentcar.login.service.LoginServiceImpl")
   private LoginService service;
 
+  @GetMapping("/user/pwfind")
+  public String pwfind() {
 
+    return "/user/pwfind";
+  }
 
   @GetMapping("/user/idfind")
   public String idfind() {
@@ -42,6 +49,7 @@ public class LoginController {
   
   @PostMapping("/user/create")
   public String create(LoginDTO dto, HttpServletRequest request) throws IOException {
+    
     String upDir = UploadLicense.getUploadDir();
     String fname = Utility.saveFileSpring(dto.getFnameMF(), upDir);
     int size = (int) dto.getFnameMF().getSize();
@@ -57,8 +65,9 @@ public class LoginController {
       return "error";
     }
 
-
-  }
+    }
+    
+ 
   
   @PostMapping("/user/createForm")
   public String create() {
@@ -79,11 +88,12 @@ public class LoginController {
     return "redirect:/";
   }
   
+  
   @PostMapping("/user/login")
   public String login(@RequestParam Map<String, String> map, HttpSession session, 
                       HttpServletRequest request, HttpServletResponse response,
                       Model model) {
-    
+
     int cnt = service.loginCheck(map);
 
     if (cnt > 0) {// 회원일경우
@@ -92,17 +102,17 @@ public class LoginController {
       session.setAttribute("grade", gmap.get("grade"));
       session.setAttribute("mname", gmap.get("mname"));
 
-      // Cookie 저장, 아이디 저장 체크
+      // 쿠키 저장, 아이디 저장 체크
       Cookie cookie = null;
       String c_id = request.getParameter("c_id");
       if (c_id != null) {
         cookie = new Cookie("c_id", c_id); // c_id=> Y
         cookie.setMaxAge(60 * 60 * 24 * 365);// 1년
-        response.addCookie(cookie);// 요청지(client:브라우저 컴) 쿠키 저장
+        response.addCookie(cookie);// client 컴퓨터에 쿠키 저장
 
         cookie = new Cookie("c_id_val", map.get("id"));
-        cookie.setMaxAge(60 * 60 * 24 * 365);// 1년
-        response.addCookie(cookie);// 요청지(client:브라우저 컴) 쿠키 저장
+        cookie.setMaxAge(60 * 60 * 24 * 365);
+        response.addCookie(cookie);
       } else {
         cookie = new Cookie("c_id", ""); // 쿠키 삭제
         cookie.setMaxAge(0);
@@ -129,8 +139,8 @@ public class LoginController {
   public String login(HttpServletRequest request) {
     
     //쿠키 설정 시작
-    String c_id = ""; // ID 저장 여부를 저장하는 변수, Y
-    String c_id_val = ""; // ID 값
+    String c_id = ""; // c_id: 아이디 저장 여부 (Y)
+    String c_id_val = ""; //아이디 값
 
     Cookie[] cookies = request.getCookies();
     Cookie cookie = null;
@@ -142,11 +152,10 @@ public class LoginController {
         if (cookie.getName().equals("c_id")) {
           c_id = cookie.getValue(); // Y
         } else if (cookie.getName().equals("c_id_val")) {
-          c_id_val = cookie.getValue();
+          c_id_val = cookie.getValue(); // 아이디값
         }
       }
     }
-    // 쿠키 설정 끝
     
     request.setAttribute("c_id", c_id);
     request.setAttribute("c_id_val", c_id_val);

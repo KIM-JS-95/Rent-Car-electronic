@@ -8,12 +8,13 @@
   <script type="text/javascript">
   function send(){
     if(document.frm.agree.checked == false){ 
-      alert('회원 약관에 동의해야 회원가입이 가능합니다.'); 
-      return false; // 서브밋 중지 
+	
+     alert('회원 약관에 동의해야 회원가입이 가능합니다.'); 
+      return false; //서브밋 중지 
     }
-    
+    }
   }
-  
+
   </script>
   
 </head>
@@ -217,7 +218,7 @@
    <div class="col-sm-offset-2 col-sm-5">
     <input id="agree" type="checkbox" name="agree" value="1" ><label for="agree"> 약관에 동의합니다 </label>
     
-    <button class="btn">회원가입</button>
+    <button class="btn" id="create_btn">회원가입</button>
     <button type="button" class="btn" onclick="history.back()">취소</button>
    </div>
  </div>

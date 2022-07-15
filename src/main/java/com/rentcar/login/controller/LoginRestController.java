@@ -4,6 +4,7 @@ import com.rentcar.login.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,6 +19,18 @@ public class LoginRestController {
     private LoginService service;
 
 
+    @GetMapping("/user/pwfindex")
+    public String pwfind(@RequestParam Map<String, String> map) {
+      
+      String pw = service.pwFind(map);
+      
+      if(pw != null && !pw.equals("")) {
+        return "찾으시는 비밀번호는 "+pw+"입니다";
+      }else {
+        return "일치하는 정보가 없습니다.";
+      }
+      
+    }
 
     @GetMapping("/user/idfindex")
     public String idfind(@RequestParam Map<String, String> map) {
@@ -27,7 +40,7 @@ public class LoginRestController {
         if(id != null && !id.equals("")) {
             return "찾으시는 아이디는 "+id+ " 입니다.";
         }else {
-            return "찾으시는 아이디는 존재하지 않습니다.";
+            return "일치하는 정보가 없습니다.";
         }
 
     }

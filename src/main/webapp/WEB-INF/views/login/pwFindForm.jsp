@@ -6,6 +6,7 @@
   <title>비밀번호 찾기</title>
   <meta charset="utf-8">
   <script type="text/javascript">
+  
   	$(function(){
   		$("#btn").click(function(){
   			if($("#id").val()==''){
@@ -18,12 +19,10 @@
   				$("#mname").focus();
   				return;
   			}
-  			
-  			//비동기 통신 요청 idfind() 호출
+
   			pwfind($("#id").val(),$("#mname").val())
   				.then(text => $("#msg").text(text))
   				.catch(console.log);
-	
   		});
   	});
   	

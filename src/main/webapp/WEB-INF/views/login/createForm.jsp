@@ -46,7 +46,17 @@
 	  }
   }
 </script>
-
+    <script>
+        $(document).ready(function(){
+            var idcheck_clicked = 0;
+        $("#idcheck_btn").click(function(){ idcheck_clicked++ });
+        $("#submit").click(function(){
+            if (idcheck_clicked <= 0){
+                alert('계산 버튼을 먼저 클릭 하세요!'); return false;
+            }
+        });
+    });
+    </script>
   <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
   <script>
     function sample6_execDaumPostcode() {
@@ -150,7 +160,9 @@ function inCheck(f){
 		return false;
 	}
 
+		    
 }
+		  
 
 </script>
 </head>
@@ -173,8 +185,8 @@ function inCheck(f){
         <input type="text" class="form-control" id="id" placeholder="Enter id" 
         name="id">
       </div>
-      <button type="button" class="btn btn-default col-sm-2"
-      onclick="idCheck(document.frm.id.value)">ID 중복확인</button>
+      <button type="button" class="btn btn-default col-sm-2" id="idcheck_btn"
+      onclick="idCheck(document.frm.id.value)">아이디 중복확인</button>
       <div id="idcheck"></div>
     </div>
     <div class="form-group">
@@ -227,7 +239,7 @@ function inCheck(f){
       </div>
       
       <button type="button" class="btn btn-default col-sm-2"
-      onclick="emailCheck(document.frm.email.value)">Email 중복확인</button>
+      onclick="emailCheck(document.frm.email.value)">이메일 중복확인</button>
       <div id="emailcheck"></div>
       
     </div>
