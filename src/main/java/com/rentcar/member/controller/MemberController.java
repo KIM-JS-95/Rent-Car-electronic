@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
 public class MemberController {
 
     @Autowired
-    @Qualifier("com.rentcar.member.MemberServiceImpl")
+    @Qualifier("com.rentcar.member.service.MemberServiceImpl")
     private MemberService service;
 
     @GetMapping("/reservation")

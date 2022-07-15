@@ -6,7 +6,7 @@ import com.rentcar.member.model.CarInfo1DTO;
 import com.rentcar.member.model.MemberDTO;
 import org.springframework.stereotype.Repository;
 
-@Repository
+
 public interface MemberMapper {
     MemberDTO mypage(String id);
 

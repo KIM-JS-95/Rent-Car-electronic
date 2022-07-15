@@ -11,7 +11,11 @@
         <title>Project Two</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="/css/common.css">
+<<<<<<< HEAD
         <link rel="stylesheet" type="text/css" href="/css/map/map.css">
+=======
+        <link rel="stylesheet" type="text/css" href="/css/map.css">
+>>>>>>> 46356a484a6a804c164d0363a2722019d4bd8afd
 
     </head>
 

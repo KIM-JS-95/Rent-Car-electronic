@@ -4,9 +4,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+<<<<<<< HEAD
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
+=======
+>>>>>>> 46356a484a6a804c164d0363a2722019d4bd8afd
 
 @SpringBootApplication
 //@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
