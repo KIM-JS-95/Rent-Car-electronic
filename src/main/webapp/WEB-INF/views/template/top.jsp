@@ -22,8 +22,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>EV Rent Car</title>
-      <link rel="stylesheet" type="text/css" href="/resources/css/common.css">
-      <link rel="stylesheet" type="text/css" href="/resources/css/top.css">
+      <link rel="stylesheet" type="text/css" href="/css/common.css">
+      <link rel="stylesheet" type="text/css" href="/css/top.css">
     </head>
 
     <body>

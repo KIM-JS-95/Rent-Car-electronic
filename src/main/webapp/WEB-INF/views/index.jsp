@@ -1,15 +1,8 @@
-<<<<<<< HEAD
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<!DOCTYPE html>
-<html>
-=======
-
- 
 <!DOCTYPE html> 
-<html> 
->>>>>>> ef8db476309123585ff1cbfc0044a0080c84c9c4
+<html>
 <head>
   <title>기본페이지</title>
   <meta charset="utf-8">
@@ -32,7 +25,3 @@ img {
 </div>
 </body>
 </html>
-<<<<<<< HEAD
-=======
-
->>>>>>> ef8db476309123585ff1cbfc0044a0080c84c9c4
