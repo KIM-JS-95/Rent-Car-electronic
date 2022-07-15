@@ -1,17 +1,13 @@
 package com.rentcar.config;
 
 
+
+
+
+
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-
 import javax.sql.DataSource;
-<<<<<<< HEAD
-
-=======
- 
->>>>>>> bad000463133901f31a3de4210065a3e003691c8
-import org.mybatis.spring.annotation.MapperScan;
-
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -24,18 +20,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 
-import javax.sql.DataSource;
+
 
 @Configuration
 @PropertySource("classpath:/application.properties")  // 설정 파일 위치
 @MapperScan(basePackages= {"com.rentcar.*"})
 
 public class DatabaseConfiguration {
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> bad000463133901f31a3de4210065a3e003691c8
     @Autowired
     private ApplicationContext applicationContext;
     
@@ -51,11 +43,7 @@ public class DatabaseConfiguration {
 
         System.out.println(dataSource.toString());  // 정상적으로 연결 되었는지 해시코드로 확인
 
-<<<<<<< HEAD
-        System.out.println(dataSource.toString());
-=======
-        System.out.println(dataSource.toString()); 
->>>>>>> bad000463133901f31a3de4210065a3e003691c8
+
 
         return dataSource;
     }

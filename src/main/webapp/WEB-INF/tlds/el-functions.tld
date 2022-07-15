@@ -17,8 +17,8 @@
 			com.rentcar.utility.Utility
 		</function-class>
 		<function-signature>
-			int rcount(int, com.rentcar.reply.service.ReplyService )
-		</function-signature>
+            int rcount(int, com.rentcar.review.service.ReplyService )
+        </function-signature>
 	</function>
 	<function>
 		<description>new 이미지 출력</description>

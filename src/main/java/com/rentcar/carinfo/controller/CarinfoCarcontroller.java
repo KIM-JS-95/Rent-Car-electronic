@@ -3,7 +3,8 @@ package com.rentcar.carinfo.controller;
 
 import com.rentcar.carinfo.model.CarinfoDTO;
 import com.rentcar.carinfo.service.CarinfoService;
-import com.rentcar.list.UploadList;
+
+import com.rentcar.utility.UploadList;
 import com.rentcar.utility.Utility;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -22,7 +23,7 @@ import java.util.Map;
 public class CarinfoCarcontroller {
 
     @Autowired
-    @Qualifier("com.rentcar.carinfo.CarinfoServiceImpl")
+    @Qualifier("com.rentcar.carinfo.service.CarinfoServiceImpl")
     private CarinfoService service;
 
 
@@ -98,10 +99,7 @@ public class CarinfoCarcontroller {
 
         return "/carinfo/list";
     }
-    @GetMapping("/")
-    public String home(){
-        return "/home";
-    }
+
 
 
 //    @GetMapping("/{id}")

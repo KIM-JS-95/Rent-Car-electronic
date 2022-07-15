@@ -35,7 +35,7 @@
 
                 <div class="btnArea">
                     <button type="button" class="btnDefault btnS btnLineG" onclick="update()">회원수정</button>
-                   <button type="button" class="btnDefault btnS btnLineG" onclick="reservation()">예약 차량 조회</button>
+                   <button type="button" class="btnDefault btnS btnLineG" onclick="reservation()"><a href="/member/reservation">예약 차량 조회</a></button>
                 </div>
             </div>
 
