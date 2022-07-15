@@ -4,13 +4,13 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.study.model.ReplyMapper">
+<mapper namespace="com.rentcar.reply.mapper.ReplyMapper">
 <delete id="bdelete" parameterType="int">
 DELETE FROM reply
 WHERE bbsno = #{bbsno}
 </delete>
 
-<insert id="create" parameterType="com.study.model.ReplyDTO">
+<insert id="create" parameterType="com.rentcar.reply.model.ReplyDTO">
      insert into reply(content, regdate, id, bbsno)
     values(#{content}, sysdate(), #{id}, #{bbsno}) 
 </insert>
@@ -20,7 +20,7 @@ delete from REPLY
 where rnum = #{rnum}
 </delete>
 
-<select id="list" parameterType="Map" resultType="com.study.model.ReplyDTO">
+<select id="list" parameterType="Map" resultType="com.rentcar.reply.model.ReplyDTO">
 select rnum, content, regdate, id, bbsno
 from REPLY
 where bbsno = ${bbsno}
@@ -28,7 +28,7 @@ order by rnum DESC
 limit #{sno}, #{eno};
 </select>
 
-<select id="read" parameterType="int" resultType="com.study.model.ReplyDTO">
+<select id="read" parameterType="int" resultType="com.rentcar.reply.model.ReplyDTO">
   select * from reply
     where rnum = #{rnum}
 </select>
@@ -38,7 +38,7 @@ limit #{sno}, #{eno};
     where bbsno=#{bbsno}
 </select>
 
-<update id="update" parameterType="com.study.model.ReplyDTO">
+<update id="update" parameterType="com.rentcar.reply.model.ReplyDTO">
 update reply
 set content = #{content}
 where rnum = #{rnum}

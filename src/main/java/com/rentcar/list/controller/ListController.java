@@ -5,8 +5,9 @@ package com.rentcar.list.controller;
 import com.rentcar.list.UploadList;
 import com.rentcar.list.model.ListDTO;
 import com.rentcar.list.service.ListService;
-import com.rentcar.reply.ReplyService;
 
+
+import com.rentcar.reply.service.ReplyService;
 import com.rentcar.utility.Utility;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

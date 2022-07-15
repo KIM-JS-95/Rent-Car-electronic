@@ -1,9 +1,11 @@
-package com.rentcar.reply;
+package com.rentcar.reply.controller;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.rentcar.reply.model.ReplyDTO;
+import com.rentcar.reply.service.ReplyService;
 import com.rentcar.utility.Utility;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -50,8 +53,8 @@ public class ReplyController {
     String url = "/list/read/"+listno;
  
     int recordPerPage = 3; // 한페이지당 출력할 레코드 갯수
- 
-    String paging = Utility.rpaging(total, nowPage, recordPerPage, col, word, url, nPage);
+
+    String paging = Utility.rpaging(total, recordPerPage, nPage);
     System.out.println("paging:"+paging);
     return new ResponseEntity<>(paging, HttpStatus.OK);
  
