@@ -4,6 +4,7 @@ package com.rentcar.support.service;
 import com.rentcar.support.mapper.RequestMapper;
 import com.rentcar.support.mapper.SupporterMapper;
 import com.rentcar.support.model.Request;
+import com.rentcar.support.model.State;
 import com.rentcar.support.model.Supporter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

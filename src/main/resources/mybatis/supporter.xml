@@ -10,10 +10,10 @@
         from supporter
             <where>
                 <choose>
-                    <when test="col=='carnum'">
+                    <when test="col=='차량번호'">
                         carnum like CONCAT('%',#{word},'%')
                     </when>
-                    <when test="col=='state'">
+                    <when test="col=='상태'">
                         state like CONCAT('%',#{word},'%')
                     </when>
                 </choose>

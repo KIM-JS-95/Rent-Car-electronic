@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!DOCTYPE mapper
-        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.rentcar.support.mapper.RequestMapper">
 
@@ -31,7 +32,6 @@
         WHERE carnum = #{carnum};
     </update>
 
-<!--    예약 테이블 받아오면 수정할 것 -->
     <select id="readmock" parameterType="String" resultType="boolean">
         select IF(COUNT(*) = 1, true, false)
         from booking where reserved_car = #{carnum};
@@ -42,10 +42,10 @@
         from help
         <where>
             <choose>
-                <when test="col=='carnum'">
+                <when test="col=='차량번호'">
                     carnum like CONCAT('%',#{word},'%')
                 </when>
-                <when test="col=='state'">
+                <when test="col=='상태'">
                     state like CONCAT('%',#{word},'%')
                 </when>
             </choose>
@@ -56,6 +56,5 @@
     <delete id="cancle" parameterType="String">
         delete from help where carnum = #{carnum};
     </delete>
-
 
 </mapper>
