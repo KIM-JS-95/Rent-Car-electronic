@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
     <!DOCTYPE html>
     <html>
-
     <head>
         <meta charset="utf-8">
         <title>마커 생성하기</title>
@@ -15,9 +14,8 @@
     </head>
 
     <body>
-
         <div>고객의 현재 위치 기준 2km 이내의 충전소 정보를 표시합니다.</div>
-        <div id="map" style="z-index: -1;"></div>
+        <div id="map" style="z-index: 0;"></div>
 
         <script type="text/javascript"
             src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6eae01749ed46288f45cd68bb87a3238"></script>
@@ -147,8 +145,6 @@
 
 
         <script>
-
-
             function onGeoError() {
                 alert("Can't find you. No weather for you.");
             }

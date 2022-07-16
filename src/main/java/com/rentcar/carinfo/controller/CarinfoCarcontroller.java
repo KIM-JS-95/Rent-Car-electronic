@@ -33,6 +33,7 @@ public class CarinfoCarcontroller {
     @Qualifier("com.rentcar.carinfo.service.CarinfoServiceImpl")
     private CarinfoService service;
 
+    @Autowired
     @Qualifier("com.rentcar.carinfo.service.CaroptionServiceImpl")
     private CaroptionService cservice;
 
