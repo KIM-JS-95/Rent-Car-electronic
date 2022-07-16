@@ -98,7 +98,7 @@
 
                         }
 
-                        function deletefun(carnum) {
+                        function delete_help(carnum) {
                             alert("요청을 취소 하시겠습니까?")
 
                             let response = fetch(`/help/delete` + encodeURI(encodeURIComponent(carnum)));

@@ -74,7 +74,6 @@ public class SupportServiceImpl implements SurpportService {
                 .dcdemo(selected.get(1))
                 .ac(selected.get(2))
                 .fullcharge(selected.get(3))
-
                 .state("stay")
                 .build();
 

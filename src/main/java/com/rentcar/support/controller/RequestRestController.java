@@ -1,16 +1,14 @@
 package com.rentcar.support.controller;
 
 import com.rentcar.support.model.Request;
-import com.rentcar.support.model.State;
 import com.rentcar.support.service.RequestServiceImpl;
+import com.rentcar.support.service.SupportServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import java.net.http.HttpRequest;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,6 +29,8 @@ public class RequestRestController {
     @Autowired
     private RequestServiceImpl requestService;
 
+    @Autowired
+    private SupportServiceImpl surpportService;
 
     // 요청자의 위치 정보를 습득하여 help_request 테이블에 저장한다.
     @PostMapping("/help")
@@ -38,7 +38,7 @@ public class RequestRestController {
 
         System.out.println(request);
         // 예약 되어진 차량 check
-        if (requestService.readmock(request.getCarnum()) == null) {
+        if (requestService.readmock(request.getCarnum()) == false) {
             return false;
         } else {
             requestService.create(request);
@@ -57,13 +57,15 @@ public class RequestRestController {
         map.put("supporter", supporter);
         map.put("state", "accept");
 
-        Boolean flag = requestService.accept_request(map);
+        Boolean flag = requestService.accept_request(map, supporter);
+
         return flag;
     }
 
-    @PostMapping("/help/delete")
-    public Boolean delete() {
-
+    @PostMapping("/help/delete/{carnum}")
+    public Boolean delete(@PathVariable("carnum") String carnum) {
+        System.out.println(carnum);
+        requestService.cancle(carnum);
         return true;
     }
 

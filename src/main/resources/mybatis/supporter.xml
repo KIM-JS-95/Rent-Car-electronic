@@ -54,7 +54,7 @@
 <!--    출동시 요청자의 위치 정보를 저장한다.-->
     <update id="update" parameterType="com.rentcar.support.model.Supporter">
         UPDATE supporter
-        SET rx = #{rx},ry = #{ry}
+        SET state = #{state}
         WHERE carnum = #{carnum};
     </update>
 

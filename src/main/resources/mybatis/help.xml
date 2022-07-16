@@ -53,5 +53,9 @@
         order by carnum;
     </select>
 
+    <delete id="cancle" parameterType="String">
+        delete from help where carnum = #{carnum};
+    </delete>
+
 
 </mapper>
