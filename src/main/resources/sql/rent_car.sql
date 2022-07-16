@@ -40,11 +40,12 @@ CREATE TABLE carinfo (
     carimage VARCHAR(100) NULL,
     carseate VARCHAR(4) NOT NULL,
     carpoint VARCHAR(8) NOT NULL,
+    rdate 	DATE NOT NULL,                    -- 등록일
     category VARCHAR(40) NOT NULL
 );
 
-
 drop table caroption;
+
 CREATE TABLE caroption (
 bluetooth char(4), -- 블루투스
 rear_sensor char(4), -- 후방센서
