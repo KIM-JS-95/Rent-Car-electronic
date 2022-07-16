@@ -5,7 +5,7 @@ import com.rentcar.carinfo.model.CaroptionDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("com.rentcar.carinfo.CaroptionServiceImpl")
+@Service("com.rentcar.carinfo.service.CaroptionServiceImpl")
 public class CaroptionServiceImpl implements CaroptionService {
 
     @Autowired

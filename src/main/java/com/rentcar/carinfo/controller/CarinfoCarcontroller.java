@@ -1,14 +1,9 @@
 package com.rentcar.carinfo.controller;
 
-<<<<<<< HEAD
-=======
-import com.rentcar.carinfo.service.CaroptionService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
->>>>>>> d641c059c011fa0e7f3a22c60cabb7b69317b3c8
 import com.rentcar.carinfo.model.CarinfoDTO;
 import com.rentcar.carinfo.model.CaroptionDTO;
 import com.rentcar.carinfo.service.CarinfoService;
+import com.rentcar.carinfo.service.CaroptionService;
 import com.rentcar.utility.UploadCon;
 import com.rentcar.utility.Utility;
 import org.slf4j.Logger;
