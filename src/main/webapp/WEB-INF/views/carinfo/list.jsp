@@ -69,6 +69,7 @@
     <th>차종류</th>
     <th>좌석수</th>
     <th>지점</th>
+    <th>등록일</th>
     <th>수정/삭제/이미지수정</th>
     </tr>
    </thead>
@@ -93,6 +94,7 @@
     <td>${dto.category}</td>
     <td>${dto.carseate}</td>
     <td>${dto.carpoint}</td>
+    <td>${dto.rdate}</td>
 
     <td> <a href="./update/${dto.carnumber }">
           <span class="glyphicon glyphicon-edit"></span>

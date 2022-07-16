@@ -1,5 +1,6 @@
 package com.rentcar.carinfo.controller;
 
+import com.rentcar.carinfo.service.CaroptionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.rentcar.carinfo.model.CarinfoDTO;
@@ -28,6 +29,9 @@ public class CarinfoCarcontroller {
     @Autowired
     @Qualifier("com.rentcar.carinfo.service.CarinfoServiceImpl")
     private CarinfoService service;
+
+    @Qualifier("com.rentcar.carinfo.service.CaroptionServiceImpl")
+    private CaroptionService cservice;
 
     @PostMapping("/updateFile")
     public String updateFile(MultipartFile filenameMF, String oldfile, String carnumber)throws IOException{
@@ -90,7 +94,7 @@ public class CarinfoCarcontroller {
     }
 
     @PostMapping("/create")
-    public String crate(CarinfoDTO dto, CaroptionDTO dto2, HttpServletRequest request)throws IOException{
+    public String crate(CarinfoDTO dto, CaroptionDTO cdto, HttpServletRequest request)throws IOException{
 
 
         String upDir = UploadCon.getUploadDir();
@@ -102,9 +106,9 @@ public class CarinfoCarcontroller {
             dto.setCarimage("default.jpg");
         }
         log.info("Carinfo;" + dto);
-        log.info("Caroption;" + dto2);
+        log.info("Caroption;" + cdto);
 
-        if(service.create(dto) > 0){
+        if(service.create(dto) > 0 && cservice.create(cdto) > 0){
             return "redirect:/carinfo/list";
         }else{
             return "error";
