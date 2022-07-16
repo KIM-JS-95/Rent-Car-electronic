@@ -19,6 +19,8 @@ public interface ReviewService {
 
   int total(int listno);
 
+
+
   int bdelete(int listno);
 
  int rcount(int listno);
