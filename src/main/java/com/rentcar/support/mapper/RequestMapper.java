@@ -28,4 +28,5 @@ public interface RequestMapper {
 //     예약된 차량 check
     Boolean readmock(String carnum);
 
+    Boolean cancle(String carnum);
 }

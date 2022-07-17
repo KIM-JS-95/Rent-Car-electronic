@@ -27,7 +27,6 @@ public class Kakaocontroller {
 
     @GetMapping("/kakao_url/{lat}/{lng}")
     public JSONArray kakao_charge(@PathVariable("lat") String lat, @PathVariable("lng") String lng) throws IOException, ParseException {
-
         /*
         lat( x 좌표 ) lng( y 좌표 ) 가 카카오에서는 두 값을 바꾸어 입력해야 정상값이 도출된다.
          */

@@ -13,7 +13,10 @@ public interface CarinfoService {
 
     List<CarinfoDTO> list(Map map);
 
-    CarinfoDTO read(int carnumber);
+    CarinfoDTO read(String carnumber);
 
     int update(CarinfoDTO dto);
+
+    int delete(String carnumber);
+    int updateFile(Map map);
 }

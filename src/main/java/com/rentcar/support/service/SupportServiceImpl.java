@@ -2,6 +2,7 @@ package com.rentcar.support.service;
 
 
 import com.rentcar.support.mapper.SupporterMapper;
+import com.rentcar.support.model.State;
 import com.rentcar.support.model.Supporter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -74,7 +75,6 @@ public class SupportServiceImpl implements SurpportService {
                 .dcdemo(selected.get(1))
                 .ac(selected.get(2))
                 .fullcharge(selected.get(3))
-
                 .state("stay")
                 .build();
 
@@ -83,6 +83,3 @@ public class SupportServiceImpl implements SurpportService {
 
 }
 
-//class answer{
-//    private String
-//}

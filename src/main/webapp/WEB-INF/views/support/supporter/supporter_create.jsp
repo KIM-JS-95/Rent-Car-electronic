@@ -46,7 +46,6 @@
                             <label>Model</label>
                             <input type="text" placeholder="Enter mobile Model" required>
                         </div>
-
                     </div>
 
                 </div>
@@ -121,13 +120,7 @@
                             <i class="uil uil-navigator"></i>
                         </button>
                     </div>
-
                 </div>
-
-                <!-- <div class="details family">
-                    <span class="title">Family Details</span>
-                </div> -->
-
             </div>
         </form>
     </div>
@@ -156,7 +149,6 @@
             const answer = GetWrited();
             const selected = GetSelected();
             const registe = GetRegiste();
-
             data = {
                 answer: answer,
                 selected: selected,
@@ -170,10 +162,18 @@
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(data)
-            })
-                .then((res) => { if (res.ok) { window.close(); } })
-                .catch("잠시후 다시 시도해 보세요.");
-        }
+            }).then((res) => {
+                 if (res.status == 200) { 
+                    alert("등록했습니다.");
+                    window.close(); 
+                } 
+            }).catch(()=>{
+                alert("잠시후 다시 시도해 보세요.");
+                window.close(); 
+            });
+
+                location.reload();
+            }
 
         function GetWrited() {
             const answer = new Array();
@@ -213,6 +213,8 @@
             for (var i = 0; i < chks.length; i++) {
                 if (chks[i].checked) {
                     selected.push(chks[i].value);
+                }else{
+                    selected.push('0');
                 }
             }
 

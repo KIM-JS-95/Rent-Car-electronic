@@ -18,12 +18,12 @@ import javax.servlet.http.HttpSession;
 public class MemberController {
 
     @Autowired
-    @Qualifier("com.rentcar.member.MemberServiceImpl")
+    @Qualifier("com.rentcar.member.service.MemberServiceImpl")
     private MemberService service;
 
     @GetMapping("/reservation")
     public String reservation(HttpSession session, Model model){
-//        String id = (String) session.getAttribute("id");
+
         String id = "user1";
         if (id == null) {
             return "redirect:/member/login/";
