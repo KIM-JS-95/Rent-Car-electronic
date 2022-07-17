@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4db05fe1-6ed5-43a9-9b60-e27f1c05d62b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/main/java/com/rentcar/config/DatabaseConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/main/java/com/rentcar/config/ServletInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/main/java/com/rentcar/config/WebMvcConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/main/webapp/WEB-INF/tlds/el-function.tld" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/main/webapp/WEB-INF/tlds/el-functions.tld" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/main/webapp/WEB-INF/views/template/top.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +34,11 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="RentCar" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="RentCar" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -74,6 +84,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -82,11 +93,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\resources" />
       <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main\main" />
       <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main" />
       <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src" />
       <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main\webapp\WEB-INF\views" />
-      <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main\resources\sql" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
