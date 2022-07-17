@@ -5,41 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4db05fe1-6ed5-43a9-9b60-e27f1c05d62b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/pro2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/carinfo/controller/CarinfoCarcontroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/carinfo/controller/CarinfoCarcontroller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/config/DatabaseConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/config/DatabaseConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/config/ServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/config/ServletInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/config/TilesConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/config/TilesConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/kakao/controller/Kakaocontroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/kakao/controller/Kakaocontroller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/kakao/service/Kakaoservice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/kakao/service/Kakaoservice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/list/controller/ListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/list/controller/ListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/list/mapper/ListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/list/mapper/ListMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/list/model/ListDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/list/model/ListDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/list/service/ListServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/list/service/ListServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/member/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/member/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/review/controller/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/review/controller/ReviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/review/mapper/ReviewMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/review/mapper/ReviewMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/review/service/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/review/service/ReviewService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/utility/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/utility/Utility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/list.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/review.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/review.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/list.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/list1.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/list2.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/list2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/map/map.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/map/map.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/support/request.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/support/request.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/con2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/con2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list/readdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list/readdd.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/map/map.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/map/map.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/template/top.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/template/top.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +70,15 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
