@@ -44,4 +44,5 @@ class HaversineDistanceTest {
         return value * Math.PI / 180;
     }
 
+
 }
