@@ -1,9 +1,16 @@
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>JS Bin</title>
+  <script>
+  function reservation(){
+  href = "/reservation"
+
+  }
+  </script>
 </head>
 <body>
 <body class="wrapper lnbWrapper">
@@ -11,9 +18,7 @@
 
 <section id="wrapper">
 
-  <header>
 
-</header>
 
   <div id="container" class="container">
 
@@ -25,12 +30,12 @@
                     <div><img src="/resource/PC/images/mypage/img_profile_big.png" alt=""></div>
                 </a>
                 <div class="txtArea">
-                    <h2 class="titDep2 name" profileLinkArea> ???님의<br><span>회원정보</span> </h2>
+                    <h2 class="titDep2 name" profileLinkArea> ${dto.mname}님의<br><span>회원정보</span> </h2>
                 </div>
 
                 <div class="btnArea">
                     <button type="button" class="btnDefault btnS btnLineG" onclick="update()">회원수정</button>
-                   <button type="button" class="btnDefault btnS btnLineG" onclick="reservation()">예약 차량 조회</button>
+                   <button type="button" class="btnDefault btnS btnLineG" onclick="reservation()"><a href="/member/reservation">예약 차량 조회</a></button>
                 </div>
             </div>
 
@@ -46,14 +51,13 @@
              <div class="contArea myPage">
                 <div class="blueBox">
                     <div class="pointList">
-                        <p><span class="txt">충전포인트</span><a href="javascript:jppJs.go(&#39;/web/mypage/point&#39;)" class="num" chargeSum>0p</a></p>
+                        <p><span class="txt">충전포인트</span><a href="" class="num" chargeSum>0p</a></p>
                         <p><span class="txt">적립포인트</span><a href="javascript:jppJs.go(&#39;/web/mypage/point&#39;)" class="num" saveSum>0p</a></p>
-                        <!--<p><span class="txt">렌터카이용권</span><a th:href="|javascript:jppJs.go('/web/mypage/rentcarPoint');|" class="num" rentcarTotalSum>0p</a></p>-->
                     </div>
                 </div>
 
                 <th class="col-sm-2">아이디 :</th>
-                <td class="col-sm-8"><a href="javascript:read('${dto.id}')">${dto.id}</a></td>
+                <td class="col-sm-8">${dto.id}</td>
             </tr>
             <tr>
                 <th class="col-sm-2">성명 :</th>
@@ -61,7 +65,7 @@
             </tr>
             <tr>
                 <th class="col-sm-2">전화번호 :</th>
-                <td class="col-sm-8">${dto.tel}</td>
+                <td class="col-sm-8">${dto.phone}</td>
             </tr>
             <tr>
                 <th class="col-sm-2">이메일 :</th>
@@ -75,7 +79,7 @@
 
 
                 <a href="#" class="bannerType">
-                  <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDA1MTNfMTEg%2FMDAxNTg5MzM2OTk0NTU0.A5pj4skNVli95pEeW9hRt5lNcqNmZJ3qRXKmieHShMUg.pf_oXQsnbPITsKz6inLsQPTboKyk8jjZ3Kgz2vUohBMg.JPEG.baeeunhye13%2Fskyscape.jpg&type=a340">
+                  <img src="https://png.pngtree.com/thumb_back/fh260/background/20210902/pngtree-blue-sky-and-white-clouds-pure-sky-image_786707.jpg">
                 </a>
 
 

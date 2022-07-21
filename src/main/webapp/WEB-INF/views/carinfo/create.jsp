@@ -1,140 +1,227 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>자동차등록</title>
-  <meta charset="utf-8">
-    <script type="text/JavaScript">
-   function checkIn(f){
-       if (f.carname.value == ""){
-               alert("차이름을 입력하세요");
-               f.carname.focus();
-               return false;
-       }
-       if (f.carnumber.value == ""){
-               alert("차번호를 입력하세요");
-               f.carnumber.focus();
-                return false;
-       }
-       if (f.carseate.value == ""){
-                alert("좌석수를 지정해 주세요");
-                f.carseate.focus()
-                return fales;
-       }
-       if (f.carpoint.value == ""){
-             alert("지점을 입력해 주세요");
-             f.carpoint.focus();
-             return fales;
-       }
+    <!DOCTYPE html>
+    <html>
 
-       if (f.carimage.value == ""){
-               alert("차량이미지를 선택하세요");
-               f.carimage.focus();
-               return false;
-       }
-  }
-   </script>
+    <head>
+      <title>자동차등록</title>
+      <meta charset="utf-8">
+    </head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-       }
-   </style>
-</head>
-<body>
-<div class="container">
-<h1 class="col-sm-offset-2 col-sm-10">자동차 등록</h1>
-<form class="form-horizontal"
-      action="/carinfo/create"
-      method="post"
-      enctype="multipart/form-data"
-      onsubmit="return checkIn(this)">
+    <link rel="stylesheet" type="text/css" href="/css/support/create.css">
+    <link rel="stylesheet" type="text/css" href="/css/support/style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-  <div class="form-group">
-      <label class="control-label col-sm-2" for="carnumber">자동차번호</label>
-      <div class="col-sm-8">
-        <input type="text" name="carnumber" id="carnumber" class="form-control"
-        placeholder="Enter carnumber">
-      </div>
-    </div>
-  <div class="form-group">
-    <label class="control-label col-sm-2" for="carname">자동차이름</label>
-    <div class="col-sm-8">
-      <input type="text" name="carname" id="carname" class="form-control"
-      placeholder="Enter carname">
-    </div>
-  </div>
-  <div class="form-group">
-      <label class="control-label col-sm-2" for="category">차 종류</label>
-      <div class="col-sm-8">
-        <input type="text" name="category" id="category" class="form-control"
-        placeholder="Enter Car category">
-      </div>
-    </div>
-      <div class="form-group">
-          <label class="control-label col-sm-2" for="carseate">좌석 수</label>
-          <div class="col-sm-8">
-            <input type="text" name="carseate" id="carseate" class="form-control"
-            placeholder="Enter carseate">
+    <body>
+      <div class="container">
+        <header>Registration</header>
+        <form>
+
+          <div class="form first">
+            <div class="details carinfo">
+              <span class="title">Car Info</span>
+
+              <div class="fields" id="carinfo">
+
+                <!--<div class="input-field">
+                  <label for="carnumber">Car Number</label>
+                  <input type="text" name="carnumber" placeholder="Enter Car Number" required>
+                </div>
+
+                <div class="input-field">
+                  <label for="carname">Car Name</label>
+                  <input type="text" name="carname" placeholder="Enter Car Name" required>
+                </div>
+                <div class="input-field">
+                                  <label for="carprice">Car Rent Price</label>
+                                  <input type="text" name="carprice" placeholder="Enter Car Rent Price" required>
+                                </div>
+
+                <div class="input-field">
+                  <label for="category">Car Category</label>
+                  <input type="text" name="category"  placeholder="Enter Car Category" required>
+                </div>
+
+                <div class="input-field">
+                  <label for="caryearmodel">Car Year Model</label>
+                  <input type="text" name="caryearmodel"  placeholder="Enter Car Year Model" required>
+                </div>
+
+                <div class="input-field">
+                  <label for="carseate">Car Seate</label>
+                  <input type="text" name="carseate"  placeholder="Enter Car Seate" required>
+                </div>
+
+                <div class="input-field">
+                  <label for="carpoint">Car Point</label>
+                  <input type="text" name="carpoint"  placeholder="Enter Car Point" required>
+                </div>
+
+                <div class="input-field">
+                  <label for="filenameMF">Car Image</label>
+                  <input type="file" name="filenameMF" required>
+                </div>
+              </div> -->
+
+              <button class="nextBtn">
+                <span class="btnText">Next</span>
+                <i class="uil uil-navigator"></i>
+              </button>
+            </div>
           </div>
-       </div>
-  <div class="form-group">
-    <label class="control-label col-sm-2" for="carpoint">지점</label>
-    <div class="col-sm-6">
-      <input type="text" name="carpoint" id="carpoint" class="form-control"
-      placeholder="Enter carpoint">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-sm-2" for="filenameMF">차이미지</label>
-    <div class="col-sm-6">
-      <input type="file" name="filenameMF" id="filenameMF" class="form-control">
-    </div>
-  </div>
-  <div class="form-group">
-  <label class="control-label col-sm-2">차옵션 선택</label><br>
-    <input type="checkbox" class="btn" name="bluetooth" value="블루투스" id="btn1">
-  	<label class="btn btn-primary" for="btn1">블루투스</label>
-  	<input type="checkbox" class="btn-check" name="rear_sensor" value="후방센서" id="btn2">
-  	<label class="btn btn-primary" for="btn2">후방센서</label>
-  	<input type="checkbox" class="btn-check" name="rear_camera" value="후방카메라" id="btn3">
-  	<label class="btn btn-primary" for="btn3">후방카메라</label>
-  	<input type="checkbox" class="btn-check" name="black_box" value="블랙박스" id="btn4">
-    <label class="btn btn-primary" for="btn4">블랙박스</label>
-    <input type="checkbox" class="btn-check" name="heated_seat" value="열선시트" id="btn5">
-    <label class="btn btn-primary" for="btn5">열선시트</label>
-    <br>
-    <input type="checkbox" class="btn-check" name="heated_handle" value="열선핸들" id="btn6">
-    <label class="btn btn-primary" for="btn6">열선핸들</label>
-    <input type="checkbox" class="btn-check" name="ventilated_seat" value="통풍시트" id="btn7">
-    <label class="btn btn-primary" for="btn7">통풍시트</label>
-    <input type="checkbox" class="btn-check" name="navigation" value="네비게이션" id="btn8">
-    <label class="btn btn-primary" for="btn8">네비게이션</label>
-    <input type="checkbox" class="btn-check" name="non-smoking_vehicle" value="금연차량" id="btn9">
-    <label class="btn btn-primary" for="btn9">금연차량</label>
-    <br>
-    <input type="checkbox" class="btn-check" name="smart_key" value="스마트키" id="btn10">
-    <label class="btn btn-primary" for="btn10">스마트키</label>
-    <input type="checkbox" class="btn-check" name="sunroof" value="썬루프" id="btn11">
-    <label class="btn btn-primary" for="btn11">썬루프</label>
-    <input type="checkbox" class="btn-check" name="rear_warning_light" value="후측방경고등" id="btn12">
-    <label class="btn btn-primary" for="btn12">후측방경고등</label>
-    <input type="checkbox" class="btn-check" name="Lane_Departure_Prevention" value="차선이탈방지" id="btn13">
-    <label class="btn btn-primary" for="btn13">차선이탈방지</label>
-  	</div>
 
-   <div class="form-group">
-   <div class="col-sm-offset-2 col-sm-5">
-    <button class="btn">등록</button>
-    <button type="reset" class="btn">취소</button>
-   </div>
- </div>
-</form>
-</div>
-</body>
-</html>
+          <div class="form second">
+            <div class="carpotion">
+              <span class="title">Car Option</span>
+
+              <div class="fields" id="option">
+
+                <div class="input-field">
+                  <label for="bluetooth">bluetooth</label>
+                  <input type="checkbox" name="checkbox"  class="cm-toggle" value="1">
+                </div>
+                <div class="input-field">
+                  <label for="rear_sensor">rear_sensor</label>
+                  <input type="checkbox" name="checkbox"  class="cm-toggle" value="1">
+                </div>
+                <div class="input-field">
+                  <label for="rear_camera">rear_camera</label>
+                  <input type="checkbox" name="checkbox"  class="cm-toggle" value="1">
+                </div>
+                <div class="input-field">
+                  <label for="black_box">black_box</label>
+                  <input type="checkbox" name="checkbox"  class="cm-toggle" value="1">
+                </div>
+                <div class="input-field">
+                  <label for="heated_seat">heated_seat</label>
+                  <input type="checkbox" name="checkbox"class="cm-toggle" value="1">
+                </div>
+                <div class="input-field">
+                  <label for="heated_handle">heated_handle</label>
+                  <input type="checkbox" name="checkbox" class="cm-toggle" value="1">
+                </div>
+                <div class="input-field">
+                  <label for="ventilated_seat">ventilated_seat</label>
+                  <input type="checkbox" name="checkbox" class="cm-toggle" value="1">
+                </div>
+                <div class="input-field">
+                  <label for="navigation">navigation</label>
+                  <input type="checkbox" name="checkbox" class="cm-toggle" value="1">
+                </div>
+                <div class="input-field">
+                  <label for="non_smoking_vehicle">non_smoking_vehicle</label>
+                  <input type="checkbox" name="checkbox" class="cm-toggle" value="1">
+                </div>
+                <div class="input-field">
+                  <label for="smart_key">smart_key</label>
+                  <input type="checkbox" name="checkbox" class="cm-toggle" value="1">
+                </div>
+                <div class="input-field">
+                  <label for="sunroof">sunroof</label>
+                  <input type="checkbox" name="checkbox" class="cm-toggle" value="1">
+                </div>
+                <div class="input-field">
+                  <label for="rear_warning_light">rear_warning_light</label>
+                  <input type="checkbox" name="checkbox" class="cm-toggle" value="1">
+                </div>
+                <div class="input-field">
+                  <label for="Lane_Departure_Prevention">Lane_Departure_Prevention</label>
+                  <input type="checkbox" name="checkbox" class="cm-toggle" value="1">
+                </div>
+              </div>
+              <div class="buttons">
+                <div class="backBtn">
+                  <i class="uil uil-navigator"></i>
+                  <span class="btnText">Back</span>
+                </div>
+
+                <button class="sumbit" onclick="getInfo()">
+                  <span class="btnText">Submit</span>
+                  <i class="uil uil-navigator"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <script>
+        const form = document.querySelector("form"),
+            nextBtn = form.querySelector(".nextBtn"),
+            backBtn = form.querySelector(".backBtn"),
+            allInput = form.querySelectorAll(".first input");
+
+
+        nextBtn.addEventListener("click", () => {
+          allInput.forEach(input => {
+                if (input.value != "") {
+                    form.classList.add('secActive');
+                } else {
+                    form.classList.remove('secActive');
+                }
+            })
+        })
+        backBtn.addEventListener("click", () => form.classList.remove('secActive'));
+   </script>
+         <script type="text/javascript">
+    //       async function getInfo() {
+    //           const answer = GetWrited();
+    //           const selected = GetSelected();
+
+    //           data = {
+    //               answer: answer,
+    //               selected: selected
+    //           };
+
+    //           var url = "/carinfo/create";
+    //           const response = await fetch(url, {
+    //               method: 'POST',
+    //               headers: {
+    //                   'Content-Type': 'application/json',
+    //               },
+    //               body: JSON.stringify(data)
+    //           })
+    //               .then((res) => { if (res.ok) { window.close(); } })
+    //               .catch("잠시후 다시 시도해 보세요.");
+    //       }
+
+    //       function GetWrited() {
+    //           const answer = new Array();
+    //           var carinfo = document.getElementById("carinfo");
+    //           //Reference all the CheckBoxes in Table.
+    //           var res = carinfo.getElementsByTagName("INPUT");
+
+    //           // Loop and push the checked CheckBox value in Array.
+    //           for (var i = 0; i < res.length; i++) {
+    //               answer.push(res[i].value);
+    //           }
+    //           return answer;
+    //       }
+
+    //       function GetSelected() {
+    //           var selected = new Array();
+    //           //Reference the Table.
+    //           var tblFruits = document.getElementById("option");
+
+    //           //Reference all the CheckBoxes in Table.
+    //           var chks = tblFruits.getElementsByTagName("INPUT");
+
+    //           // Loop and push the checked CheckBox value in Array.
+    //           for (var i = 0; i < chks.length; i++) {
+    //               if (chks[i].checked) {
+    //                   selected.push(chks[i].value);
+    //               }
+    //           }
+
+    //           return selected;
+    //       };
+
+    //   </script>
+
+    </body>
+
+    </html>

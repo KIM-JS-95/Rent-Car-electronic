@@ -1,13 +1,17 @@
 package com.rentcar.carinfo.controller;
 
+
 import com.rentcar.carinfo.service.CaroptionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import com.rentcar.carinfo.model.CarinfoDTO;
 import com.rentcar.carinfo.model.CaroptionDTO;
 import com.rentcar.carinfo.service.CarinfoService;
 import com.rentcar.utility.UploadCon;
 import com.rentcar.utility.Utility;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -72,9 +76,11 @@ public class CarinfoCarcontroller {
 
     @PostMapping("/update")
     public String update(CarinfoDTO dto){
+        //log.info("dto:"+dto);
         int cnt = service.update(dto);
+        log.info("cnt:"+cnt);
         if(cnt == 1){
-            return "redirect:./list";
+            return "redirect:/carinfo/list";
         }else{
             return "error";
         }
@@ -94,9 +100,7 @@ public class CarinfoCarcontroller {
     }
 
     @PostMapping("/create")
-    public String crate(CarinfoDTO dto, CaroptionDTO cdto, HttpServletRequest request)throws IOException{
-
-
+    public String crate(CarinfoDTO dto, HttpServletRequest request)throws IOException{
         String upDir = UploadCon.getUploadDir();
         String fname = Utility.saveFileSpring(dto.getFilenameMF(), upDir);
         int size = (int)dto.getFilenameMF().getSize();
@@ -105,11 +109,9 @@ public class CarinfoCarcontroller {
         }else{
             dto.setCarimage("default.jpg");
         }
-        log.info("Carinfo;" + dto);
-        log.info("Caroption;" + cdto);
-
-        if(service.create(dto) > 0 && cservice.create(cdto) > 0){
-            return "redirect:/carinfo/list";
+        log.info("CarinfoDTO:" + dto);
+        if(service.create(dto) > 0){
+            return "redirect:./list";
         }else{
             return "error";
         }
@@ -133,7 +135,7 @@ public class CarinfoCarcontroller {
         if(request.getParameter("nowPage") !=null){
             nowPage = Integer.parseInt(request.getParameter("nowPage"));
         }
-        int recordPerPage = 5;
+        int recordPerPage = 3;
         int sno = (nowPage - 1) * recordPerPage;
         int eno = recordPerPage;
 
@@ -155,14 +157,5 @@ public class CarinfoCarcontroller {
 
         return "/carinfo/list";
     }
-   @GetMapping("/")
-   public String home(){
-       return "/home";
-   }
 
-
-//    @GetMapping("/{id}")
-//    public String hello(@PathVariable("id") int id){
-//        return id + "입니다.";
-//    }
 }
