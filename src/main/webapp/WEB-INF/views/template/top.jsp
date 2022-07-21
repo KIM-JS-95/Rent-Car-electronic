@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html; charset=UTF-8" %>
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <c:set var="root" value="${pageContext.request.contextPath }" />
@@ -23,8 +22,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>EV Rent Car</title>
-      <link rel="stylesheet" type="text/css" href="/resources/css/common.css">
-      <link rel="stylesheet" type="text/css" href="/resources/css/top.css">
+      <link rel="stylesheet" type="text/css" href="/css/common.css">
+      <link rel="stylesheet" type="text/css" href="/css/top.css">
     </head>
 
     <body>
@@ -33,8 +32,8 @@
         <h1 class="header__title">EV Rent Car</h1>
       </header>
 
-      <nav class="navigaiton">
-        <ul class="navigation__list">
+      <nav class="navigaiton" style="z-index: 2;">
+        <ul class="navigation__list" style="z-index: 1;">
 
           <div class="dropdown">
             <li class="navigation__item"><span class="item__icon"><span class="icon__emoji">🌇</span></span><span
@@ -60,18 +59,19 @@
             <li class="navigation__item"><span class="item__icon"><span class="icon__emoji">🗺️</span></span><span
                 class="item__text">Map</span></li>
             <div class="dropdown-content">
-              <a href="#">충전소 조회</a>
-              <a href="#">Link 2</a>
+              <a href="/map/map">충전소 조회</a>
+              <a href="/request/create">지원 요청</a>
               <a href="#">Link 3</a>
             </div>
           </div>
 
           <c:choose>
 
-          <c:when test="${empty sessionScope.id }">
+            <c:when test="${empty sessionScope.id }">
               <div class="dropdown">
                 <li class="navigation__item"><span class="item__icon"><span class="icon__emoji">🙋‍♂️</span></span>
-                <span class="item__text"> <a id="grade">${str}</span></li>
+                  <span class="item__text"> <a id="grade">${str}</span>
+                </li>
                 <div class="dropdown-content">
                   <a href="#">Log In Page</a>
                   <a href="#">My Page</a>
@@ -104,21 +104,11 @@
                   <a href="#">Link 3</a>
                 </div>
               </div>
-             </c:otherwise>
+            </c:otherwise>
           </c:choose>
 
-
-
-
         </ul>
-
-
-
       </nav>
-
     </body>
 
     </html>
-
-
-

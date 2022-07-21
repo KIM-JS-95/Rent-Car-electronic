@@ -1,9 +1,9 @@
 package com.rentcar.carinfo.service;
 
-
-import com.rentcar.carinfo.mapper.CarinfoMapper;
 import com.rentcar.carinfo.model.CarinfoDTO;
+import com.rentcar.carinfo.mapper.CarinfoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,7 +20,6 @@ public class CarinfoServiceImpl implements CarinfoService {
     public int create(CarinfoDTO dto) {
         return mapper.create(dto);
     }
-
     @Override
     public int total(Map map) {
         return mapper.total(map);
@@ -32,13 +31,23 @@ public class CarinfoServiceImpl implements CarinfoService {
     }
 
     @Override
-    public CarinfoDTO read(int carnumber) {
+    public CarinfoDTO read(String carnumber) {
         return mapper.read(carnumber);
     }
 
     @Override
     public int update(CarinfoDTO dto) {
         return mapper.update(dto);
+    }
+
+    @Override
+    public int delete(String carnumber) {
+        return mapper.delete(carnumber);
+    }
+
+    @Override
+    public int updateFile(Map map) {
+        return mapper.updateFile(map);
     }
 }
 

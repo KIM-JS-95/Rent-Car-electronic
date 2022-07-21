@@ -6,11 +6,6 @@ $(function(){
 
 	 var content = document.querySelector("#content").value;
 
-
-      alert(content+":"+listno);
-
-
-
   	var data = {
 		"content" : content,
 		"listno" : listno
@@ -20,7 +15,7 @@ $(function(){
  	$.ajax({
 
 	    type : "post",
-	    url : "/review/create", //+ "?id=" + id + "&pw=" + pw,
+	    url : "/review/create",
 	     data : JSON.stringify(data),
 	    //data: data,
 	    // dataType:"json",
@@ -28,9 +23,7 @@ $(function(){
 	    success:function(data){
 		   console.log('성공입니다.');
 		   console.log(data);
-
-				console.log(data);
-				alert(data+"성공");
+            location.reload()
 
 	    },
 	    error:function(){
@@ -40,39 +33,47 @@ $(function(){
 		});
 
 
-		$("#delete").click(function(){
+$("#delete").click(function(){
+
+var rnum = document.querySelector("#rnum").value;
+
+
+       	console.log(rnum);
 
 
 
-
-
-
-          	var data = {
-        		"rnum" : rnum
-        	}
-        	console.log(data);
-
-         	$.ajax({
-
-        	    type : "delete",
-        	    url : "/review/${rnum}", //+ "?id=" + id + "&pw=" + pw,
-        	     data : JSON.stringify(data),
-        	    //data: data,
-        	    // dataType:"json",
-        	    contentType: "application/json",
-        	    success:function(data){
-        		   console.log('성공입니다.');
-        		   console.log(data);
-
-        				console.log(data);
-        				alert(data+"성공");
-
-        	    },
-        	    error:function(){
-        	        alert("에러입니다");
-        	    }
-        	});
+fetch(`/review/${rnum}`,{method: 'delete'})
+               .then(response => response.text())
+               .then(location.reload())
+               .catch(console.log);
         		});
+
+
+
+
+//$("#deleteV").click(function(){
+//
+//
+//
+//
+// 	$.ajax({
+//
+// 	    type : "post",
+// 	    url : "/contents/list/delete",
+// 	     //data : JSON.stringify(data),
+// 	    data: listno,
+// 	    // dataType:"json",
+// 	    //contentType: "application/json",
+// 	    success:function(data){
+// 		   console.log('성공입니다.');
+//
+//
+// 	    }
+//
+//});
+//
+//});
+
 
 
 

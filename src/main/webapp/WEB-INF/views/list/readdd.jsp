@@ -11,21 +11,31 @@
       <title>JS Bin</title>
        <link rel="stylesheet" type="text/css" href="/css/list2.css"/>
        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
     </head>
     <body>
-
+<form class="form-horizontal"
+      action="./delete"
+      method="post"
+      >
+<input type="hidden" name="listno" value="${dto.listno}">
       <div class="container">
         <div id="div1">
          <table class="table table-striped">
-          <th><img src="https://cdn-icons-png.flaticon.com/512/1828/1828413.png" style="height:20px; width:20px ">${dto.wname}</th>
-          <th>${dto.rdate}</th>
-          <th>조회: ${dto.cnt} | 추천: <span id="bbsRecommendNum1">6</span></th>
+          <th><img src="https://cdn-icons-png.flaticon.com/512/1828/1828413.png" style="height:20px; width:20px ">&nbsp;${dto.wname}</th>
+          <th>&emsp;${dto.rdate}&emsp;</th>
+          <th>조회수: ${dto.cnt}</th>
+             <div style="display: inline-block; margin: 0 5px;  float: right;">
+            <button id='btn' class='btn' style="width:10; height:5;" >글 삭제</button>
+             </div>
+</form>
 
           </table>
         </div>
+        <br>
         <div style="display: inline-block; margin: 0 5px;  float: right;"><span style="color: #787878;">
-    <a style="color: #787878;" href="/contents/list">목록</a>
-    | <a style="color: #787878;" href="javascript:void(0);" onClick="document.getElementById('powerbbsCmt2').scrollIntoView();">댓글(<span style="color:#F94B4B;">${dto.recommend}</span>)</a>
+        <a style="color: #787878;" href="/contents/list">목록</a>
+    |   <a style="color: #787878;" href="javascript:void(0);" onClick="document.getElementById('powerbbsCmt2').scrollIntoView();">추천(<span style="color:#F94B4B;">${dto.recommend}</span>)</a>
           </span></div>
           <br><br><br>
         <h1>${dto.title}</h1>
@@ -35,7 +45,7 @@
 
           <br><br><br>
           <div style="display: flex;   justify-content : center;">
-          <button id="btn1" style="border-radius: 30px;"><img src="https://cdn-icons.flaticon.com/png/128/5037/premium/5037413.png?token=exp=1657937149~hmac=1ba7da1832135ce1167a4e2957402476" ></button>
+          <button id="btn1" style="border-radius: 30px;"><img src="/images/SJ/free-icon-thumb-up-889221.png" style="height:130px;"></button>
           </div>
             <br><br><br>
             <div id=review>
@@ -56,8 +66,9 @@
 <c:otherwise>
 
    <c:forEach var="list" items="${list}">
-<input type="hidden" value="${list.rnum}">
- <strong class="title">
+<input type="hidden" value="${list.rnum}" id="rnum">
+
+<strong class="title">
 <img src="https://cdn-icons-png.flaticon.com/128/1465/1465265.png" style=" height:30px; width:30px;">
 <span class="nickname" data-is-writer="1" style="padding: 1em;">${dto.wname}</span>
 <span class="date">(${list.regdate})</span>
@@ -71,7 +82,7 @@
 
     <a >${list.content}</a>
     <div style="display: inline-block; margin: 0 5px;  float: right;">
-   <button id='delete' class='delete' style="width:20; height:20; ">삭 제</button>
+   <button id='delete' class='delete' style="width:20; height:20;">삭 제</button>
     </div>
     <br>
       <br>
@@ -97,7 +108,7 @@
 법률에 의해 처벌 받을 수 있습니다. 건전한 커뮤니티를 위해 자제를 당부 드립니다." style="width:830px; height:70px;"></textarea>
              </th>
              <th>
-             <button id='addreviewBtn' class='btn btn-primary btn-xs pull-right' type="submit" style="width:100px; height:85px;">등 록</button>
+             <button id='addreviewBtn' class='btn btn-primary btn-xs pull-right' type="submit" style="width:100px; height:85px;" >등 록</button>
 
              </th>
              </table>
@@ -109,22 +120,23 @@
 
 
     </div>
+      <script>
+                     let listno = "${dto.listno}";
+                    let sno = "${sno}";
+                     let eno = "${eno}";
+                     <!-- 댓글용 paging 로그인 id -->
+                     let nPage = "${nPage}";
+                     let id = "${sessionScope.id}";
+
+                  </script>
 
 
 
 
 
-            <script>
-              let listno = "${dto.listno}";
-             let sno = "${sno}";
-              let eno = "${eno}";
-              <!-- 댓글용 paging 로그인 id -->
-              let nPage = "${nPage}";
-              let id = "${sessionScope.id}";
-
-           </script>
    <script src="/js/pro2.js" defer></script>
 
     <script src="/js/con2.js" defer></script>
+
     </body>
     </html>

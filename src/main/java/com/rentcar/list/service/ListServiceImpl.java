@@ -1,13 +1,14 @@
 package com.rentcar.list.service;
 
 
-import java.util.List;
-import java.util.Map;
-
 import com.rentcar.list.mapper.ListMapper;
 import com.rentcar.list.model.ListDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Map;
 
 @Service("com.rentcar.list.service.ListServiceImpl")
 public class ListServiceImpl implements ListService {
@@ -64,7 +65,9 @@ public class ListServiceImpl implements ListService {
     return mapper.delete(listno);
   }
 
-  public void recommend(int listno) {
-    mapper.recommend(listno);
+  public int recommend(int listno) {
+
+
+    return mapper.recommend(listno);
   }
 }
