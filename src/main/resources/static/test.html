@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>주소로 장소 표시하기</title>
+
+</head>
+
+<body>
+
+    <div id="map" style="width:100%;height:350px;"></div>
+
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6eae01749ed46288f45cd68bb87a3238&libraries=services"></script>
+
+    <script>
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = {
+                center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                level: 3 // 지도의 확대 레벨
+            };
+
+        // 지도를 생성합니다    
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+
+        // 주소-좌표 변환 객체를 생성합니다
+        var geocoder = new kakao.maps.services.Geocoder();
+
+
+        const list = [
+            "청주시 상당구 1순환로1253번길 42 (용암동  2층)",
+            "청주시 상당구 중앙로 30 (북문로2가  8층)",
+            "청주시 상당구 상당로115번길 26  1동 101호 (북문로2가)",
+            "청주시 서원구 수곡로 83 (수곡동)",
+            "청주시 서원구 1순환로674번길 52, 1층 (사창동)",
+            "청주시 서원구 두꺼비로94번길 72-17, 1층 (산남동)",
+            "청주시 서원구 산남로70번길 34 (산남동,미소시티  103호)",
+            "청주시 서원구 산미로 95, 1동 1층 (산남동)",
+            "청주시 서원구 산남로24번길 18-8, 1층 (산남동)",
+            "청주시 서원구 산남로 49, 4층 (산남동)",
+            "청주시 서원구 무심서로 497 (사직동, (2층))",
+            "청주시 서원구 산남로 49, 3층 (산남동)",
+            "청주시 서원구 1순환로704번길 63, 지하1층 (사창동)",
+            "청주시 서원구 예체로 92-1, 1층,2층,3층,4층 (사창동, 어번브라운2)",
+            "청주시 흥덕구 2순환로1167번길 19 (복대동,(3층))",
+            "청주시 흥덕구 백봉로 201 (봉명동,(2층))",
+            "청주시 흥덕구 진재로 22 (복대동,(3층))",
+            "청주시 흥덕구 짐대로72번길 17, 1층 (복대동)",
+            "청주시 흥덕구 흥덕로162번길 19 (운천동, (1층))",
+            "청주시 흥덕구 오송읍 연제만수길 50",
+            "청주시 흥덕구 흥덕로151번길 36, 2층 (운천동)",
+            "청주시 흥덕구 죽천로 131, 1층 (복대동)",
+            "청주시 흥덕구 2순환로 1254, DS클리닉동 1층 (강서동)",
+            "청주시 흥덕구 예체로179번길 1, 1층 (봉명동)",
+            "청주시 흥덕구 과상미로10번길 3, 1층 (봉명동)",
+            "청주시 청원구 새터로 29 (내덕동)"
+        ];
+
+        for (i = 0; i < list.length; i++) {
+            geocoder.addressSearch(list[i], function (result, status) {
+
+                // 정상적으로 검색이 완료됐으면 
+                if (status === kakao.maps.services.Status.OK) {
+
+                    var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+                    console.log(result[0].y, result[0].x);
+
+                    // 결과값으로 받은 위치를 마커로 표시합니다
+                    var marker = new kakao.maps.Marker({
+                        map: map,
+                        position: coords
+                    });
+
+                    // 인포윈도우로 장소에 대한 설명을 표시합니다
+                    var infowindow = new kakao.maps.InfoWindow({
+                        content: '<div style="width:150px;text-align:center;padding:6px 0;">우리회사</div>'
+                    });
+                    infowindow.open(map, marker);
+
+                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                    map.setCenter(coords);
+                }
+            });
+        }
+// 주소로 좌표를 검색합니다
+// geocoder.addressSearch('제주특별자치도 제주시 첨단로 242', function(result, status) {
+
+//     // 정상적으로 검색이 완료됐으면 
+//      if (status === kakao.maps.services.Status.OK) {
+
+//         var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+//         // 결과값으로 받은 위치를 마커로 표시합니다
+//         var marker = new kakao.maps.Marker({
+//             map: map,
+//             position: coords
+//         });
+
+//         // 인포윈도우로 장소에 대한 설명을 표시합니다
+//         var infowindow = new kakao.maps.InfoWindow({
+//             content: '<div style="width:150px;text-align:center;padding:6px 0;">우리회사</div>'
+//         });
+//         infowindow.open(map, marker);
+
+//         // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+//         map.setCenter(coords);
+//     } 
+// });    
+    </script>
+</body>
+
+</html>
