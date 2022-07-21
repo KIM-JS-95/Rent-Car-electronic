@@ -17,7 +17,14 @@
        url += "&nowPage=${nowPage}";
        location.href=url;
  
-     }  
+     }
+
+     function fileDown(fname){
+             var url = "./fileDown";
+             url += "?fname="+fname;
+             location.href=url;
+          }
+
   </script>
  
 </head>
@@ -87,7 +94,16 @@
     </td>
     <td>${dto.wname}</td>
     <td>${dto.wdate}</td>
-    <td>${dto.fname}</td>
+    <td>
+    			<c:choose>
+    			    <c:when test="${empty dto.fname}">파일없음</c:when>
+    			    <c:otherwise>
+    			    <a href="javascript:fileDown('${dto.fname}')">
+    			    ${dto.fname}
+    			    </a>
+    			    </c:otherwise>
+    			    </c:choose>
+    </td>
    </tr>
    </c:forEach>
    </c:otherwise>

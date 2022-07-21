@@ -47,4 +47,9 @@ public class NoticeServiceImpl implements NoticeService{
     return mapper.passwd(map);
   }
 
+  @Override
+  public int update(NoticeDTO dto) {
+    return mapper.update(dto);
+  }
+
 }

@@ -1,7 +1,9 @@
 package com.rentcar.notice.controller;
 
 import com.rentcar.notice.model.NoticeDTO;
+import com.rentcar.notice.model.UploadNotice;
 import com.rentcar.notice.service.NoticeService;
+import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.rentcar.utility.Utility;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.File;
+import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,19 +33,75 @@ public class NoticeController {
 
     private static final Logger log = LoggerFactory.getLogger(NoticeController.class);
 
+    @GetMapping("/notice/fileDown")
+    public void fileDown(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        // 저장 폴더를 절대 경로로 변환
+        String dir = UploadNotice.getUploadDir();
+        // 파일명 받기
+        String fname = request.getParameter("fname");
+        byte[] files = FileUtils.readFileToByteArray(new File(dir, fname));
+        response.setHeader("Content-disposition", "attachment; fileName=\"" + URLEncoder.encode(fname, "UTF-8") + "\";");
+
+        // Content-Transfer-Encoding : 전송 데이타의 body를 인코딩한 방법을 표시함.
+        response.setHeader("Content-Transfer-Encoding", "binary");
+        /**
+         * Content-Disposition가 attachment와 함게 설정되었다면 'Save As'로 파일을 제안하는지 여부에 따라 브라우저가
+         * 실행한다.
+         */
+        response.setContentType("application/octet-stream");
+        response.setContentLength(files.length);
+        response.getOutputStream().write(files);
+        response.getOutputStream().flush();
+        response.getOutputStream().close();
+    }
+
     @GetMapping
     public String home() {
 
         return "/home";
     }
 
+    @GetMapping("/notice/update")
+    public String update(int noticeno, Model model) {
+
+        model.addAttribute("dto",service.read(noticeno));
+
+        return "/notice/update";
+    }
+
+    @PostMapping("/notice/update")
+    public String update(NoticeDTO dto)  {
+        Map map = new HashMap();
+        map.put("noticeno", dto.getNoticeno());
+        map.put("passwd", dto.getPasswd());
+        int pcnt = service.passwd(map);
+
+        int cnt = 0;
+        if (pcnt==1) {
+
+            cnt = service.update(dto);
+        }
+
+        if (pcnt != 1) {
+            return "passwdError";
+        } else if (cnt==1) {
+            return "redirect:./list";
+        } else {
+            return "error";
+        }
+
+    }
+
     @PostMapping("/notice/delete")
-    public String delete(HttpServletRequest request, int noticeno, String passwd) {
+    public String delete(HttpServletRequest request, int noticeno, String passwd, String oldfile) {
 
         Map map = new HashMap();
         map.put("noticeno", noticeno);
         map.put("passwd", passwd);
         int pcnt = service.passwd(map);
+
+        String upDir = UploadNotice.getUploadDir();
 
         log.info("passwd :" , pcnt);
 
@@ -72,6 +134,14 @@ public class NoticeController {
 
     @PostMapping("/notice/create")
     public String create(NoticeDTO dto) {
+
+        String upDir = UploadNotice.getUploadDir();
+
+        if (dto.getFnameMF().getSize() > 0) {
+            dto.setFname(Utility.saveFileSpring(dto.getFnameMF(), upDir));
+
+        }
+
         if(service.create(dto)==1) {
             return "redirect:list";
         }else {

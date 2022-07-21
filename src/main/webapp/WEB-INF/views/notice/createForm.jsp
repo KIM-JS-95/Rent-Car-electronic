@@ -38,6 +38,7 @@
       action="./create"
       method="post"
       onsubmit="return checkIn(this)"
+      enctype="multipart/form-data"
       >
  
   <div class="form-group">
@@ -63,7 +64,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="fname">첨부파일</label>
       <div class="col-sm-6">
-        <input type="text" name="fname" id="fname" class="form-control">
+        <input type="file" name="fnameMF" id="fnameMF" class="form-control">
       </div>
     </div>
 

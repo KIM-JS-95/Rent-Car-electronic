@@ -5,6 +5,12 @@
 
 <mapper namespace="com.rentcar.notice.mapper.NoticeMapper">
 
+	<update id="update"  parameterType="com.rentcar.notice.model.NoticeDTO">
+		UPDATE projectNotice
+		SET title=#{title}, content=#{content}, wname=#{wname}, fname = #{fname}
+		WHERE noticeno=#{noticeno}
+	</update>
+
 	<delete id="delete" parameterType="int">
 		DELETE FROM projectNotice
 		WHERE noticeno=#{noticeno};

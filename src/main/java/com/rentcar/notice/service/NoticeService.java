@@ -18,5 +18,6 @@ public interface NoticeService {
   int delete(int noticeno);
 
   int passwd(Map map);
+  int update(NoticeDTO dto);
 
 }

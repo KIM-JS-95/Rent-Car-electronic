@@ -182,7 +182,7 @@ public class Utility {
                 if (os.equals("mac os x")) { // Mac
                     System.out.println("맥");
                     serverFullPath = basePath + "/" + filename;
-                } else if (os.equals("windows 10")) {
+                } else if (os.equals("windows 11")) {
                     System.out.println("os: " + os);
                     serverFullPath = basePath + "\\" + filename;
                 } else if (os.equals("linux")) {

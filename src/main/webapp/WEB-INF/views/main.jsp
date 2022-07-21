@@ -9,7 +9,7 @@
       <title>ISOSIM Rent-Car</title>
     <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="js/main.js"></script>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
     </head>
     
     <body class="">
@@ -27,9 +27,12 @@
         <!-- 자동차버튼 클릭시 나오는 화면 -->
                 <div class="reservePanel" >
 <br><br>
-<h1>차량 예약</h1>
+
                     <div class="containerReserve">
+
                             <ul class="reserveOptionUl">
+
+                                                <h1>차량 예약</h1>
                                 <li class="reserveOptionLi">
                                     <p><h3>대여일</h3></p>
                                     <p></p>
@@ -55,7 +58,7 @@
 
                                     </select>
                                 </li>
-                               
+
                                 <li style="vertical-align: middle" class="reserveOptionLi">
                                     <p></p>
                                     <button type="submit" class="reserveBtn" onclick=""">검색</button>
@@ -97,7 +100,6 @@
 </div>
 <br><br><br>
 
-
 <!-- 이미지 슬라이드 -->
 
 <div id="slide_warp">
@@ -118,13 +120,14 @@
 <!-- 이미지 슬라이드 end-->
 
 
+
 <br><br><br>
                 <div class="mainCont" >
     
                     <div class="mainCont">
-                        <h3 class="titDep2">서비스 이용안내</h3>
-                        <ul class="quickBtnUl">
 
+                        <ul class="quickBtnUl">
+                        <h3 class="titDep2">서비스 이용안내</h3>
                             <li class="underQuickBtn"><a href=""><span><img src="./images/icons/ecar.svg" alt=""></span><br>차량예약안내</a></li>
                             <li class="underQuickBtn"><a href=""><span><img src="./images/icons/key.svg" alt=""></span><br>차량인수반납</a></li>
                             <li class="underQuickBtn"><a href=""><span><img src="./images/icons/membership.svg" alt=""></span><br>마일리지안내</a></li>
@@ -136,6 +139,6 @@
                 <!-- //컨텐츠 영역 -->
             </div>
         <!-- container end -->
-        </div>
+
 </body>
 </html>

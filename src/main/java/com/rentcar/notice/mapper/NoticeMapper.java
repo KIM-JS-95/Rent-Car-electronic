@@ -19,4 +19,6 @@ public interface NoticeMapper {
 
   int passwd(Map map);
 
+  int update(NoticeDTO dto);
+
 }

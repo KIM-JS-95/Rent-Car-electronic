@@ -17,6 +17,12 @@
                        value="/WEB-INF/views/main.jsp" />
     </definition>
 
+    <definition name="/notice/update" extends="main">
+        <put-attribute name="title" value="수정"></put-attribute>
+        <put-attribute name="body"
+                       value="/WEB-INF/views/notice/updateForm.jsp" />
+    </definition>
+
     <definition name="/notice/delete" extends="main">
         <put-attribute name="title" value="공지삭제"></put-attribute>
         <put-attribute name="body"
