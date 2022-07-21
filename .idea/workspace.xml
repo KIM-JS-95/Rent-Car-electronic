@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4db05fe1-6ed5-43a9-9b60-e27f1c05d62b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/src/main/java/com/rentcar/config/DatabaseConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/main/java/com/rentcar/config/ServletInitializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/main/java/com/rentcar/config/WebMvcConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/main/webapp/WEB-INF/tlds/el-function.tld" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/main/webapp/WEB-INF/tlds/el-functions.tld" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/main/webapp/WEB-INF/views/template/top.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
