@@ -9,6 +9,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -60,10 +62,16 @@ public class RequestRestController {
         return flag;
     }
 
+    // 요청 취소
     @GetMapping("/help/delete/{carnum}")
     public Boolean delete(@PathVariable("carnum") String carnum) {
         return requestService.cancle(carnum);
     }
 
+    @GetMapping("/help/complete/{carnum}")
+    public Boolean complete(@PathVariable("carnum") String carnum) throws UnsupportedEncodingException {
+        String decodecarnum = URLDecoder.decode(carnum,"utf-8");
+        return surpportService.complete(decodecarnum);
+    }
 
 }
