@@ -32,7 +32,7 @@
         <h1 class="header__title">EV Rent Car</h1>
       </header>
 
-      <nav class="navigaiton" style="z-index: 2;">
+      <nav class="navigaiton">
         <ul class="navigation__list" style="z-index: 1;">
 
           <div class="dropdown">

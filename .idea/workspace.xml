@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="2f54c7a1-3fc5-4f71-9d62-8ade45f32cdc" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/notice/controller/NoticeController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/notice/mapper/NoticeMapper.java" afterDir="false" />
@@ -90,9 +91,13 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+=======
+    <list default="true" id="4db05fe1-6ed5-43a9-9b60-e27f1c05d62b" name="Changes" comment="">
+>>>>>>> bb728cb6b5518ad3d6c964f44446376ccd93fa57
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
@@ -236,6 +241,8 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/com/rentcar/support/controller/SurpportControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/rentcar/support/controller/SurpportControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/rentcar/support/mapper/SurpportMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/rentcar/support/mapper/SurpportMapperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/rentcar/support/service/SerpportServiceImplTest.java" beforeDir="false" />
+=======
+>>>>>>> bb728cb6b5518ad3d6c964f44446376ccd93fa57
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,6 +303,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
@@ -312,16 +320,43 @@
       <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main\resources\static\js\carinfo" />
       <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main\main" />
       <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main" />
+=======
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\resources" />
+      <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main\main" />
+      <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main" />
+      <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src" />
+      <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main\webapp\WEB-INF\views" />
+>>>>>>> bb728cb6b5518ad3d6c964f44446376ccd93fa57
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+<<<<<<< HEAD
       <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main\webapp\WEB-INF\views\carinfo" />
       <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main\resources\static\css\carinfo" />
       <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main\resources\static\images" />
       <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main\resources\static\images\carImg" />
       <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main\resources\static\js\carinfo" />
+=======
+      <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main" />
+      <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main\resources" />
+      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\resources\static" />
+      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\resources\static\css" />
+      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\webapp\WEB-INF\views" />
+>>>>>>> bb728cb6b5518ad3d6c964f44446376ccd93fa57
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.rentcar.support.controller" />
@@ -479,6 +514,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
