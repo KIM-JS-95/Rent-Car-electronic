@@ -8,8 +8,8 @@
 
 <!--    요청자 정보 저장 -->
     <insert id="create" parameterType="com.rentcar.support.model.Request">
-        insert into help(carnum, rx, ry, reason)
-        values(#{carnum}, #{rx}, #{ry}, #{reason});
+        insert into help(name, carnum, rx, ry, reason, request_time)
+        values(#{name}, #{carnum}, #{rx}, #{ry}, #{reason}, sysdate());
     </insert>
 
 <!--    출동시 요청자의 위치 정보를 저장한다.-->
@@ -22,13 +22,9 @@
 <!--    요청 접수 및 지원 차량 등록-->
     <update id="accept_request" parameterType="Map">
         UPDATE help
-        SET supporter_carnum = #{supporter}, state=#{state}
-        WHERE carnum = #{carnum};
-    </update>
-
-    <update id="update_state" parameterType="Map">
-        UPDATE help
-        SET state = #{state}, supporter_carnum =#{supporter}
+        SET supporter_carnum = #{supporter},
+        state=#{state},
+        accepted_time = sysdate()
         WHERE carnum = #{carnum};
     </update>
 
@@ -56,5 +52,12 @@
     <delete id="cancle" parameterType="String">
         delete from help where carnum = #{carnum};
     </delete>
+
+
+    <select id="read" parameterType="String" resultType="com.rentcar.support.model.Request">
+        select *
+        from help
+        where carnum = #{carnum}
+    </select>
 
 </mapper>
