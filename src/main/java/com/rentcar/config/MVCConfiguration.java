@@ -6,6 +6,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class MVCConfiguration implements WebMvcConfigurer {
+
   @Override
   public void addInterceptors(InterceptorRegistry registry) {
 
@@ -13,4 +14,5 @@ public class MVCConfiguration implements WebMvcConfigurer {
     registry.addInterceptor(new AdminInterceptor()).addPathPatterns("/admin/**");
 
   }
+
 }
