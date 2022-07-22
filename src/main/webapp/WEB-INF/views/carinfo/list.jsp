@@ -2,13 +2,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="util" uri="/ELFunctions" %>
+
     <!DOCTYPE html>
-     <html lang="en" xmlns:th="http://www.thymeleaf.org">
+     <html lang="en">
 
     <head>
       <title>상품메인페이지</title>
       <meta charset="utf-8">
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
       <script type="text/javascript">
 
         function del(carnumber) {
@@ -24,27 +26,34 @@
           windowObjectReference = window.open("./create", "mozillaTab", windowFeatures);
         }
 
+        // function update() {
+        //                   let windowObjectReference;
+        //                   let windowFeatures = "left=100,top=100,width=320,height=900, width=640";
+        //                   windowObjectReference = window.open("./update/${dto.carnumber}", "mozillaTab", windowFeatures);
+        //                 }
+
       </script>
       <style>
         #row {
           display: flex;
           justify-content: center;
-
         }
-
         .search {
           display: flex;
           justify-content: center;
           margin-bottom: 10px;
           margin-top: 10px;
         }
-
         .carlist {
           margin-left: 45%;
         }
         .col-sm-3 {
           justify-content: center;
           margin: 15px;
+        }
+        .check{
+          background-color: skyblue;
+          color: black;
         }
       </style>
     </head>
@@ -71,9 +80,10 @@
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Enter 검색어" name="word" value="${word}">
           </div>
-          <button type="submit" class="btn btn-default">검색</button>
+          <button type="submit" class="check">검색</button>
           <!-- car create 버튼 나중에 유저는 안보이게 하고 관리자만 볼 수 있게 수정 필요 -->
           <button onclick="createwindow()">Car Create</button>
+          
           </form>
 
         </div>
@@ -100,9 +110,10 @@
 
                     <!-- 나중에 수정/삭제는 유저한테 안보이게 처리 해야함 -->
                   </p><button>
-                  <a href="./update/${dto.carnumber }">Car Update
+                  <a href="./update/${dto.carnumber}">Car Update
                     <span class="glyphicon glyphicon-edit"></span>
                   </a></button>
+
 
                   <button>
                   <a href="javascript:del('${dto.carnumber}')">Car Delete

@@ -4,6 +4,8 @@
 <head>
   <title>이미지 수정</title>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <style>
     .imageup{
       display: flex;
@@ -11,17 +13,19 @@
     }
     .one{
       margin-right: 20px;
+      margin-top : 20px;
     }
     .oldfile{
       display: flex;
     justify-content: center;
       margin: 10px;
+      margin-left : 165px;
 
     }
     .fileMF{
       display: flex;
     justify-content: center;
-    margin-right: 50px;
+    margin-right:120px;
     }
     .filech{
       margin-left: 20px;
@@ -29,7 +33,7 @@
     .button{
       display: flex;
     justify-content: center;
-    margin-right: 130px;
+    margin-left : 218px;
     }
   </style>
 </head>

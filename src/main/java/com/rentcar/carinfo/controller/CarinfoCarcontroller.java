@@ -1,13 +1,12 @@
 package com.rentcar.carinfo.controller;
 
-<<<<<<< HEAD
+
 
 import com.rentcar.carinfo.service.CaroptionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-=======
->>>>>>> bb728cb6b5518ad3d6c964f44446376ccd93fa57
+
 import com.rentcar.carinfo.model.CarinfoDTO;
 import com.rentcar.carinfo.model.CaroptionDTO;
 import com.rentcar.carinfo.service.CarinfoService;
@@ -105,17 +104,19 @@ public class CarinfoCarcontroller {
     }
 
     @PostMapping("/create")
-    public String crate(CarinfoDTO dto, HttpServletRequest request)throws IOException{
+    public String crate(CarinfoDTO dto, CaroptionDTO cdto, HttpServletRequest request)throws IOException{
         String upDir = UploadCon.getUploadDir();
         String fname = Utility.saveFileSpring(dto.getFilenameMF(), upDir);
         int size = (int)dto.getFilenameMF().getSize();
+
         if(size > 0){
             dto.setCarimage(fname);
         }else{
             dto.setCarimage("default.jpg");
         }
-        log.info("CarinfoDTO:" + dto);
-        if(service.create(dto) > 0){
+        log.info("dto:" + dto);
+        log.info("cdto" + cdto);
+        if(service.create(dto) > 0 && cservice.create(cdto) > 0){
             return "redirect:./list";
         }else{
             return "error";
