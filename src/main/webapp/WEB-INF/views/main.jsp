@@ -15,7 +15,6 @@
 
     <!-- <body class="">
         <div id="container" class="">
-
             <div id="quickBtnDiv">
                 <ul class="quickBtnUl">
                     <li class="quickBtn"><a href="#" aria-selected="" aria-controls=""><img
@@ -28,7 +27,6 @@
                                 src="./images/icons/reserv.svg" alt=""></a></li>
                 </ul>
             </div>
-
             <div class="reservePanel">
                 <br><br>
                 <h1>차량 예약</h1>
@@ -41,7 +39,6 @@
                             <p></p>
                             <input type="date" id="choosedate">
                         </li>
-
                         <li class="reserveOptionLi">
                             <p>
                             <h3>반납일</h3>
@@ -49,49 +46,38 @@
                             <p></p>
                             <input type="date" id="choosedate">
                         </li>
-
                         <li class="reserveOptionLi">
                             <p>
                             <h3>차종</h3>
                             </p>
                             <p></p>
                             <select class="selectCar">
-
                                 <option value="" selected>차량을 선택해 주세요</option>
                                 <option value="">테슬라 모델Y</option>
                                 <option value="">테슬라 모델X</option>
                                 <option value="">포르쉐 타이칸</option>
                                 <option value="">현대 IONIQ6</option>
-
                             </select>
                         </li>
-
                         <li style="vertical-align: middle" class="reserveOptionLi">
                             <p></p>
                             <button type="submit" class="reserveBtn" onclick=""">검색</button>
                                     <p></p>
                                 </li>
-
                             </ul>
                     </div>
 <br><br>
                 </div>
-
 <br><br><br>
 <div class=" find" style="display: none">
                                 <h1>충전소 찾기</h1>
                                 <div class="containerFindDiv">
-
                                     <div>
                                         <input type="text" class="findInput">&nbsp;&nbsp;&nbsp;&nbsp;<button
                                             type="submit" class="findBtn">검색</button>
                                     </div>
-
                                 </div>
                 </div>
-
-
-
                 <div class="find2" style="display: none">
                     <h1>주변 편의시설 찾기</h1>
                     <div class="containerFindDiv">
@@ -99,11 +85,9 @@
                             <input type="text" class="findInput">&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit"
                                 class="findBtn">검색</button>
                         </div>
-
                     </div>
                 </div>
                 <br><br><br>
-
                 <div id="slide_warp">
                     <div id="slide_group_view">
                         <div id="slide_group">
@@ -120,11 +104,9 @@
                 </div>
                 <br><br><br>
                 <div class="mainCont">
-
                     <div class="mainCont">
                         <h3 class="titDep2">서비스 이용안내</h3>
                         <ul class="quickBtnUl">
-
                             <li class="underQuickBtn"><a href=""><span><img src="./images/icons/ecar.svg"
                                             alt=""></span><br>차량예약안내</a></li>
                             <li class="underQuickBtn"><a href=""><span><img src="./images/icons/key.svg"
@@ -134,11 +116,9 @@
                             <li class="underQuickBtn"><a href=""><span><img src="./images/icons/info.svg"
                                             alt=""></span><br>취소/환불 안내</a></li>
                         </ul>
-
                     </div>
                 </div>
             </div>
-
         </div>
     </body> -->
 
