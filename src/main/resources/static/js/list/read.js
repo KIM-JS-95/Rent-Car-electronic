@@ -47,11 +47,14 @@ fetch(`/review/${rnum}`,{method: 'delete'})
                .catch(console.log);
         		});
 
-	$("#addreviewBtn").click(function(){
 
 
-	 var content = document.querySelector("#content").value;
 
+	$("#addreviewBtn").click(function(){// review create
+
+
+	 var content = document.querySelector("#review11").value;
+           	console.log(content);
   	var data = {
 		"content" : content,
 		"listno" : listno

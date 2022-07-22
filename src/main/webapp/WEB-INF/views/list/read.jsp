@@ -11,6 +11,7 @@
       <title>JS Bin</title>
        <link rel="stylesheet" type="text/css" href="/css/list2.css"/>
        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
 <style>
   .container {
     width: 900px;
@@ -21,7 +22,7 @@
   </style>
     </head>
     <body>
-<form class="form-horizontal">
+
 <input type="hidden" name="listno" value="${dto.listno}">
       <div class="container">
         <div id="div1">
@@ -32,7 +33,7 @@
              <div style="display: inline-block; margin: 0 5px;  float: right;">
             <button id='btn' class='btn' style="width:10; height:5;" >글 삭제</button>
              </div>
-</form>
+
 
           </table>
         </div>
@@ -108,11 +109,11 @@
 
              <table  style=" width:930px; height:150px; margin:0 auto;">
              <th>
-                <textarea id="content" name="content" class="content" rows="8" tabindex="99" placeholder="명예훼손,개인정보 유출,분쟁,허위사실 유포 등의 글은 이용약관에 의해 제재는
+                <textarea id="review11" name="content" class="content" rows="8" tabindex="99" placeholder="명예훼손,개인정보 유출,분쟁,허위사실 유포 등의 글은 이용약관에 의해 제재는
 법률에 의해 처벌 받을 수 있습니다. 건전한 커뮤니티를 위해 자제를 당부 드립니다." style="width:830px; height:70px;"></textarea>
              </th>
              <th>
-             <button id='addreviewBtn' class='btn btn-primary btn-xs pull-right' type="submit" style="width:100px; height:85px;" >등 록</button>
+             <button id='addreviewBtn' class='btn btn-primary btn-xs pull-right' type="button" style="width:100px; height:85px;" >등 록</button>
 
              </th>
              </table>
@@ -137,9 +138,8 @@
 
 
 
-   <script src="/js/list/pro2.js" defer></script>
+   <script src="/js/list/read.js" defer></script>
 
-    <script src="/js/list/con2.js" defer></script>
 
     </body>
     </html>

@@ -51,14 +51,11 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-websocket'
     implementation 'com.googlecode.json-simple:json-simple:1.1.1'
 
-    implementation files('libs/CKFinder-2.6.3.jar')
+
+    compileOnly 'com.google.code.gson:gson:2.9.0'
+
 
 }
-dependencies {
-    compileOnly "com.google.code.gson:gson:2.8.6"
-}
-
-
 
 
 tasks.named('test') {

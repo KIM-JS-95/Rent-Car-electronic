@@ -11,12 +11,20 @@
     position: relative;
   }
   </style>
+      <!-- include libraries(jQuery, bootstrap) -->
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+      <!-- include summernote css/js -->
+      <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 </head>
 <body> 
 
 <div class="container">
 <h1 class="col-sm-offset-2 col-sm-10">글 수정</h1>
-<form class="form-horizontal" 
+<form class="form-horizontal"
       action="./update"
       method="post"
       >
@@ -39,7 +47,7 @@
   <div class="form-group">
     <label class="control-label col-sm-2" for="content">내용</label>
     <div class="col-sm-8">
-    <textarea rows="12" cols="7" id="content" name="content" 
+    <textarea rows="12" cols="7" id="summernote" name="content"
     class="form-control">${dto.content}</textarea>
     </div>
   </div>

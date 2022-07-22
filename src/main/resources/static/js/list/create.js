@@ -1,7 +1,4 @@
-
-
-$(function(){
-$(document).ready(function () {
+ $(document).ready(function () {
   var fontList = ['맑은 고딕','굴림','돋움','바탕','궁서','NotoSansKR','Arial','Courier New','Verdana','Tahoma','Times New Roamn'];
         $('#summernote').summernote({
           height: 150,                 // 에디터 높이
@@ -60,4 +57,40 @@ $(document).ready(function () {
           });
           }
 
-});
+
+             });
+//          function uploadResource(file, editor) {
+//            const formData = new FormData();
+//            formData.append("file", file);
+//             console.log("formData ="+formData);
+//            fetch("/uploadSummernoteImageFile", {
+//              method: "POST",
+//              body: formData
+//            })
+//              .then(result => result.json())
+//              .then(data => document.getElementById("img").setAttribute("src", data.path))
+//              .catch(error => console.log(`error => ${error}`));
+//          }
+
+      function checkIn(f) {
+        if (f.wname.value == "") {
+          alert("글쓴이를 입력하세요");
+          f.wname.focus()
+          return false;
+        }
+        if (f.title.value == "") {
+          alert("제목를 입력하세요");
+          f.title.focus();
+          return false;
+        }
+        if (CKEDITOR.instances['content'].getData() == '') {
+          window.alert('내용을 입력해 주세요.');
+          CKEDITOR.instances['content'].focus();
+          return false;
+        }
+        if (f.passwd.value == "") {
+          alert("패스워드를 입력하세요");
+          f.passwd.focus();
+          return false;
+        }
+      }
