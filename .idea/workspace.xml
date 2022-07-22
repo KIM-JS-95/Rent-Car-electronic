@@ -5,10 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4db05fe1-6ed5-43a9-9b60-e27f1c05d62b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/kakao/Model/StoreDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/facilities.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/map/facilities.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/font/BMJUA_ttf.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/map/addtocoor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/map/facilities.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/utility/Ncloud/AwsS3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/utility/Ncloud/AwsS3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/utility/Ncloud/service/AwsS3Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/utility/Ncloud/service/AwsS3Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/kakao/Model/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/kakao/Model/Store.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/kakao/controller/Kakaocontroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/kakao/controller/Kakaocontroller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/kakao/controller/Mapcontroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/kakao/controller/Mapcontroller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/kakao/mapper/StoreMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/kakao/mapper/StoreMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/kakao/service/StoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/kakao/service/StoreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/kakao/service/StoreServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/kakao/service/StoreServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/Facilities.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/Facilities.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/map/map.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/map/map.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/map/map_layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/map/map_layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tiles/map.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tiles/map.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tiles/popup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tiles/Non_top.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/map/map.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/map/map.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/support/supporter/supporter_create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/support/supporter/supporter_create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/template/top.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/template/top.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,6 +287,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
