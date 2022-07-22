@@ -73,7 +73,7 @@
                   <span class="item__text"> <a id="grade">${str}</span>
                 </li>
                 <div class="dropdown-content">
-                  <a href="/user/login">Log In Page</a>
+                  <a href="/user/login">Login</a>
                   <a href="#">My Page</a>
                   <a href="#">Link 3</a>
                 </div>
@@ -89,6 +89,7 @@
                   <a href="#">차량관리</a>
                   <a href="#">유저관리</a>
                   <a href="#">Link 3</a>
+                  <a href="/user/logout">Logout</a>
                 </div>
               </div>
             </c:when>
@@ -99,9 +100,9 @@
                 <li class="navigation__item"><span class="item__icon"><span class="icon__emoji">🙋‍♂️</span></span><span
                     class="item__text">${str}</span></li>
                 <div class="dropdown-content">
-                  <a href="/user/login">Log In Page</a>
                   <a href="#">My Page</a>
                   <a href="#">Link 3</a>
+                  <a href="/user/logout">Logout</a>
                 </div>
               </div>
             </c:otherwise>
