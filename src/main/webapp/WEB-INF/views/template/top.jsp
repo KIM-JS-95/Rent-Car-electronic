@@ -58,11 +58,11 @@
 
           <div class="dropdown">
             <li class="navigation__item"><span class="item__icon"><span class="icon__emoji">🗺️</span></span><span
-                class="item__text">Map</span></li>
+                class="item__text">지원</span></li>
             <div class="dropdown-content">
               <a href="/map/map">충전소 조회</a>
               <a href="/request/create">지원 요청</a>
-              <a href="#">Link 3</a>
+              <a href="/map/facilities/create">가게 등록</a>
             </div>
           </div>
 
