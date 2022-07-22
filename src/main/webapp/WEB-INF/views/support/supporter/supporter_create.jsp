@@ -79,7 +79,7 @@
             </div>
 
             <div class="form second">
-                <div class="details address">
+                <div class="vehicle">
                     <span class="title">Register Details</span>
 
                     <div class="fields" id="register">

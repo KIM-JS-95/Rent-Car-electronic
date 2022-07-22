@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 public class CaroptionController {
 
     @Autowired
-    @Qualifier("com.rentcar.carinfo.service.CaroptionServiceImpl")
+    @Qualifier(("com.rentcar.carinfo.service.CaroptionServiceImpl"))
     private CaroptionService service;
 
 }

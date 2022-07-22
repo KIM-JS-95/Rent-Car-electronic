@@ -33,7 +33,7 @@
       </header>
 
       <nav class="navigaiton">
-        <ul class="navigation__list" style="z-index: 1;">
+        <ul class="navigation__list">
 
           <div class="dropdown">
             <li class="navigation__item"><span class="item__icon"><span class="icon__emoji">🌇</span></span><span
@@ -49,30 +49,28 @@
             <li class="navigation__item"><span class="item__icon"><span class="icon__emoji">🚖</span></span><span
                 class="item__text">Rent</span></li>
             <div class="dropdown-content">
-              <a href="/carinfo/list">차량 리스트(유저)</a>
+              <a href="#">차량 리스트</a>
               <a href="#">차량 예약</a>
               <a href="#">예약 현황</a>
-              <a href="/carinfo/list">차량리스트(관리자)</a>
             </div>
           </div>
 
           <div class="dropdown">
             <li class="navigation__item"><span class="item__icon"><span class="icon__emoji">🗺️</span></span><span
-                class="item__text">지원</span></li>
+                class="item__text">Map</span></li>
             <div class="dropdown-content">
-              <a href="/map/map">충전소 조회</a>
-              <a href="/request/create">지원 요청</a>
-              <a href="/map/facilities/create">가게 등록</a>
+              <a href="#">충전소 조회</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
             </div>
           </div>
 
           <c:choose>
 
-            <c:when test="${empty sessionScope.id }">
+          <c:when test="${empty sessionScope.id }">
               <div class="dropdown">
                 <li class="navigation__item"><span class="item__icon"><span class="icon__emoji">🙋‍♂️</span></span>
-                  <span class="item__text"> <a id="grade">${str}</span>
-                </li>
+                <span class="item__text"> <a id="grade">${str}</span></li>
                 <div class="dropdown-content">
                   <a href="#">Log In Page</a>
                   <a href="#">My Page</a>
@@ -105,11 +103,18 @@
                   <a href="#">Link 3</a>
                 </div>
               </div>
-            </c:otherwise>
+             </c:otherwise>
           </c:choose>
 
+
+
+
         </ul>
+
+
+
       </nav>
+
     </body>
 
     </html>
