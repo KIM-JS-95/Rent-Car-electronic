@@ -5,9 +5,7 @@
   <title>회원가입</title>
   <meta charset="utf-8">  
   
-  	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="/css/login.css">
   
@@ -23,8 +21,36 @@
 	 color: #2F9D27;
 	}
 </style>
-
   <script type="text/javascript">
+  
+  function ocrtest(formData){
+	  
+	  return fetch(`/license`,{ 
+		    method: 'POST',
+		    body: formData
+		  })
+	  		.then(response => response.json())
+	  		.catch(console.log);
+  }
+  
+  function licInfo(fname){
+	  const formData = new FormData();
+	  const fileField = document.querySelector('input[type="file"]');
+
+	  formData.append('fname', fileField.files[0]);
+	  
+	  ocrtest(formData)
+	  .then(result => {
+		  
+		  document.querySelector('#license').value = result.lic;
+		  document.querySelector('#jumin').value = result.jumin;
+		  
+	  }
+	  );
+
+  }
+  
+  
   function idCheck(id){
 	  if(id==''){
 		  alert("아이디를 입력하세요");
@@ -62,7 +88,8 @@
         $("#idcheck_btn").click(function(){ idcheck_clicked++ });
         $("#submit").click(function(){
             if (idcheck_clicked <= 0){
-                alert('계산 버튼을 먼저 클릭 하세요!'); return false;
+                alert('중복확인 버튼을 먼저 클릭 하세요!'); 
+                return false;
             }
         });
     });
@@ -190,10 +217,13 @@ function inCheck(f){
         action="create"
         method="post"
         name = 'frm'
-        enctype="multipart/form-data"
         onsubmit="return inCheck(this)"
         >
-
+        
+<!--  주민번호 ocr한 값 -->
+    <input type="hidden" name="jumin" id="jumin" value="">
+ 
+    
     <div class="form-group">
       <label class="control-label col-sm-2" for="id"><span id="need">*</span>아이디</label>
       <div class="col-sm-3">          
@@ -223,7 +253,10 @@ function inCheck(f){
       <div class="col-sm-4">
         <input type="file" class="form-control" id="fnameMF" 
         name="fnameMF" accept=".jpg,.gif,.png">
+        <label>* 1MB이하의 파일만 업로드 해주세요. </label>
       </div>
+        <input type="text" class="form-control" id="jumin" name="jumin"> 주민등록 출력 확인
+      <button type="button" class="btn btn-primary-outline" onclick="licInfo(document.frm.fnameMF.value)">운전면허증 확인</button>
     </div>
         <div class="form-group">
       <label class="control-label col-sm-2" for="license"><span id="need">*</span>운전면허번호</label>
