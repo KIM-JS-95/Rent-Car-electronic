@@ -5,6 +5,7 @@ mapContainer = document.getElementById('map'), // 지도를 표시할 div 입니
 rvContainer = document.getElementById('roadview'); //로드뷰를 표시할 div 입니다
 
 var map, dong_dong, rvClient, rv;
+
 // Map api 호출 및 생성
 function mapcreate(lat, lng) {
 // 지도를 표시할 div
@@ -126,8 +127,6 @@ var lng = position.coords.longitude;
 // Map create
 map = mapcreate(lat, lng);
 
-facilitie(lat, lng);
-
 //add(map);
 
 var mapCenter = new kakao.maps.LatLng(lat, lng);
@@ -206,15 +205,22 @@ var url = "/kakao_url/" + lat + "/" + lng
 const response = await fetch(url);
 const data = await response.json();
 
-itemlist = []
-//len = 0;
-data.forEach(obj => {
-    itemlist.push(obj)
-});
+itemlist = [];
+var i=0;
+min_distance = Number.MAX_VALUE;
+for(i=0; i<15; i++){
+    itemlist.push(data[i]);
+}
 
-var locPosition = new kakao.maps.LatLng(lat, lng); // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
-//message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
+console.log(data[15].lat);
 
+facilitie(data[15].lng, data[15].lat);
+
+var locPosition = new kakao.maps.LatLng(lat, lng);
+//message = '<div style="padding:5px;">여기에 계신가요?!</div>';
+
+
+// 현재 사용자 위치
 var marker = new kakao.maps.Marker({
     map: map, // 마커를 표시할 지도
     position: locPosition, // 마커를 표시할 위치
@@ -232,6 +238,8 @@ for (var i = 0; i < positions.length; i++) {
     var imageSize = new kakao.maps.Size(24, 35);
     // 마커 이미지를 생성합니다
     var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+
 
     // 마커를 생성합니다
     var marker = new kakao.maps.Marker({
@@ -302,7 +310,7 @@ for (let i = 0; i < itemlist.length; i++) {
 </div>
 </div>`,
 
-        iwRemoveable = true;
+    iwRemoveable = true;
     position = {
         content: iwContent,
         removable: iwRemoveable,
@@ -328,11 +336,11 @@ var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
 
 var url = "/facilities/" + lat + "/" + lng
 
-console.log(url);
-
 // list 로 반환 받기 List<store>
 var facilities = await fetch(url);
 const data = await facilities.json();
+
+console.log(data);
 
 itemlist = []
 len = 0;

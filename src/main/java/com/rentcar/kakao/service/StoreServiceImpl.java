@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class StoreServiceImpl implements StoreService{
@@ -16,9 +17,9 @@ public class StoreServiceImpl implements StoreService{
     private StoreMapper storeMapper;
 
     // TODO: 사용자 기준 2km 이내의 편의 시설 을 계산하려면 만하탄 알고리즘을 사용해야할까?
-    public List<Store> stores(String lat,String lng){
+    public List<Store> stores(Map<String, String> map){
 
-        return storeMapper.stores(lat,lng);
+        return storeMapper.stores(map);
     }
 
     @Override

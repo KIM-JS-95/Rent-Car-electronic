@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class Kakaocontroller {
@@ -49,13 +51,16 @@ public class Kakaocontroller {
     // todo: 사용자의 위치 중심으로 주변 편의시설 검색
     @GetMapping("/facilities/{lat}/{lng}")
     public List<Store> facilities(@PathVariable("lat") String lat,
-                                  @PathVariable("lng") String lng){
-
-        return storeService.stores(lat,lng);
+                                  @PathVariable("lng") String lng) {
+        Map<String, String> map = new HashMap<>();
+        map.put("lat", lat);
+        map.put("lng", lng);
+        System.out.println("!!!!!!!!!!!!" + storeService.stores(map));
+        return storeService.stores(map);
     }
 
     @PostMapping("/facilities/create")
-    public Boolean create_facilities(@RequestBody Store store){
+    public Boolean create_facilities(@RequestBody Store store) {
 
         return storeService.create(store);
     }
