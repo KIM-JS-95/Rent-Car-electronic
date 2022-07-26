@@ -1,8 +1,8 @@
 version: '3.0'
 services:
-  ebkm1:
+  evrent1:
     container_name: EV_Rent1
-    build: "ebkm:latest"
+    build: "isosim:latest"
     ports:
       - "9090:9090"
     environment:
@@ -11,10 +11,9 @@ services:
       - .:/usr/src
   #    links:
   #      - logspout
-
-  ebkm2:
+  evrent2:
     container_name: EV_Rent2
-    build: "ebkm:latest"
+    build: "isosim:latest"
     ports:
       - "9091:9090"
     environment:
