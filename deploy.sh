@@ -36,7 +36,7 @@ docker build -t isosim:latest .
 echo "DockerFile clear !!!"
 
 echo "Docker compose up start ... "
-docker-compose up -d
+docker compose up -d
 
 
 echo "image push to docker hub"
