@@ -11,7 +11,7 @@
         cos( radians(x)) * cos(radians(y) - radians(#{lng})) + sin(radians(#{lat})) * sin(radians(x))))
         AS distance , x, y
         FROM facilities
-        having distance &lt; 200;
+        having distance &lt; 0.3;
     </select>
 
     <insert id="create" parameterType="com.rentcar.kakao.Model.Store">

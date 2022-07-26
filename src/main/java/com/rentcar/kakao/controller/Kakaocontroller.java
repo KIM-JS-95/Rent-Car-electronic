@@ -5,6 +5,7 @@ import com.rentcar.kakao.Model.Store;
 import com.rentcar.kakao.Model.StoreDTO;
 import com.rentcar.kakao.service.Kakaoservice;
 import com.rentcar.kakao.service.StoreServiceImpl;
+import com.rentcar.kakao.service.Timer;
 import net.minidev.json.JSONArray;
 import net.minidev.json.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,14 +50,20 @@ public class Kakaocontroller {
 
 
     // todo: 사용자의 위치 중심으로 주변 편의시설 검색
+    //  실행 시간 : 0.104초 (mysql 사용시)
     @GetMapping("/facilities/{lat}/{lng}")
     public List<Store> facilities(@PathVariable("lat") String lat,
                                   @PathVariable("lng") String lng) {
+        Timer timer = new Timer();
+        long start = timer.start();
         Map<String, String> map = new HashMap<>();
         map.put("lat", lat);
         map.put("lng", lng);
-        System.out.println("!!!!!!!!!!!!" + storeService.stores(map));
-        return storeService.stores(map);
+        List<Store> answer = storeService.stores(map);
+        long end = timer.end();
+
+        timer.showtime(start,end);
+        return answer;
     }
 
     @PostMapping("/facilities/create")

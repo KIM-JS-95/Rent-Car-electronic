@@ -3,8 +3,8 @@ container = document.getElementById('container'), // 지도와 로드뷰를 감�
 mapWrapper = document.getElementById('mapWrapper'), // 지도를 감싸고 있는 div 입니다
 mapContainer = document.getElementById('map'), // 지도를 표시할 div 입니다 
 rvContainer = document.getElementById('roadview'); //로드뷰를 표시할 div 입니다
-
 var map, dong_dong, rvClient, rv;
+var min_lat, min_lng;
 
 // Map api 호출 및 생성
 function mapcreate(lat, lng) {
@@ -212,7 +212,6 @@ for(i=0; i<15; i++){
     itemlist.push(data[i]);
 }
 
-console.log(data[15].lat);
 
 facilitie(data[15].lng, data[15].lat);
 
@@ -340,8 +339,6 @@ var url = "/facilities/" + lat + "/" + lng
 var facilities = await fetch(url);
 const data = await facilities.json();
 
-console.log(data);
-
 itemlist = []
 len = 0;
 data.forEach(obj => {
@@ -375,4 +372,4 @@ navigator.geolocation.getCurrentPosition(fetchData, onGeoError);
 
 init();
 //5분 간격으로 메시지를 보여줌
-let timerId = setInterval(() => facilitie(), 5 * 36 * 1000);
+let timerId = setInterval(() => init(), 5 * 36 * 1000);

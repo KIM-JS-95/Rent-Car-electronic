@@ -1,0 +1,31 @@
+version: '3.0'
+services:
+  ebkm1:
+    container_name: EV_Rent1
+    build: "ebkm:latest"
+    ports:
+      - "9090:9090"
+    environment:
+      ENV: DEV
+    volumes:
+      - .:/usr/src
+  #    links:
+  #      - logspout
+
+  ebkm2:
+    container_name: EV_Rent2
+    build: "ebkm:latest"
+    ports:
+      - "9091:9090"
+    environment:
+      ENV: DEV
+    volumes:
+      - .:/usr/src
+  #    links:
+  #      - logspout
+
+  nginx:
+    container_name: nginx
+    image: "nginx:test"
+    ports:
+      - "80:80"
