@@ -19,7 +19,7 @@ services:
 
   evrent2:
     container_name: evrent2
-    image: .
+    build: .
     ports:
       - "9091:9090"
     environment:
