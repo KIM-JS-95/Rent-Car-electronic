@@ -10,7 +10,8 @@ echo "Container stop and remove";
 
 # shellcheck disable=SC1007
 container_id=$(docker ps -aqf "name= ${container_name}");
-
+echo "docker logins try"
+docker login
 echo "Docker : container_id = ${container_id}";
 
 echo "Container stop"
