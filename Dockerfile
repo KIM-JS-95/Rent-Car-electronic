@@ -7,9 +7,9 @@ COPY settings.gradle .
 COPY src src
 
 RUN chmod +x ./gradlew
-RUN ./gradlew bootJar
+RUN ./gradlew bootWar
 
 FROM openjdk:11
 
-COPY --from=builder build/libs/*.jar app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+COPY --from=builder build/libs/*.war /usr/local/tomcat/webapps/app.war
+ENTRYPOINT ["java","-war","/usr/local/tomcat/webapps/app.war"]

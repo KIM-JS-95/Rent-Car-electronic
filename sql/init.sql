@@ -1,22 +1,13 @@
--- MySQL Workbench Forward Engineering
+
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
-
--- -----------------------------------------------------
--- Schema rent_car
--- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema rent_car
--- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `rent_car` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
 USE `rent_car` ;
--- -----------------------------------------------------
--- Table `mydb`.`store`
--- -----------------------------------------------------
+
+
 CREATE TABLE IF NOT EXISTS `rent_car`.`store` (
   `no` VARCHAR(45) NOT NULL,
   `store_name` VARCHAR(45) NOT NULL,
@@ -29,9 +20,7 @@ CREATE TABLE IF NOT EXISTS `rent_car`.`store` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `rent_car`.`user`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `rent_car`.`user` (
   `id` VARCHAR(10) NOT NULL,
   `passwd` VARCHAR(24) NOT NULL,
@@ -51,16 +40,14 @@ DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
 
--- -----------------------------------------------------
--- Table `rent_car`.`carinfo`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `rent_car`.`carinfo` (
   `carnumber` VARCHAR(8) NOT NULL,
   `carname` VARCHAR(100) NOT NULL,
   `carimage` VARCHAR(100) NULL DEFAULT NULL,
   `carseate` VARCHAR(4) NOT NULL,
   `carpoint` VARCHAR(8) NOT NULL,
-  `rdate` DATE NOT NULL,
+  `caryearmodel`	varchar(5) NOT NULL,
   `category` VARCHAR(40) NOT NULL,
   PRIMARY KEY (`carnumber`))
 ENGINE = InnoDB
@@ -68,9 +55,7 @@ DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
 
--- -----------------------------------------------------
--- Table `rent_car`.`booking`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `rent_car`.`booking` (
   `booking_no` INT NOT NULL AUTO_INCREMENT,
   `rent_day` DATE NOT NULL,
@@ -95,36 +80,31 @@ DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
 
--- -----------------------------------------------------
--- Table `rent_car`.`caroption`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `rent_car`.`caroption` (
-  `bluetooth` CHAR(4) NULL DEFAULT NULL,
-  `rear_sensor` CHAR(4) NULL DEFAULT NULL,
-  `rear_camera` CHAR(5) NULL DEFAULT NULL,
-  `black_box` CHAR(4) NULL DEFAULT NULL,
-  `heated_seat` CHAR(4) NULL DEFAULT NULL,
-  `heated_handle` CHAR(4) NULL DEFAULT NULL,
-  `ventilated_seat` CHAR(4) NULL DEFAULT NULL,
-  `navigation` CHAR(5) NULL DEFAULT NULL,
-  `non_smoking_vehicle` CHAR(4) NULL DEFAULT NULL,
-  `smart_key` CHAR(4) NULL DEFAULT NULL,
-  `sunroof` CHAR(3) NULL DEFAULT NULL,
-  `rear_warning_light` CHAR(5) NULL DEFAULT NULL,
-  `Lane_Departure_Prevention` CHAR(6) NULL DEFAULT NULL,
-  `carnumber` VARCHAR(8) NULL DEFAULT NULL,
-  INDEX `carnumber` (`carnumber` ASC) VISIBLE,
-  CONSTRAINT `caroption_ibfk_1`
-    FOREIGN KEY (`carnumber`)
-    REFERENCES `rent_car`.`carinfo` (`carnumber`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+`bluetooth` varchar(4), -- 블루투스
+`rear_sensor` varchar(4), -- 후방센서
+`rear_camera` varchar(5), -- 후방카메라
+`black_box` varchar(4), -- 블랙박스
+`heated_seat` varchar(4),  -- 열선시트
+`heated_handle` varchar(4), -- 열선핸들
+`ventilated_seat` varchar(4), -- 통풍시트
+`navigation` varchar(5), -- 네비게이션
+`non_smoking_vehicle` varchar(4), -- 금연차량
+`smart_key` varchar(4), -- 스마트키
+`sunroof` varchar(3), -- 선루프
+`rear_warning_light` varchar(5), -- 후방경고등
+`Lane_Departure_Prevention` varchar(6), -- 차선방지이탈
+`carnumber` VARCHAR(8) not null,
+ CONSTRAINT fk_caroption_carinfo1
+    FOREIGN KEY (carnumber)
+        REFERENCES `rent_car`.`carinfo` (`carnumber`)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
+);
 
 
--- -----------------------------------------------------
--- Table `rent_car`.`supporter`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `rent_car`.`supporter` (
   `carnum` VARCHAR(10) NOT NULL,
   `registed` DATE NOT NULL,
@@ -142,9 +122,7 @@ DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
 
--- -----------------------------------------------------
--- Table `rent_car`.`help`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `rent_car`.`help` (
   `no` INT NOT NULL AUTO_INCREMENT,
   `carinfo_carnum` VARCHAR(45) NOT NULL,
@@ -173,9 +151,7 @@ DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
 
--- -----------------------------------------------------
--- Table `rent_car`.`list`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `rent_car`.`list` (
   `listno` INT NOT NULL AUTO_INCREMENT COMMENT '글 번호',
   `title` VARCHAR(300) NOT NULL COMMENT '제목',
@@ -189,9 +165,7 @@ DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
 
--- -----------------------------------------------------
--- Table `rent_car`.`notice`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `rent_car`.`notice` (
   `noticeno` INT NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(300) NOT NULL,
@@ -207,9 +181,7 @@ DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
 
--- -----------------------------------------------------
--- Table `rent_car`.`review`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `rent_car`.`review` (
   `rnum` INT NOT NULL AUTO_INCREMENT,
   `content` VARCHAR(500) NOT NULL,
@@ -226,9 +198,6 @@ DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
 
--- -----------------------------------------------------
--- Table `rent_car`.`support_log`
--- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `rent_car`.`support_log` (
   `no` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL DEFAULT NULL,

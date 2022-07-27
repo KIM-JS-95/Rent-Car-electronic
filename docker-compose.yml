@@ -1,30 +1,54 @@
 version: '3.0'
 services:
   evrent1:
-    container_name: EV_Rent1
-    build: "isosim:latest"
+    container_name: evrent1
+    image: "baugh248730/isosim:latest"
     ports:
       - "9090:9090"
     environment:
-      ENV: DEV
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Wotjd@487
+      MYSQL_PORT: 3306
     volumes:
       - .:/usr/src
-  #    links:
-  #      - logspout
+    restart:
+      always
+    depends_on:
+      - mysql
+
   evrent2:
-    container_name: EV_Rent2
-    build: "isosim:latest"
+    container_name: evrent2
+    image: "baugh248730/isosim:latest"
     ports:
       - "9091:9090"
     environment:
-      ENV: DEV
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Wotjd@487
+      MYSQL_PORT: 3306
     volumes:
       - .:/usr/src
-  #    links:
-  #      - logspout
+    restart:
+      always
+    depends_on:
+      - mysql
 
   nginx:
     container_name: nginx
     image: "nginx:test"
     ports:
       - "80:80"
+    depends_on:
+      - evrent2
+
+  mysql:
+    container_name: mysql
+    image: mysql
+    environment:
+      MYSQL_DATABASE: rent_car
+      MYSQL_ROOT_PASSWORD: Wotjd@487
+    volumes:
+      - "./sql/init.sql:/docker-entrypoint-initdb.d/init.sql"
+    ports:
+      - 3307:3306
