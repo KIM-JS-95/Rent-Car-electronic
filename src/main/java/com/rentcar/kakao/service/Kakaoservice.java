@@ -61,6 +61,8 @@ public class Kakaoservice {
         JSONObject obj = (JSONObject) parser.parse(sb.toString());
         JSONArray array = (JSONArray) obj.get("documents");
 
+        System.out.println(array);
+
         List<Map<String, Object>> map = JsonUtil.getListMapFromJsonArray(array);
         int min_value = Integer.MAX_VALUE;
         for (int i = 0; i < map.size(); i++) {
@@ -73,9 +75,10 @@ public class Kakaoservice {
 
 
         String strJson = "{"
-                + "lat: " + min_x + ","
-                + "lng: " + min_y + ""
+                + "lat:" + min_x + ","
+                + "lng:" + min_y
                 + "}";
+
         Object obj1 = parser.parse(strJson);
         JSONObject jsonObj = (JSONObject) obj1;
         array.appendElement(jsonObj);

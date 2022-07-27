@@ -22,8 +22,8 @@ docker rmi ${container_name}
 
 cd proxy
 echo "Run Nginx ..."
-docker build -t nginx:latest .
-docker push baugh248730/nginx
+#docker build -t nginx:test .
+
 
 echo "Change dir ... "
 cd ..
@@ -39,6 +39,6 @@ echo "Docker compose up start ... "
 docker-compose up -d
 
 
-echo "image push to docker hub"
-docker tag isosim baugh248730/isosim:latest
-docker push ${repository}
+#echo "image push to docker hub"
+#docker tag isosim baugh248730/isosim:latest
+#docker push ${repository}

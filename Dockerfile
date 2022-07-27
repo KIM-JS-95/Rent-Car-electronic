@@ -12,4 +12,4 @@ RUN ./gradlew bootWar
 FROM openjdk:11
 
 COPY --from=builder build/libs/*.war /usr/local/tomcat/webapps/app.war
-ENTRYPOINT ["java","-war","/usr/local/tomcat/webapps/app.war"]
+ENTRYPOINT ["java","-jar","/usr/local/tomcat/webapps/app.war"]

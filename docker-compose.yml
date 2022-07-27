@@ -36,7 +36,7 @@ services:
 
   nginx:
     container_name: nginx
-    image: "nginx:test"
+    build: ./proxy
     ports:
       - "80:80"
     depends_on:
