@@ -2,7 +2,7 @@ version: '3.0'
 services:
   evrent1:
     container_name: evrent1
-    image: "baugh248730/isosim:latest"
+    build: .
     ports:
       - "9090:9090"
     environment:
@@ -19,7 +19,7 @@ services:
 
   evrent2:
     container_name: evrent2
-    image: "baugh248730/isosim:latest"
+    image: .
     ports:
       - "9091:9090"
     environment:
