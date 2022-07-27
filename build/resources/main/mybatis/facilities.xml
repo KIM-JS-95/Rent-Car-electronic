@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.rentcar.kakao.mapper.StoreMapper">
+
+    <select id="stores" parameterType="Map" resultType="com.rentcar.kakao.Model.StoreDTO">
+        SELECT name, address_road,
+        ( 6371 * acos(cos( radians(#{lat}) ) *
+        cos( radians(x)) * cos(radians(y) - radians(#{lng})) + sin(radians(#{lat})) * sin(radians(x))))
+        AS distance , x, y
+        FROM facilities
+        having distance &lt; 0.3;
+    </select>
+
+    <insert id="create" parameterType="com.rentcar.kakao.Model.Store">
+
+        insert into facilities(name, address, address_road, phonenum, type, x, y)
+        values(#{name}, #{address}, #{address_road},#{phonenum}, #{type}, #{x}, #{y});
+    </insert>
+
+
+
+
+</mapper>

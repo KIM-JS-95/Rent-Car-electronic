@@ -9,7 +9,5 @@ COPY src src
 RUN chmod +x ./gradlew
 RUN ./gradlew bootWar
 
-FROM openjdk:11
-
-COPY --from=builder build/libs/*.war /usr/local/tomcat/webapps/app.war
-ENTRYPOINT ["java","-jar","/usr/local/tomcat/webapps/app.war"]
+COPY --from=builder build/libs/*.war /app.war
+ENTRYPOINT ["java","-jar","/app.war"]

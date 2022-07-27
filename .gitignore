@@ -1,11 +1,10 @@
-build/
+
 !gradle/wrapper/gradle-wrapper.jar
 !src/main/main/**/build/
 !**/src/test/**/build/
 
-<<<<<<< HEAD
 /src/main/resources/*.properties
-=======
+
 
 /src/main/resources/application.properties
 /src/main/resources/kakao.properties
