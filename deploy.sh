@@ -21,9 +21,9 @@ echo "Docker image remove"
 docker rmi ${container_name}
 
 cd proxy
-
 echo "Run Nginx ..."
-docker build -t nginx:test .
+docker build -t nginx:latest .
+docker push baugh248730/nginx
 
 echo "Change dir ... "
 cd ..
