@@ -44,11 +44,13 @@ services:
       - "./sql/init.sql:/docker-entrypoint-initdb.d/init.sql"
     ports:
       - 3307:3306
+
   nginx:
     container_name: nginx
     build: ./proxy
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d
       - ./certbot/conf:/etc/letsencrypt  #동일한 디렉토리를 마운트
@@ -66,6 +68,6 @@ services:
     volumes:
       - ./certbot/conf:/etc/letsencrypt    #nginx컨테이너에 certbot컨테이너 연결
       - ./certbot/www:/var/www/certbot
-    depends_on:
-      - nginx
     entrypoint : "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+      depends_on:
+        - nginx
