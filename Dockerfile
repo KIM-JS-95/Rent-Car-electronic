@@ -10,4 +10,5 @@ RUN chmod +x ./gradlew
 RUN ./gradlew bootWar
 
 COPY --from=builder build/libs/*.war app.war
-ENTRYPOINT ["java","-jar","-Dserver.port=9090","app.war"]
+# ENTRYPOINT ["java","-jar","-Dserver.port=9090","app.war"]
+ENTRYPOINT ["java","-jar","app.war"]

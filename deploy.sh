@@ -37,11 +37,9 @@ echo "DockerFile start... and"
 docker build -t isosim:latest .
 
 echo "DockerFile clear !!!"
-
-echo "Docker compose up start ... "
-docker-compose up -d
-
-
 echo "image push to docker hub"
 docker tag isosim baugh248730/isosim:latest
 docker push ${repository}
+
+echo "Docker compose up start ... "
+docker-compose up -d

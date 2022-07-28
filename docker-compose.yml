@@ -2,7 +2,7 @@ version: '3.0'
 services:
   evrent1:
     container_name: evrent1
-    build: .
+    image: baugh248730/isosim
     ports:
       - "9090:9090"
     environment:
@@ -19,7 +19,7 @@ services:
 
   evrent2:
     container_name: evrent2
-    build: .
+    image: baugh248730/isosim
     ports:
       - "9091:9090"
     environment:
@@ -40,34 +40,30 @@ services:
     environment:
       MYSQL_DATABASE: rent_car
       MYSQL_ROOT_PASSWORD: Wotjd@487
-    volumes:
-      - "./sql/init.sql:/docker-entrypoint-initdb.d/init.sql"
+#    volumes:
+#      - "./sql/init.sql:/docker-entrypoint-initdb.d/init.sql"
     ports:
       - 3307:3306
 
   nginx:
     container_name: nginx
     build: ./proxy
+        volumes:
+        - ./data/nginx:/etc/nginx/conf.d
+        - ./data/certbot/conf:/etc/letsencrypt
+        - ./data/certbot/www:/var/www/certbot
     ports:
       - "80:80"
       - "443:443"
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/conf.d
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     depends_on:
       - evrent1
       - evrent2
 
-
-  certbot:  #certbot 컨테이너 추가
+  certbot:
     image: certbot/certbot
     restart: unless-stopped
-    container_name: certbot
     volumes:
-      - ./certbot/conf:/etc/letsencrypt    #nginx컨테이너에 certbot컨테이너 연결
-      - ./certbot/www:/var/www/certbot
-    entrypoint : "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
-    depends_on:
-      - nginx
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
