@@ -2,7 +2,7 @@ version: '3.0'
 services:
   evrent1:
     container_name: evrent1
-    image: baugh248730/isosim
+    build: .
     ports:
       - "9090:9090"
     environment:
@@ -19,7 +19,7 @@ services:
 
   evrent2:
     container_name: evrent2
-    image: baugh248730/isosim
+    build: .
     ports:
       - "9091:9090"
     environment:
@@ -40,8 +40,8 @@ services:
     environment:
       MYSQL_DATABASE: rent_car
       MYSQL_ROOT_PASSWORD: Wotjd@487
-#    volumes:
-#      - "./sql/init.sql:/docker-entrypoint-initdb.d/init.sql"
+    volumes:
+      - "./sql/init.sql:/docker-entrypoint-initdb.d/init.sql"
     ports:
       - 3307:3306
 
