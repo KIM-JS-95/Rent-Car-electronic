@@ -34,14 +34,6 @@ services:
     depends_on:
       - mysql
 
-  nginx:
-    container_name: nginx
-    build: ./proxy
-    ports:
-      - "80:80"
-    depends_on:
-      - evrent2
-
   mysql:
     container_name: mysql
     image: mysql
@@ -52,3 +44,30 @@ services:
       - "./sql/init.sql:/docker-entrypoint-initdb.d/init.sql"
     ports:
       - 3307:3306
+      -
+  nginx:
+    container_name: nginx
+    build: ./proxy
+    ports:
+      - "80:80"
+    volumes:
+      # - ./nginx/nginx.conf:/etc/nginx/conf.d
+      - build_folder:/var/www/Frontend
+      - ./certbot/conf:/etc/letsencrypt  #동일한 디렉토리를 마운트
+      - ./certbot/www:/var/www/certbot
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    depends_on:
+      - evrent1
+      - evrent2
+
+
+certbot:  #certbot 컨테이너 추가
+  image: certbot/certbot
+  restart: unless-stopped
+  container_name: certbot
+  volumes:
+    - ./certbot/conf:/etc/letsencrypt    #nginx컨테이너에 certbot컨테이너 연결
+    - ./certbot/www:/var/www/certbot
+  depends_on:
+    - nginx
+  entrypoint : "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
