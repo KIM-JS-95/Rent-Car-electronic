@@ -44,15 +44,13 @@ services:
       - "./sql/init.sql:/docker-entrypoint-initdb.d/init.sql"
     ports:
       - 3307:3306
-      -
   nginx:
     container_name: nginx
     build: ./proxy
     ports:
       - "80:80"
     volumes:
-      # - ./nginx/nginx.conf:/etc/nginx/conf.d
-      - build_folder:/var/www/Frontend
+      - ./nginx/nginx.conf:/etc/nginx/conf.d
       - ./certbot/conf:/etc/letsencrypt  #동일한 디렉토리를 마운트
       - ./certbot/www:/var/www/certbot
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
