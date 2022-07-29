@@ -5,7 +5,7 @@ if ! [ -x "$(command -v docker-compose)" ]; then
   exit 1
 fi
 
-domains=(evrent.ml www.evrent.ml)
+domains="evrent.ml"
 rsa_key_size=4096
 data_path="./data/certbot"
 email="baugh248730@gmail.com" # Adding a valid address is strongly recommended
@@ -28,7 +28,9 @@ if [ ! -e "$data_path/conf/options-ssl-nginx.conf" ] || [ ! -e "$data_path/conf/
 fi
 
 echo "### Creating dummy certificate for $domains ..."
+
 path="/etc/letsencrypt/live/$domains"
+
 mkdir -p "$data_path/conf/live/$domains"
 docker-compose run --rm --entrypoint "\
   openssl req -x509 -nodes -newkey rsa:$rsa_key_size -days 1\

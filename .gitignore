@@ -8,16 +8,10 @@
 
 /src/main/resources/application.properties
 /src/main/resources/kakao.properties
->>>>>>> 8f8a305ee04bb6b2ef703c9a76aef92d65c342bc
 
-### STS ###
-.apt_generated
-.factorypath
-.springBeans
-.sts4-cache
-bin/
-!src/main/main/**/bin/
-!**/src/test/**/bin/
+
+./proxy
+./init-letsencrypt.sh
 ### IntelliJ IDEA ###
 .idea
 *.iws
