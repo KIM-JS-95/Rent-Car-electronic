@@ -41,6 +41,6 @@ services:
       MYSQL_DATABASE: rent_car
       MYSQL_ROOT_PASSWORD: Wotjd@487
     volumes:
-      - "./var/lib/mysql:/docker-entrypoint-initdb.d"
+      - "/var/lib/mysql:/docker-entrypoint-initdb.d"
     ports:
       - 3307:3306
