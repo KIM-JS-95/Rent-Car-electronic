@@ -14,6 +14,8 @@ services:
       - .:/usr/src
     restart:
       always
+    depends_on:
+      - mysql
 
   evrent2:
     container_name: evrent2
@@ -29,3 +31,16 @@ services:
       - .:/usr/src
     restart:
       always
+    depends_on:
+      - mysql
+
+  mysql:
+    container_name: mysql
+    image: mysql
+    environment:
+      MYSQL_DATABASE: rent_car
+      MYSQL_ROOT_PASSWORD: Wotjd@487
+    volumes:
+      - "./var/lib/mysql:/docker-entrypoint-initdb.d/"
+    ports:
+      - 3307:3306
