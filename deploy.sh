@@ -2,7 +2,7 @@
 
 # Jenkins 에서 체크가 끝나면 해당 파일을 실행
 
-container_name="isosim";
+container_name="evrent";
 repository="baugh248730/isosim";
 
 echo "docker logins try"
@@ -13,7 +13,6 @@ echo "Container stop and remove";
 
 # shellcheck disable=SC1007
 container_id=$(docker ps -aqf "name= ${container_name}");
-
 echo "Docker : container_id = ${container_id}";
 
 echo "Container stop"
@@ -22,14 +21,6 @@ docker rm ${container_id}
 
 echo "Docker image remove"
 docker rmi ${container_name}
-
-cd proxy
-echo "Run Nginx ..."
-#docker build -t nginx:test .
-
-
-echo "Change dir ... "
-cd ..
 
 # gradle build
 echo "DockerFile start... and"

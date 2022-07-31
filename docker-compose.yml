@@ -14,8 +14,6 @@ services:
       - .:/usr/src
     restart:
       always
-    depends_on:
-      - mysql
 
   evrent2:
     container_name: evrent2
@@ -31,39 +29,3 @@ services:
       - .:/usr/src
     restart:
       always
-    depends_on:
-      - mysql
-
-  mysql:
-    container_name: mysql
-    image: mysql
-    environment:
-      MYSQL_DATABASE: rent_car
-      MYSQL_ROOT_PASSWORD: Wotjd@487
-    volumes:
-      - "./sql/init.sql:/docker-entrypoint-initdb.d/init.sql"
-    ports:
-      - 3307:3306
-
-  nginx:
-    container_name: nginx
-    build: ./proxy
-    volumes:
-      - ./proxy/conf:/etc/nginx/conf.d
-      - ./data/certbot/conf:/etc/letsencrypt
-      - ./data/certbot/www:/var/www/certbot
-    ports:
-      - 80:80
-      - 443:443
-    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
-    depends_on:
-      - evrent1
-      - evrent2
-
-  certbot:
-    image: certbot/certbot
-    restart: always
-    volumes:
-      - ./data/certbot/conf:/etc/letsencrypt
-      - ./data/certbot/www:/var/www/certbot
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
