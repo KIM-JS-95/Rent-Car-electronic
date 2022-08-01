@@ -30,7 +30,7 @@ public class Kakaocontroller {
     @Autowired
     private StoreServiceImpl storeService;
 
-    @GetMapping("/kakao_url/{lat}/{lng}")
+    @GetMapping("/kakao_url/{lng}/{lat}")
     public JSONArray kakao_charge(@PathVariable("lat") String lat, @PathVariable("lng") String lng) throws IOException, ParseException {
         /*
         lat( x 좌표 ) lng( y 좌표 ) 가 카카오에서는 두 값을 바꾸어 입력해야 정상값이 도출된다.
@@ -51,18 +51,17 @@ public class Kakaocontroller {
 
     // todo: 사용자의 위치 중심으로 주변 편의시설 검색
     //  실행 시간 : 0.104초 (mysql 사용시)
-    @GetMapping("/facilities/{lat}/{lng}")
+    @GetMapping("/facilities/{lng}/{lat}")
     public List<Store> facilities(@PathVariable("lat") String lat,
                                   @PathVariable("lng") String lng) {
-        Timer timer = new Timer();
-        long start = timer.start();
         Map<String, String> map = new HashMap<>();
+
         map.put("lat", lat);
         map.put("lng", lng);
-        List<Store> answer = storeService.stores(map);
-        long end = timer.end();
 
-        timer.showtime(start,end);
+
+        List<Store> answer = storeService.stores(map);
+
         return answer;
     }
 

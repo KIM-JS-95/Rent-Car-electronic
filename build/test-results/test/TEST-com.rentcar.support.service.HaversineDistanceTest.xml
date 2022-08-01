@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.rentcar.support.service.HaversineDistanceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-26T08:43:37" hostname="DESKTOP-R7AB2GV" time="0.001">
-  <properties/>
-  <testcase name="test()" classname="com.rentcar.support.service.HaversineDistanceTest" time="0.001"/>
-  <system-out><![CDATA[The distance between two lat and long is::0.8511070373354512km
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

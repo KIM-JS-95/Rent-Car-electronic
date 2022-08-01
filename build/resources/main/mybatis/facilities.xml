@@ -5,13 +5,9 @@
 
 <mapper namespace="com.rentcar.kakao.mapper.StoreMapper">
 
-    <select id="stores" parameterType="Map" resultType="com.rentcar.kakao.Model.StoreDTO">
-        SELECT name, address_road,
-        ( 6371 * acos(cos( radians(#{lat}) ) *
-        cos( radians(x)) * cos(radians(y) - radians(#{lng})) + sin(radians(#{lat})) * sin(radians(x))))
-        AS distance , x, y
-        FROM facilities
-        having distance &lt; 0.3;
+    <select id="stores" resultType="com.rentcar.kakao.Model.Store">
+        SELECT *
+        FROM facilities;
     </select>
 
     <insert id="create" parameterType="com.rentcar.kakao.Model.Store">

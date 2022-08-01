@@ -61,16 +61,16 @@ public class Kakaoservice {
         JSONObject obj = (JSONObject) parser.parse(sb.toString());
         JSONArray array = (JSONArray) obj.get("documents");
 
-        System.out.println(array);
-
         List<Map<String, Object>> map = JsonUtil.getListMapFromJsonArray(array);
         int min_value = Integer.MAX_VALUE;
 
         for (int i = 0; i < map.size(); i++) {
             // 사용자 기준에서 가장 짧은 거리 정보(m)를 가져온다.
             if (min_value > Integer.parseInt((String) map.get(i).get("distance"))) {
+                min_value = Integer.parseInt((String) map.get(i).get("distance"));
                 min_x = (String) map.get(i).get("x");
                 min_y = (String) map.get(i).get("y");
+                System.out.println(map.get(i).get("place_name"));
             }
         }
 
@@ -79,6 +79,7 @@ public class Kakaoservice {
                 + "lat:" + min_x + ","
                 + "lng:" + min_y
                 + "}";
+
 
         Object obj1 = parser.parse(strJson);
         JSONObject jsonObj = (JSONObject) obj1;

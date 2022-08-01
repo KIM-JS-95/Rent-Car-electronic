@@ -200,8 +200,8 @@ kakao.maps.event.addListener(map, 'click', function (mouseEvent) {
 
 
 
-
-var url = "/kakao_url/" + lat + "/" + lng
+console.log(lng, lat);
+var url = "/kakao_url/" + lng + "/" + lat
 const response = await fetch(url);
 const data = await response.json();
 
@@ -371,5 +371,6 @@ navigator.geolocation.getCurrentPosition(fetchData, onGeoError);
 }
 
 init();
+
 //5분 간격으로 메시지를 보여줌
 let timerId = setInterval(() => init(), 5 * 36 * 1000);

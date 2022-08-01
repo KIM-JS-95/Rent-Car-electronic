@@ -7,7 +7,7 @@ import java.util.Map;
 
 public interface StoreMapper {
 
-    List<Store> stores(Map<String, String> map);
+    List<Store> stores();
 
     Boolean create(Store store);
 }
