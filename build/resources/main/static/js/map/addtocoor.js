@@ -26,6 +26,7 @@ function show_map(position) {
 
     // 지도를 클릭했을 때 클릭 위치 좌표에 대한 주소정보를 표시하도록 이벤트를 등록합니다
     kakao.maps.event.addListener(map, 'click', function (mouseEvent) {
+
         searchDetailAddrFromCoords(mouseEvent.latLng, function (result, status) {
             if (status === kakao.maps.services.Status.OK) {
                 address_result = result;
@@ -56,14 +57,14 @@ function show_map(position) {
 
     function searchAddrFromCoords(coords, callback) {
         // 좌표로 행정동 주소 정보를 요청합니다
-        x = coords.getLng();
-        y = coords.getLat();
-        geocoder.coord2RegionCode(x, y, callback);
+        geocoder.coord2RegionCode(coords.getLng(), coords.getLat(), callback);
     }
 
     function searchDetailAddrFromCoords(coords, callback) {
         // 좌표로 법정동 상세 주소 정보를 요청합니다
-        geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
+        x = coords.getLng();
+        y = coords.getLat();
+        geocoder.coord2Address(x, y, callback);
     }
 
     // 지도 좌측상단에 지도 중심좌표에 대한 주소정보를 표출하는 함수입니다
@@ -106,8 +107,8 @@ async function getInfo() {
         "type": type,
         "address_road": address_road,
         "address": address,
-        "x": x,
-        "y": y
+        "x": y,
+        "y": x
     }
 
 

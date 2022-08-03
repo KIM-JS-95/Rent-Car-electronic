@@ -66,11 +66,11 @@ public class Kakaoservice {
 
         for (int i = 0; i < map.size(); i++) {
             // 사용자 기준에서 가장 짧은 거리 정보(m)를 가져온다.
-            if (min_value > Integer.parseInt((String) map.get(i).get("distance"))) {
-                min_value = Integer.parseInt((String) map.get(i).get("distance"));
+            int distence = Integer.parseInt((String) map.get(i).get("distance"));
+            if (min_value > distence) {
+                min_value = distence;
                 min_x = (String) map.get(i).get("x");
                 min_y = (String) map.get(i).get("y");
-                System.out.println(map.get(i).get("place_name"));
             }
         }
 

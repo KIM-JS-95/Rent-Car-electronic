@@ -21,15 +21,17 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
       <title>EV Rent Car</title>
+
       <link rel="stylesheet" type="text/css" href="/css/common.css">
       <link rel="stylesheet" type="text/css" href="/css/top.css">
     </head>
 
     <body>
-
+      <div style="position: relative; z-index:20">
       <header class="header">
-        <h1 class="header__title">EV Rent Car</h1>
+        <h1 onclick="location.href='/'">EV Rent Car</h1>
       </header>
 
       <nav class="navigaiton">
@@ -45,7 +47,7 @@
             </div>
           </div>
 
-          <div class="dropdown">
+          <div class="dropdown" style="z-index:2">
             <li class="navigation__item"><span class="item__icon"><span class="icon__emoji">🚖</span></span><span
                 class="item__text">Rent</span></li>
             <div class="dropdown-content">
@@ -110,6 +112,7 @@
 
         </ul>
       </nav>
+      </div>
     </body>
 
     </html>
