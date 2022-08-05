@@ -1,6 +1,7 @@
 package com.rentcar.booking;
 
-import com.rentcar.car.CarinfoDTO;
+
+import com.rentcar.carinfo.model.CarinfoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

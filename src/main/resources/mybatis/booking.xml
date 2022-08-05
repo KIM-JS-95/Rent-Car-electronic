@@ -9,7 +9,7 @@
         VALUES(#{rent_day}, #{rent_time}, #{return_day}, #{return_time}, #{user_id}, #{reserved_car} ,#{insurance})
     </insert>
     <!-- (C) 렌트 검색 -->
-    <select id="searchList" resultType="com.rentcar.car.CarinfoDTO" parameterType="int">
+    <select id="searchList" resultType="com.rentcar.carinfo.model.CarinfoDTO" parameterType="int">
         SELECT category, carnumber, carname, carseate, rentcost
         FROM car_info
         WHERE rentstatus = 0 and category = #{category};

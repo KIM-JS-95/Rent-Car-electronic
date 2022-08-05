@@ -1,6 +1,6 @@
 package com.rentcar.booking;
 
-import com.rentcar.car.CarinfoDTO;
+import com.rentcar.carinfo.model.CarinfoDTO;
 import com.rentcar.utility.Utility;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

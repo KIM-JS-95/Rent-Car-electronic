@@ -1,6 +1,6 @@
 package com.rentcar.booking;
 
-import com.rentcar.car.CarinfoDTO;
+import com.rentcar.carinfo.model.CarinfoDTO;
 
 import java.util.List;
 import java.util.Map;
