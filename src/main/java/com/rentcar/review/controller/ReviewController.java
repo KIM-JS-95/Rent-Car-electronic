@@ -1,26 +1,19 @@
 package com.rentcar.review.controller;
 
-import com.google.gson.JsonObject;
 import com.rentcar.list.service.ListServiceImpl;
 import com.rentcar.review.model.ReviewDTO;
 import com.rentcar.review.service.ReviewServiceImpl;
 import com.rentcar.utility.Utility;
-import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 
 @RestController
@@ -71,11 +64,11 @@ public class ReviewController {
 //      log.info("ReviewDTO:id " + vo.getId());
         log.info("ReviewDTO:listno " + vo.getListno());
         System.out.println("vo:  " + vo);
-        vo.setContent(vo.getContent().replaceAll("/n/r", "<br>"));
+       // vo.setContent(vo.getContent().replaceAll("/n/r", "<br>"));
 
         int flag = service.create(vo);
 
-        log.info("Reply INSERT flag: " + flag);
+
 
         return flag == 1 ? new ResponseEntity<>("success", HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

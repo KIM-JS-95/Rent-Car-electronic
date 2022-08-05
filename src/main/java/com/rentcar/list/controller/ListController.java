@@ -1,27 +1,20 @@
 package com.rentcar.list.controller;
+
 import com.google.gson.JsonObject;
 import com.rentcar.list.model.ListDTO;
 import com.rentcar.list.service.ListServiceImpl;
 import com.rentcar.review.model.ReviewDTO;
 import com.rentcar.review.service.ReviewServiceImpl;
 import com.rentcar.utility.Utility;
-import net.minidev.json.JSONObject;
-import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 @Controller
 @RequestMapping("/contents")
@@ -34,26 +27,16 @@ public class ListController {
     private ReviewServiceImpl rservice;
 
 
-
-
-    @GetMapping("/list/delete")
-    public String delete(int listno, Model model) {
-
-        model.addAttribute("listno", listno);
-        return "/list/delete";
-    }
-
     @PostMapping("/list/delete")
     public String delete(int listno) {
-        System.out.println(listno);
+        System.out.println("********************************" + listno);
+        System.out.println("********************************" + listno);
 
         rservice.bdelete(listno);
-
 
         service.delete(listno);
 
         return "redirect:/contents/list";
-
 
     }
 
@@ -113,8 +96,6 @@ public class ListController {
         int eno = recordPerPage;
 
 
-
-
         Map map = new HashMap();
         map.put("sno", sno);
         map.put("eno", eno);
@@ -131,10 +112,6 @@ public class ListController {
         request.setAttribute("list", list);
 
 
-
-
-
-
         return "/list/read";
     }
 
@@ -148,11 +125,7 @@ public class ListController {
     @PostMapping("/list/create")
     public String create(ListDTO dto) {
 
-
-
-
-
-        System.out.println("dto="+dto);
+        System.out.println("dto=" + dto);
         if (service.create(dto) == 1) {
             return "redirect:/contents/list";
         } else {
@@ -179,7 +152,7 @@ public class ListController {
 
         // DB에서 가져올 순번-----------------
         int sno = ((nowPage - 1) * recordPerPage);
-        // int eno = nowPage * recordPerPage;
+        int eno = nowPage * recordPerPage;
 
         Map map = new HashMap();
         map.put("col", col);
@@ -207,7 +180,6 @@ public class ListController {
         return "/list";
 
     }
-
 
 
 }

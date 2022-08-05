@@ -1,7 +1,6 @@
 package com.rentcar.carinfo.controller;
 
 
-
 import com.rentcar.carinfo.service.CaroptionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,10 +41,10 @@ public class CarinfoCarcontroller {
     private CaroptionService cservice;
 
     @PostMapping("/updateFile")
-    public String updateFile(MultipartFile filenameMF, String oldfile, String carnumber)throws IOException{
+    public String updateFile(MultipartFile filenameMF, String oldfile, String carnumber) throws IOException {
 
         String basePath = UploadCon.getUploadDir();
-        if(oldfile != null && !oldfile.equals("default.jpg")){
+        if (oldfile != null && !oldfile.equals("default.jpg")) {
             Utility.deleteFile(basePath, oldfile);
         }
 
@@ -54,9 +53,9 @@ public class CarinfoCarcontroller {
         map.put("carimage", Utility.saveFileSpring(filenameMF, basePath));
 
         int cnt = service.updateFile(map);
-        if(cnt == 1){
+        if (cnt == 1) {
             return "redirect:/carinfo/list";
-        }else {
+        } else {
             return "error";
         }
     }
@@ -64,7 +63,7 @@ public class CarinfoCarcontroller {
     @GetMapping("/updateFile/{carnumber}/{oldfile}")
     public String updateFileForm(@PathVariable("carnumber") String carnumber,
                                  @PathVariable("oldfile") String oldfile,
-                                 Model model){
+                                 Model model) {
         model.addAttribute("carnumber", carnumber);
         model.addAttribute("oldfile", oldfile);
         return "/carinfo/updateFile";
@@ -72,64 +71,70 @@ public class CarinfoCarcontroller {
 
 
     @GetMapping("/delete/{carnumber}")
-    public String delete(@PathVariable String carnumber){
+    public String delete(@PathVariable String carnumber) {
         int flag = service.delete(carnumber);
-        if(flag != 1) return "error";
+        if (flag != 1) return "error";
         else return "redirect:/carinfo/list";
     }
 
     @PostMapping("/update")
-    public String update(CarinfoDTO dto){
+    public String update(CarinfoDTO dto) {
         //log.info("dto:"+dto);
         int cnt = service.update(dto);
-        log.info("cnt:"+cnt);
-        if(cnt == 1){
+        log.info("cnt:" + cnt);
+        if (cnt == 1) {
             return "redirect:/carinfo/list";
-        }else{
+        } else {
             return "error";
         }
     }
+
     @GetMapping("/update/{carnumber}")
-    public String update(@PathVariable("carnumber") String carnumber, Model model){
+    public String update(@PathVariable("carnumber") String carnumber, Model model) {
         CarinfoDTO dto = service.read(carnumber);
         model.addAttribute("dto", dto);
         return "/carinfo/update";
     }
 
     @GetMapping("/read/{carnumber}")
-    public String read(@PathVariable("carnumber") String carnumber,Model model){
+    public String read(@PathVariable("carnumber") String carnumber, Model model) {
         CarinfoDTO dto = service.read(carnumber);
         model.addAttribute("dto", dto);
         return "/carinfo/read";
     }
 
     @PostMapping("/create")
-    public String crate(CarinfoDTO dto, CaroptionDTO cdto, HttpServletRequest request)throws IOException{
+    public String crate(CarinfoDTO dto,
+                        CaroptionDTO cdto,
+                        HttpServletRequest request) throws IOException {
+        System.out.println(dto);
         String upDir = UploadCon.getUploadDir();
         String fname = Utility.saveFileSpring(dto.getFilenameMF(), upDir);
-        int size = (int)dto.getFilenameMF().getSize();
+        int size = (int) dto.getFilenameMF().getSize();
 
-        if(size > 0){
+        if (size > 0) {
             dto.setCarimage(fname);
-        }else{
+        } else {
             dto.setCarimage("default.jpg");
         }
         log.info("dto:" + dto);
         log.info("cdto" + cdto);
-        if(service.create(dto) > 0 && cservice.create(cdto) > 0){
+        if (service.create(dto) > 0 && cservice.create(cdto) > 0) {
             return "redirect:./list";
-        }else{
+        } else {
             return "error";
         }
+
     }
+
     @GetMapping("/create")
-    public String create(){
+    public String create() {
         return
                 "/carinfo/create";
     }
 
     @RequestMapping("/list")
-    public String list(HttpServletRequest request){
+    public String list(HttpServletRequest request) {
         // 검색관련------------------------
         String col = Utility.checkNull(request.getParameter("col"));
         String word = Utility.checkNull(request.getParameter("word"));
@@ -138,7 +143,7 @@ public class CarinfoCarcontroller {
             word = "";
         }
         int nowPage = 1;
-        if(request.getParameter("nowPage") !=null){
+        if (request.getParameter("nowPage") != null) {
             nowPage = Integer.parseInt(request.getParameter("nowPage"));
         }
         int recordPerPage = 3;
@@ -149,11 +154,11 @@ public class CarinfoCarcontroller {
         map.put("col", col);
         map.put("word", word);
         map.put("sno", sno);
-        map.put("eno",eno);
+        map.put("eno", eno);
 
         int total = service.total(map);
         List<CarinfoDTO> list = service.list(map);
-        String paging = Utility.paging(total, nowPage, recordPerPage,col, word);
+        String paging = Utility.paging(total, nowPage, recordPerPage, col, word);
 
         request.setAttribute("list", list);
         request.setAttribute("nowPage", nowPage);

@@ -2,15 +2,47 @@
 $(function(){
 
 
-$("#btn").click(function(){ //글 삭제
+$("#btn_update").click(function(){ //글 삭제
+
+	var url = "/contents/list/update";
+           url += "?listno="+listno;
+//           url += "&col=${col}";
+//           url += "&word=${word}";
+//           url += "&nowPage=${nowPage}";
+           location.href=url;
+
+});
+
+
+
+
+
+
+$("#btn_delete").click(function(){ //글 삭제
 
 	console.log(listno);
 
 
-		fetch(`/list/delete`,{method: 'post'})
-                       .then(response => response.text())
-                        .then(location.href="/contents/list")
-                       .catch(console.log);
+
+
+
+$.ajax({
+	url : "http://localhost:9090/contents/list/delete",
+	type : 'post',
+	data : {
+		listno : listno
+	},
+	success : function(data) {
+				location.href="/contents/list";
+     },
+	error : function() {
+		alert("error");
+	}
+});
+
+
+
+
 
 });
 
@@ -45,13 +77,17 @@ fetch(`/review/${rnum}`,{method: 'delete'})
                .then(response => response.text())
                .then(location.reload())
                .catch(console.log);
+
         		});
 
-	$("#addreviewBtn").click(function(){
 
 
-	 var content = document.querySelector("#content").value;
 
+	$("#addreviewBtn").click(function(){// review create
+
+
+	 var content = document.querySelector("#review11").value;
+           	console.log(content);
   	var data = {
 		"content" : content,
 		"listno" : listno

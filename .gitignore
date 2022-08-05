@@ -4,11 +4,23 @@
 !**/src/test/**/build/
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /src/main/resources/*.properties
 
 =======
 /src/main/resources/*.properties
+=======
+/src/main/resources/*.properties
+
+/src/main/resources/application.properties
+/src/main/resources/kakao.properties
+=======
+
+/src/main/resources/*.properties
+
+>>>>>>> 8c43d8b28950a705ad11559217a2fecc452b2bd8
+>>>>>>> 666b389bc25af48f47d2c39f0b97088ef92678fb
 
 
 /src/main/resources/application.properties
