@@ -1,18 +1,21 @@
 package com.rentcar.carinfo.controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import com.rentcar.carinfo.model.CarinfoDTO;
 import com.rentcar.carinfo.model.CaroptionDTO;
 import com.rentcar.carinfo.service.CarinfoService;
+import com.rentcar.carinfo.service.CaroptionService;
 import com.rentcar.utility.UploadCon;
-import com.rentcar.utility.UploadList;
 import com.rentcar.utility.Utility;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -29,6 +32,10 @@ public class CarinfoCarcontroller {
     @Autowired
     @Qualifier("com.rentcar.carinfo.service.CarinfoServiceImpl")
     private CarinfoService service;
+
+    @Autowired
+    @Qualifier("com.rentcar.carinfo.service.CaroptionServiceImpl")
+    private CaroptionService cservice;
 
     @PostMapping("/updateFile")
     public String updateFile(MultipartFile filenameMF, String oldfile, String carnumber)throws IOException{
@@ -91,7 +98,7 @@ public class CarinfoCarcontroller {
     }
 
     @PostMapping("/create")
-    public String crate(CarinfoDTO dto, CaroptionDTO dto2, HttpServletRequest request)throws IOException{
+    public String crate(CarinfoDTO dto, CaroptionDTO cdto, HttpServletRequest request)throws IOException{
 
 
         String upDir = UploadCon.getUploadDir();
@@ -103,9 +110,9 @@ public class CarinfoCarcontroller {
             dto.setCarimage("default.jpg");
         }
         log.info("Carinfo;" + dto);
-        log.info("Caroption;" + dto2);
+        log.info("Caroption;" + cdto);
 
-        if(service.create(dto) > 0){
+        if(service.create(dto) > 0 && cservice.create(cdto) > 0){
             return "redirect:/carinfo/list";
         }else{
             return "error";
@@ -153,17 +160,4 @@ public class CarinfoCarcontroller {
         return "/carinfo/list";
     }
 
-   @GetMapping("/")
-   public String home(){
-       return "/home";
-   }
-
-
-
-
-
-//    @GetMapping("/{id}")
-//    public String hello(@PathVariable("id") int id){
-//        return id + "입니다.";
-//    }
 }

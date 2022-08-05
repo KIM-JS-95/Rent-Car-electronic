@@ -10,12 +10,12 @@ public class UploadNotice {
     public static synchronized String getUploadDir() {
         String path = "";
         if (File.separator.equals("\\")) {
-            path = "D:\\Github_upload\\projectSaveF\\uploaded";
+            path = "https://kr.object.ncloudstorage.com/imagetest/";
             System.out.println("Windows 10: " + path);
             
         } else {
-            // System.out.println("Linux");
-            path = "/home/ubuntu/deploy/bbs/storage/";
+            System.out.println("Linux");
+            path = "/root/imagetest/";
         }
         
         return path;

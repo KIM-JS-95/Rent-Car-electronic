@@ -18,12 +18,12 @@
 
     <insert id="create" parameterType="com.rentcar.carinfo.model.CarinfoDTO">
         insert into carinfo
-        (carnumber, carname, carimage, carseate, carpoint, category)
-        values(#{carnumber}, #{carname}, #{carimage}, #{carseate}, #{carpoint}, #{category})
+        (carnumber, carname, carimage, carseate, carpoint, category,rdate)
+        values(#{carnumber}, #{carname}, #{carimage}, #{carseate}, #{carpoint}, #{category},sysdate())
     </insert>
 
     <select id="list" parameterType="Map" resultType="com.rentcar.carinfo.model.CarinfoDTO">
-        select carnumber, carname, carimage, carseate, carpoint, category
+        select carnumber, carname, carimage, carseate, carpoint, category, rdate
         from
         carinfo
         <where>

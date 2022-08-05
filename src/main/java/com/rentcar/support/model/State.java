@@ -1,6 +1,6 @@
 package com.rentcar.support.model;
 
+// 지원자 입장에서
 public enum State {
-
-    request ,accept,going,done
+    stay, requested,gonin,  done
 }

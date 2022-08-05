@@ -20,4 +20,5 @@ public interface NoticeService {
   int passwd(Map map);
   int update(NoticeDTO dto);
 
+    int deleteFile(int noticeno);
 }

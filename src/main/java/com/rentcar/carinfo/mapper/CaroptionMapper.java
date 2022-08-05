@@ -1,4 +1,7 @@
-//package com.rentcar.carinfo.mapper;
-//
-//public interface CarConditionMapper {
-//}
+package com.rentcar.carinfo.mapper;
+
+import com.rentcar.carinfo.model.CaroptionDTO;
+
+public interface CaroptionMapper {
+    int create(CaroptionDTO cdto);
+}

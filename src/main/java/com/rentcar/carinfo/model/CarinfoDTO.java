@@ -13,6 +13,7 @@ public class CarinfoDTO {
     private String carseate; //좌석수
     private String carpoint ;  	// 차 위치 (지점)
     private String category ; // 차 종류
+    private String rdate ;  // 등록일
 }
 
 

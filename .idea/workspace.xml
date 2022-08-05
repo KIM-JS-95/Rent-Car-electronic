@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="eda9f431-5b30-485b-b48f-ce367b35f37b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
@@ -72,6 +73,11 @@
       <change beforePath="$PROJECT_DIR$/src/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/src/main/webapp/WEB-INF/views/template/template.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/src/main/webapp/WEB-INF/views/template/top.jsp" beforeDir="false" />
+=======
+    <list default="true" id="4db05fe1-6ed5-43a9-9b60-e27f1c05d62b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+>>>>>>> bb728cb6b5518ad3d6c964f44446376ccd93fa57
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +89,7 @@
       <ProjectState />
     </projectState>
   </component>
+<<<<<<< HEAD
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -90,10 +97,68 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2C60jujrOSjLcMJPlQkvOXVZrOU" />
+=======
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="RentCar" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="RentCar" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Kotlin Class" />
+        <option value="JUnit5 Test Class" />
+        <option value="HTML File" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2BMvgGP0sUwqbscACBEilkUkona" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+>>>>>>> bb728cb6b5518ad3d6c964f44446376ccd93fa57
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -110,6 +175,48 @@
       <recent name="D:\Github_upload\Rent-Car-electtronic\src\main\webapp" />
       <recent name="D:\Github_upload\Rent-Car-electtronic\src\main\webapp\WEB-INF" />
       <recent name="D:\Github_upload\Rent-Car-electtronic\src\main\webapp\WEB-INF\views\notice" />
+=======
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\resources" />
+      <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main\main" />
+      <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main" />
+      <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src" />
+      <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main\webapp\WEB-INF\views" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main" />
+      <recent name="C:\Aistudy_JIH\final_project\final_project\Rent-Car-electtronic\src\main\resources" />
+      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\resources\static" />
+      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\resources\static\css" />
+      <recent name="C:\Users\JAESEUNG\IdeaProjects\Rent-Car-electtronic\src\main\webapp\WEB-INF\views" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.rentcar.support.controller" />
+      <recent name="com.rentcar.support.mapper" />
+      <recent name="com.rentcar.support.service" />
+      <recent name="com.rentcar.kakao.controller" />
+      <recent name="com.rentcar.kakao" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.rentcar.support.controller" />
+      <recent name="com.rentcar.support.model" />
+      <recent name="com.rentcar.support.service" />
+      <recent name="com.rentcar.support.mapper" />
+>>>>>>> bb728cb6b5518ad3d6c964f44446376ccd93fa57
     </key>
   </component>
   <component name="RunManager">
@@ -126,20 +233,135 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <recent_temporary>
       <list>
         <item itemvalue="Application.application" />
+=======
+    <configuration name="KakaoRestApiHelperTest.local_find_path" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.rentcar.kakao.controller.KakaoRestApiHelperTest.local_find_path&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="SerpportServiceImplTest.support_find" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.rentcar.support.service.SerpportServiceImplTest.support_find&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="SurpportControllerTest.list" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.rentcar.support.controller.SurpportControllerTest.list&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="SurpportMapperTest.test1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.rentcar.support.mapper.SurpportMapperTest.test1&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Rent-Car-electtronic" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Rent-Car-electtronic" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.application" />
+        <item itemvalue="Gradle.KakaoRestApiHelperTest.local_find_path" />
+        <item itemvalue="Gradle.SurpportControllerTest.list" />
+        <item itemvalue="Gradle.SerpportServiceImplTest.support_find" />
+        <item itemvalue="Gradle.SurpportMapperTest.test1" />
+>>>>>>> bb728cb6b5518ad3d6c964f44446376ccd93fa57
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="eda9f431-5b30-485b-b48f-ce367b35f37b" name="Changes" comment="" />
       <created>1658107869490</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1658107869490</updated>
+=======
+      <changelist id="2f54c7a1-3fc5-4f71-9d62-8ade45f32cdc" name="Changes" comment="" />
+      <created>1656728880506</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1656728880506</updated>
+>>>>>>> bb728cb6b5518ad3d6c964f44446376ccd93fa57
     </task>
     <servers />
   </component>
@@ -153,5 +375,13 @@
         </entry>
       </map>
     </option>
+<<<<<<< HEAD
+=======
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+>>>>>>> bb728cb6b5518ad3d6c964f44446376ccd93fa57
   </component>
 </project>

@@ -8,12 +8,14 @@ import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 @Configuration
 public class TilesConfiguration {
-
     @Bean
     public TilesConfigurer tilesConfigurer() {
         final TilesConfigurer configurer = new TilesConfigurer();
+
         //해당 경로에 tiles.xml 파일을 넣음
-        configurer.setDefinitions("classpath:/tiles/*.xml");
+        configurer.setDefinitions(new String[]{"classpath:/tiles/*.xml",});
+
+
         configurer.setCheckRefresh(true);
         return configurer;
     }
@@ -24,4 +26,5 @@ public class TilesConfiguration {
         tilesViewResolver.setViewClass(TilesView.class);
         return tilesViewResolver;
     }
+
 }

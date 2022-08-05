@@ -21,4 +21,5 @@ public interface NoticeMapper {
 
   int update(NoticeDTO dto);
 
+  int deleteFile(int noticeno);
 }

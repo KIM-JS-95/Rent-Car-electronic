@@ -10,11 +10,10 @@ import lombok.Data;
 @Data
 public class Request {
 
+    private String name;
     /*
      견인 및 이동식 충전 서비스 지원
      */
-    private String name;
-    private String email;
     private String carnum;
     private String reason;
 
@@ -23,7 +22,11 @@ public class Request {
      */
     private String rx;
     private String ry;
+    private String state;
 
+    private String request_time;
+    private String accepted_time;
 
-    private State state;
+    private String supporter_carnum;
+
 }

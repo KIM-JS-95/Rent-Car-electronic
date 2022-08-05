@@ -7,12 +7,11 @@ import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import com.rentcar.review.service.ReviewService;
+import com.rentcar.notice.model.review.service.ReviewService;
 import org.springframework.web.multipart.MultipartFile;
+
 
 public class Utility {
     /**
@@ -57,7 +56,8 @@ public class Utility {
         return str;
     }
 
-    public static String rpaging(int total, int nowPage, int recordPerPage, String col, String word, String url, int nPage) {
+    public static String rpaging(int total, int nowPage, int recordPerPage, String col, String word, String url,
+                                 int nPage) {
         int pagePerBlock = 5; // 블럭당 페이지 수
         int totalPage = (int) (Math.ceil((double) total / recordPerPage)); // 전체 페이지
         int totalGrp = (int) (Math.ceil((double) totalPage / pagePerBlock));// 전체 그룹
@@ -210,7 +210,7 @@ public class Utility {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-
+           // System.out.println("filename="+ filename);
         }
 
         return filename;

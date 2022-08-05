@@ -19,7 +19,6 @@ public class CarinfoServiceImpl implements CarinfoService {
     public int create(CarinfoDTO dto) {
         return mapper.create(dto);
     }
-
     @Override
     public int total(Map map) {
         return mapper.total(map);

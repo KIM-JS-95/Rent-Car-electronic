@@ -52,4 +52,10 @@ public class NoticeServiceImpl implements NoticeService{
     return mapper.update(dto);
   }
 
+  @Override
+  public int deleteFile(int noticeno) {
+    return mapper.deleteFile(noticeno);
+  }
+
+
 }

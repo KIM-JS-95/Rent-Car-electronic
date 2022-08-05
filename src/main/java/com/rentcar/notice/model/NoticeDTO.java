@@ -12,6 +12,8 @@ public class NoticeDTO {
     private String passwd       ;
     private String wdate        ;
     private String fname        ;
+    private String key;
+
     private MultipartFile fnameMF;
 
 }

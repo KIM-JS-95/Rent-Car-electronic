@@ -4,6 +4,9 @@
 <html>
 <head>
 <title>조회</title>
+ <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <meta charset="utf-8">
  
 <script type="text/javascript">
@@ -15,7 +18,7 @@
     function deleteM(){
       var url = "./delete";
       url += "?noticeno=${dto.noticeno}";
-      url += '?oldfile=${dto.fname}'
+
       location.href=url;
     }
 

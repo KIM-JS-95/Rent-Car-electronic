@@ -1,8 +1,7 @@
-//package com.rentcar.carinfo.service;
-//
-//import org.springframework.beans.factory.annotation.Autowired;
-//
-//
-//public interface CarConditionService {
-//
-//}
+package com.rentcar.carinfo.service;
+
+import com.rentcar.carinfo.model.CaroptionDTO;
+
+public interface CaroptionService {
+    int create(CaroptionDTO cdto);
+}
