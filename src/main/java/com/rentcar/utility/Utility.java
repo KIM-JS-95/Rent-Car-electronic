@@ -261,7 +261,4 @@ public class Utility {
 
     }
 
-    public static int rcount(int bbsno, ReviewService rservice) {
-        return rservice.total(bbsno);
-    }
 }

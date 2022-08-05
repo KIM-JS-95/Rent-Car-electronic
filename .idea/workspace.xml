@@ -225,6 +225,8 @@
 =======
     <list default="true" id="4db05fe1-6ed5-43a9-9b60-e27f1c05d62b" name="Changes" comment="">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
       <change afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/kakao/Model/StoreDTO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/facilities.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/map/facilities.css" afterDir="false" />
@@ -235,6 +237,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
 =======
+>>>>>>> 8979c42fa9554a7b20a674bd3c100047eab8b93f
 >>>>>>> bb728cb6b5518ad3d6c964f44446376ccd93fa57
 >>>>>>> b97016f9342b5ab962d264a0a9318e9ee949e2f0
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
@@ -1553,7 +1556,16 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/com/rentcar/support/service/SerpportServiceImplTest.java" beforeDir="false" />
 =======
 >>>>>>> bb728cb6b5518ad3d6c964f44446376ccd93fa57
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/utility/Ncloud/AwsS3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/utility/Ncloud/AwsS3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rentcar/utility/Ncloud/service/AwsS3Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rentcar/utility/Ncloud/service/AwsS3Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/Facilities.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/Facilities.html" afterDir="false" />
+>>>>>>> f9ffc00d01913a8cc34212265d0e5e77eb357391
+=======
 >>>>>>> b97016f9342b5ab962d264a0a9318e9ee949e2f0
+<<<<<<< HEAD
 =======
 >>>>>>> f9ffc00d01913a8cc34212265d0e5e77eb357391
 >>>>>>> 9de60db3876c7e61389e427f34cb52a9a34d569d
@@ -1567,6 +1579,9 @@
 =======
 >>>>>>> bb728cb6b5518ad3d6c964f44446376ccd93fa57
 >>>>>>> f2a7c16da89fb6519d1472058c605a37c514499d
+=======
+>>>>>>> 8979c42fa9554a7b20a674bd3c100047eab8b93f
+>>>>>>> 51f89d8ea917ad23762a96237ee26c40778e14e2
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
