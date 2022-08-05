@@ -19,13 +19,22 @@
  
      }  
   </script>
- 
+  <style>
+  .container {
+    width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  </style>
+
+ <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
 <div class="container">
  
-    <h2>맛집 게시판</h2>
-  <form class="form-inline" action="./list">
+    <h1 class="col-sm-offset-2 col-sm-10">맛집 목록</h1>
+<form class="form-inline" action="/list" >
     <div class="form-group">
       <select class="form-control" name="col">
         <option value="wname"
@@ -42,65 +51,71 @@
         >제목+내용</option>
         <option value="total"
         <c:if test= "${col=='total'}"> selected </c:if>
-        >전체출력</option>       
+        >전체출력</option>
      </select>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" placeholder="Enter 검색어" 
-      name="word" value="${word}">
-    </div>
 
-    <button type="submit" class="btn btn-default" >검색</button>
+
+      <input type="text" class="form-control" placeholder="Enter 검색어"
+      name="word" value="${word}">
+
+
+    <button class="btn btn-default" >검색</button>
     <c:if test="${sessionScope.id==''}">
     <button type="button" class="btn btn-default" onclick="location.href='/contents/list/create'">등록</button>
   	</c:if>
   	  	 <button type="button" class="btn btn-default" onclick="location.href='/contents/list/create'">등록</button>
-  </form>
-  
-  <table class="table table-striped">
+</div>
+ </form>
+ <br>
+<table class="table table-striped" >
    <thead>
     <tr>
-    <th>번호</th>
     <th>제목</th>
     <th>작성자</th>
     <th>등록날짜</th>
     <th>조회수</th>
+    <th><span style="color:#FF0040;">추천</span></th>
     </tr>
    </thead>
    <tbody>
- 
-<c:choose>   
+
+<c:choose>
 <c:when test="${empty list}">
    <tr><td colspan="6">등록된 글이 없습니다.</td>
 </c:when>
 <c:otherwise>
-  
-   <c:forEach var="dto" items="${list}"> 
-   
+
+   <c:forEach var="dto" items="${list}">
+
    <tr>
-    <td>${dto.listno}</td>
     <td>
     <a href="javascript:read('${dto.listno}')">${dto.title}</a>
- 
+
     <c:if test="${util:newImg(fn:substring(dto.rdate,0,10)) }">
-         <img src="/images/new.gif"> 
+         <img src="/images/SJ/new.gif">
     </c:if>
- 
+
     </td>
     <td>${dto.wname}</td>
     <td>${dto.rdate}</td>
-    <td>${dto.cnt}</td>
+    <td>&emsp;&emsp;${dto.cnt}</td>
+    <td>
+    <span style="color:#FF0040;">
+    &emsp;${dto.recommend}</span> <img src="/images/SJ/free-icon-love-1029132.png" style="height:25px; " ></td>
    </tr>
    </c:forEach>
    </c:otherwise>
    </c:choose>
- 
+
    </tbody>
-  
+
   </table>
+
   <div>
       ${paging}
   </div>
+
 </div>
+
 </body> 
 </html> 

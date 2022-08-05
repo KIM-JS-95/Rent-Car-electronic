@@ -13,11 +13,6 @@
         <put-attribute name="body" value="/WEB-INF/views/index.jsp" />
     </definition>
 
-    <definition name="/carinfo/create" extends="main">
-        <put-attribute name="title" value="차동차등록" ></put-attribute>
-        <put-attribute name="body" value="/WEB-INF/views/carinfo/create.jsp" />
-    </definition>
-
     <definition name="/carinfo/list" extends="main">
         <put-attribute name="title" value="자동차목록" ></put-attribute>
         <put-attribute name="body" value="/WEB-INF/views/carinfo/list.jsp" />

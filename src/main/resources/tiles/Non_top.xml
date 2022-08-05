@@ -23,5 +23,9 @@
                        value="/WEB-INF/views/support/request/supporter_list.jsp" />
     </definition>
 
+    <definition name="/facilities" extends="main">
+        <put-attribute name="title" value="가맹정 등록"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/views/map/facilities.jsp" />
+    </definition>
 
 </tiles-definitions>

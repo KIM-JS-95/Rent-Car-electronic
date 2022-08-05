@@ -13,5 +13,5 @@ public class ListDTO {
         private int    cnt          ;
         private int recommend       ;
         private String rdate        ;
-
+        private MultipartFile multipartFile;
 }

@@ -1,27 +1,36 @@
 package com.rentcar.review.controller;
 
+import com.google.gson.JsonObject;
+import com.rentcar.list.service.ListServiceImpl;
 import com.rentcar.review.model.ReviewDTO;
 import com.rentcar.review.service.ReviewServiceImpl;
 import com.rentcar.utility.Utility;
+import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 
 @RestController
 public class ReviewController {
     private static final Logger log = LoggerFactory.getLogger(ReviewController.class);
 
-
-  @Autowired
-  private ReviewServiceImpl service;
+    @Autowired
+    private ReviewServiceImpl service;
+    @Autowired
+    private ListServiceImpl rservice;
 
     @GetMapping("/review/list/{listno}/{sno}/{eno}")
     public ResponseEntity<List<ReviewDTO>> getList(
@@ -39,8 +48,9 @@ public class ReviewController {
         return new ResponseEntity<List<ReviewDTO>>(service.list(map), HttpStatus.OK);
     }
 
-  @GetMapping("/review/page")
-  public ResponseEntity<String> getPage(int nPage, int listno, int nowPage, String col, String word) {
+
+    @GetMapping("/review/page")
+    public ResponseEntity<String> getPage(int nPage, int listno, int nowPage, String col, String word) {
 
         System.out.println("listno:  " + listno);
         int total = service.total(listno);
@@ -48,8 +58,7 @@ public class ReviewController {
 
         int recordPerPage = 10; // 한페이지당 출력할 레코드 갯수
 
-
-    String paging = Utility.rpaging(total, nowPage, recordPerPage, col, word, url, nPage);
+        String paging = Utility.rpaging(total, nowPage, recordPerPage, col, word, url, nPage);
 
         return new ResponseEntity<>(paging, HttpStatus.OK);
 
@@ -92,11 +101,26 @@ public class ReviewController {
 
     @DeleteMapping("/review/{rnum}")
     public ResponseEntity<String> remove(@PathVariable("rnum") int rnum) {
-
+        System.out.println("rnum="+rnum);
         log.info("remove: " + rnum);
 
         return service.delete(rnum) == 1 ? new ResponseEntity<>("success", HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 
     }
+
+    @PostMapping("/list/{listno}")
+    public ResponseEntity<String> recommend(@PathVariable("listno") int listno) {
+        System.out.println("listno="+listno);
+        log.info("listno: " + listno);
+
+        int flag = rservice.recommend(listno);
+
+        System.out.println("flag?="+flag);
+
+        return flag == 1 ?  new ResponseEntity<>("success", HttpStatus.OK)
+                : new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+
+    }
+
 }

@@ -1,5 +1,12 @@
 package com.rentcar.carinfo.controller;
 
+
+
+import com.rentcar.carinfo.service.CaroptionService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 import com.rentcar.carinfo.model.CarinfoDTO;
 import com.rentcar.carinfo.model.CaroptionDTO;
 import com.rentcar.carinfo.service.CarinfoService;
@@ -12,10 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -76,9 +80,11 @@ public class CarinfoCarcontroller {
 
     @PostMapping("/update")
     public String update(CarinfoDTO dto){
+        //log.info("dto:"+dto);
         int cnt = service.update(dto);
+        log.info("cnt:"+cnt);
         if(cnt == 1){
-            return "redirect:./list";
+            return "redirect:/carinfo/list";
         }else{
             return "error";
         }
@@ -99,21 +105,19 @@ public class CarinfoCarcontroller {
 
     @PostMapping("/create")
     public String crate(CarinfoDTO dto, CaroptionDTO cdto, HttpServletRequest request)throws IOException{
-
-
         String upDir = UploadCon.getUploadDir();
         String fname = Utility.saveFileSpring(dto.getFilenameMF(), upDir);
         int size = (int)dto.getFilenameMF().getSize();
+
         if(size > 0){
             dto.setCarimage(fname);
         }else{
             dto.setCarimage("default.jpg");
         }
-        log.info("Carinfo;" + dto);
-        log.info("Caroption;" + cdto);
-
+        log.info("dto:" + dto);
+        log.info("cdto" + cdto);
         if(service.create(dto) > 0 && cservice.create(cdto) > 0){
-            return "redirect:/carinfo/list";
+            return "redirect:./list";
         }else{
             return "error";
         }
@@ -137,7 +141,7 @@ public class CarinfoCarcontroller {
         if(request.getParameter("nowPage") !=null){
             nowPage = Integer.parseInt(request.getParameter("nowPage"));
         }
-        int recordPerPage = 5;
+        int recordPerPage = 3;
         int sno = (nowPage - 1) * recordPerPage;
         int eno = recordPerPage;
 
@@ -159,5 +163,4 @@ public class CarinfoCarcontroller {
 
         return "/carinfo/list";
     }
-
 }

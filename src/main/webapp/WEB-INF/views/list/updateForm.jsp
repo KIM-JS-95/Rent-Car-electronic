@@ -4,7 +4,13 @@
 <head>
   <title>수정</title>
   <meta charset="utf-8">
-
+<style>
+  .container {
+    width: 950px;
+    margin: 0 auto;
+    position: relative;
+  }
+  </style>
 </head>
 <body> 
 
