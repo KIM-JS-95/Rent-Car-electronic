@@ -3,6 +3,7 @@ build/
 !src/main/main/**/build/
 !**/src/test/**/build/
 
+/src/main/resources/*.properties
 
 /src/main/resources/application.properties
 /src/main/resources/kakao.properties

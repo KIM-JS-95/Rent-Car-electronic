@@ -1,5 +1,6 @@
 package com.rentcar.list.controller;
 
+import com.google.gson.JsonObject;
 import com.rentcar.list.model.ListDTO;
 import com.rentcar.list.service.ListServiceImpl;
 import com.rentcar.review.model.ReviewDTO;
@@ -8,9 +9,7 @@ import com.rentcar.utility.Utility;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -28,24 +27,16 @@ public class ListController {
     private ReviewServiceImpl rservice;
 
 
-    @GetMapping("/list/delete")
-    public String delete(int listno, Model model) {
-
-        model.addAttribute("listno", listno);
-        return "/list/delete";
-    }
-
     @PostMapping("/list/delete")
     public String delete(int listno) {
-        System.out.println(listno);
+        System.out.println("********************************" + listno);
+        System.out.println("********************************" + listno);
 
         rservice.bdelete(listno);
-
 
         service.delete(listno);
 
         return "redirect:/contents/list";
-
 
     }
 
@@ -161,7 +152,7 @@ public class ListController {
 
         // DB에서 가져올 순번-----------------
         int sno = ((nowPage - 1) * recordPerPage);
-        // int eno = nowPage * recordPerPage;
+        int eno = nowPage * recordPerPage;
 
         Map map = new HashMap();
         map.put("col", col);

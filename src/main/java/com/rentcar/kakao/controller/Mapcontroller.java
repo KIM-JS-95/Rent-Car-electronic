@@ -15,4 +15,10 @@ public class Mapcontroller {
     public String map(){
         return "/map";
     }
+
+
+    @GetMapping("/facilities/create")
+    public String facilities(){
+        return "/facilities";
+    }
 }

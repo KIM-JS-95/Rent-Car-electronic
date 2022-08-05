@@ -18,4 +18,6 @@ public interface LoginMapper {
 
   String idFind(Map<String, String> map);
 
+  String pwFind(Map<String, String> map);
+
 }

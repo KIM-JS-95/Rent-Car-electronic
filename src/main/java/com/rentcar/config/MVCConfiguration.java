@@ -1,6 +1,5 @@
 package com.rentcar.config;
 
-
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -12,9 +11,6 @@ public class MVCConfiguration implements WebMvcConfigurer {
 
 // URL에 "/admin/"이 들어간 요청은 AdminInterceptor 작동함.
         registry.addInterceptor(new AdminInterceptor()).addPathPatterns("/admin/**");
-
-
-
 
     }
 

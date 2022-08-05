@@ -4,6 +4,11 @@
 <head>
   <title>회원가입</title>
   <meta charset="utf-8">  
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="/css/login.css">
+  
   <style type="text/css">
   	#need{
   		color:red;
@@ -12,9 +17,40 @@
 	#idcheck,#emailcheck{
 		color : red;
 	}
+	.form-group button{
+	 color: #2F9D27;
+	}
 </style>
-
   <script type="text/javascript">
+  
+  function ocrtest(formData){
+	  
+	  return fetch(`/license`,{ 
+		    method: 'POST',
+		    body: formData
+		  })
+	  		.then(response => response.json())
+	  		.catch(console.log);
+  }
+  
+  function licInfo(fname){
+	  const formData = new FormData();
+	  const fileField = document.querySelector('input[type="file"]');
+
+	  formData.append('fname', fileField.files[0]);
+	  
+	  ocrtest(formData)
+	  .then(result => {
+		  
+		  document.querySelector('#license').value = result.lic;
+		  document.querySelector('#jumin').value = result.jumin;
+		  
+	  }
+	  );
+
+  }
+  
+  
   function idCheck(id){
 	  if(id==''){
 		  alert("아이디를 입력하세요");
@@ -46,7 +82,18 @@
 	  }
   }
 </script>
-
+    <script>
+        $(document).ready(function(){
+            var idcheck_clicked = 0;
+        $("#idcheck_btn").click(function(){ idcheck_clicked++ });
+        $("#submit").click(function(){
+            if (idcheck_clicked <= 0){
+                alert('중복확인 버튼을 먼저 클릭 하세요!'); 
+                return false;
+            }
+        });
+    });
+    </script>
   <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
   <script>
     function sample6_execDaumPostcode() {
@@ -150,31 +197,41 @@ function inCheck(f){
 		return false;
 	}
 
+		    
 }
+		  
 
 </script>
 </head>
 <body>
+
 <div class="container">
 
-<h2 class="col-sm-offset-2 col-sm-10">회원가입</h2>
-<label class="col-sm-offset-2 col-sm-10">(<span id="need">*</span> 필수입력사항)</label>
+    <div class="form-block">
+	<div class="mb-4">
+       <h3><strong>회원가입</strong></h3>
+       <p style="font-size:20px;">( <span id="need">*</span> 필수입력사항)</p><br><br>
+     </div>
+
   <form class="form-horizontal" 
         action="create"
         method="post"
         name = 'frm'
-        enctype="multipart/form-data"
         onsubmit="return inCheck(this)"
         >
-
+        
+<!--  주민번호 ocr한 값 -->
+    <input type="hidden" name="jumin" id="jumin" value="">
+ 
+    
     <div class="form-group">
       <label class="control-label col-sm-2" for="id"><span id="need">*</span>아이디</label>
       <div class="col-sm-3">          
         <input type="text" class="form-control" id="id" placeholder="Enter id" 
         name="id">
       </div>
-      <button type="button" class="btn btn-default col-sm-2"
-      onclick="idCheck(document.frm.id.value)">ID 중복확인</button>
+      <button type="button" class="btn btn-default col-sm-2" id="idcheck_btn"
+      onclick="idCheck(document.frm.id.value)">아이디 중복확인</button>
       <div id="idcheck"></div>
     </div>
     <div class="form-group">
@@ -196,7 +253,10 @@ function inCheck(f){
       <div class="col-sm-4">
         <input type="file" class="form-control" id="fnameMF" 
         name="fnameMF" accept=".jpg,.gif,.png">
+        <label>* 1MB이하의 파일만 업로드 해주세요. </label>
       </div>
+        <input type="text" class="form-control" id="jumin" name="jumin"> 주민등록 출력 확인
+      <button type="button" class="btn btn-primary-outline" onclick="licInfo(document.frm.fnameMF.value)">운전면허증 확인</button>
     </div>
         <div class="form-group">
       <label class="control-label col-sm-2" for="license"><span id="need">*</span>운전면허번호</label>
@@ -227,7 +287,7 @@ function inCheck(f){
       </div>
       
       <button type="button" class="btn btn-default col-sm-2"
-      onclick="emailCheck(document.frm.email.value)">Email 중복확인</button>
+      onclick="emailCheck(document.frm.email.value)">이메일 중복확인</button>
       <div id="emailcheck"></div>
       
     </div>
@@ -252,15 +312,17 @@ function inCheck(f){
       </div>
     </div>
        
-    <div class="form-group">        
+    <div>        
       <div class="col-sm-offset-2 col-sm-5">
-        <button type="submit" class="btn btn-default">등록</button>
-        <button type="reset" class="btn btn-default">취소</button>
+      <br><br>
+        <button type="submit" class="btn btn-info">등록</button>
+        <button type="reset" class="btn btn-default" style="float:right;" onclick="history.back()">취소</button>
       </div>
     </div>
   </form>
 
 <br><br>
+</div>
 </div>
 </body>
 </html>

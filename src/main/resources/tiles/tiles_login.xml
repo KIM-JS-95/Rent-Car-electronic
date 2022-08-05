@@ -14,7 +14,7 @@
   <definition name="/home" extends="main">
     <put-attribute name="title" value="기본페이지"></put-attribute>
     <put-attribute name="body"
-      value="/WEB-INF/views/index.jsp" />
+      value="/WEB-INF/views/main.jsp" />
   </definition>
   
   	<definition name="/user/login" extends="main">
@@ -36,9 +36,14 @@
 	</definition>
 
 	<definition name="/user/idfind" extends="main">
-		<put-attribute name="title" value="아이디찾기"></put-attribute>
+		<put-attribute name="title" value="아이디 찾기"></put-attribute>
 		<put-attribute name="body"
 			value="/WEB-INF/views/login/idFindForm.jsp" />
+	</definition>
+	<definition name="/user/pwfind" extends="main">
+		<put-attribute name="title" value="비밀번호 찾기"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/login/pwFindForm.jsp" />
 	</definition>
  
 </tiles-definitions>
