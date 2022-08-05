@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,11 +16,33 @@
         :root {
             --greyColor: rgba(0, 0, 0, 0.6);
         }
+=======
+      <title>ISOSIM Rent-Car</title>
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="/css/main.css">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>ISOSIM Rent-Car</title>
+        <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="js/main.js"></script>
+        <!-- <link rel="stylesheet" href="css/main.css"> -->
+
+    </head>
+
+ <body class="">
+        <div id="container" class="">
+>>>>>>> f2a7c16da89fb6519d1472058c605a37c514499d
 
         * {
             box-sizing: border-box;
         }
 
+<<<<<<< HEAD
         h1,
   h2,
   h3,
@@ -42,6 +65,89 @@
             height: 100%;
             color: #252523;
         }
+=======
+<!-- 임시 주석처리부분
+
+        <!-- 자동차버튼 클릭시 나오는 화면 -->
+                <div class="reservePanel" >
+<br><br>
+
+                    <div class="containerReserve">
+
+                            <ul class="reserveOptionUl">
+
+            <div class="reservePanel">
+                <br><br>
+                <h1>차량 예약</h1>
+                <div class="containerReserve">
+                    <ul class="reserveOptionUl">
+                        <li class="reserveOptionLi">
+                            <p>
+                            <h3>대여일</h3>
+                            </p>
+                            <p></p>
+                            <input type="date" id="choosedate">
+                        </li>
+
+                        <li class="reserveOptionLi">
+                            <p>
+                            <h3>반납일</h3>
+                            </p>
+                            <p></p>
+                            <input type="date" id="choosedate">
+                        </li>
+
+                        <li class="reserveOptionLi">
+                            <p>
+                            <h3>차종</h3>
+                            </p>
+                            <p></p>
+                            <select class="selectCar">
+
+                            
+                                </li>
+
+                                <li style="vertical-align: middle" class="reserveOptionLi">
+                                    <p></p>
+                                    <button type="submit" class="reserveBtn" onclick=""">검색</button>
+
+                                <option value="" selected>차량을 선택해 주세요</option>
+                                <option value="">테슬라 모델Y</option>
+                                <option value="">테슬라 모델X</option>
+                                <option value="">포르쉐 타이칸</option>
+                                <option value="">현대 IONIQ6</option>
+
+                            </select>
+                        </li>
+
+                        <li style="vertical-align: middle" class="reserveOptionLi">
+                            <p></p>
+                            <button type="submit" class="reserveBtn" onclick=""">검색</button>
+
+                                    <p></p>
+                                </li>
+
+                            </ul>
+                    </div>
+<br><br>
+                </div>
+            </div>
+
+            -->
+
+<br><br><br>
+<div class=" find" style="display: none">
+                                <h1>충전소 찾기</h1>
+                                <div class="containerFindDiv">
+
+                                    <div>
+                                        <input type="text" class="findInput">&nbsp;&nbsp;&nbsp;&nbsp;<button
+                                            type="submit" class="findBtn">검색</button>
+                                    </div>
+
+                                </div>
+                </div>
+>>>>>>> f2a7c16da89fb6519d1472058c605a37c514499d
 
 
         .swiper-slide .main__photo {
@@ -169,17 +275,58 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <div class="swiper-slide">
                     <div class="main__photo"
                         style="background-image: url(https://source.unsplash.com/random/1000×1000/?trip);">
                     </div>
                 </div>
+=======
+<!-- 이미지 슬라이드 -->
+<!--
+<div id="slide_warp">
+    <div id="slide_group_view">
+        <div id="slide_group">
+            <img src="./images/carImg/modelYc.jpg" class="slide_img">
+            <img src="./images/carImg/modelXc.jpg" class="slide_img">
+            <img src="./images/carImg/taycanc.jpg" class="slide_img">
+            <img src="./images/carImg/ioniq6c.png" class="slide_img">
+        </div>
+    </div>
+    <div id="nav">
+        <a href="#" class="prev"></a>
+        <a href="#" class="next"></a>
+    </div>
+</div>
+
+<!-- 이미지 슬라이드 end-->
+
+-->
+
+                <br><br><br>
+
+                <div class="mainCont">
+
+
+                    <div class="mainCont">
+
+
+                        <ul class="quickBtnUl">
+                        <h3 class="titDep2">서비스 이용안내</h3>
+                            <li class="underQuickBtn"><a href=""><span><img src="./images/icons/ecar.svg" alt=""></span><br>차량예약안내</a></li>
+                            <li class="underQuickBtn"><a href=""><span><img src="./images/icons/key.svg" alt=""></span><br>차량인수반납</a></li>
+                            <li class="underQuickBtn"><a href=""><span><img src="./images/icons/membership.svg" alt=""></span><br>마일리지안내</a></li>
+                            <li class="underQuickBtn"><a href=""><span><img src="./images/icons/info.svg" alt=""></span><br>취소/환불 안내</a></li>
+
+                        </ul>
+>>>>>>> f2a7c16da89fb6519d1472058c605a37c514499d
 
                 <div class="swiper-slide">
                     <div class="main__photo"
                         style="background-image: url(https://source.unsplash.com/random/1000×1000/?car);">
                     </div>
                 </div>
+<<<<<<< HEAD
             </div>
         </div>
 
@@ -277,3 +424,13 @@
 </body>
 
 </html>
+=======
+
+
+        <!-- container end -->
+
+</body>
+</html>
+
+
+>>>>>>> f2a7c16da89fb6519d1472058c605a37c514499d
