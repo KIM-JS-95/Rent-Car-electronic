@@ -3,10 +3,16 @@ build/
 !src/main/main/**/build/
 !**/src/test/**/build/
 
+<<<<<<< HEAD
 /src/main/resources/*.properties
 
 /src/main/resources/application.properties
 /src/main/resources/kakao.properties
+=======
+
+/src/main/resources/*.properties
+
+>>>>>>> 8c43d8b28950a705ad11559217a2fecc452b2bd8
 
 ### STS ###
 .apt_generated

@@ -44,7 +44,7 @@
           $.ajax({
             data: data,
             type: "POST",
-            url: "/s3/resource",
+            url: "/list/resource",
             contentType: false,
             processData: false,
             success: function (data) {

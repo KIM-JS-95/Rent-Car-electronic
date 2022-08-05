@@ -24,8 +24,8 @@ public class AwsS3Controller {
     public AwsS3 upload(@RequestPart("file") MultipartFile multipartFile) throws IOException {
 
 
-        return awsS3Service.upload(multipartFile,"list");
 
+        return awsS3Service.upload(multipartFile,"user");
     }
 
     @GetMapping("/resource/{idx}")

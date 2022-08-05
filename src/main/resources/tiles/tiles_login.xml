@@ -45,5 +45,25 @@
 		<put-attribute name="body"
 			value="/WEB-INF/views/login/pwFindForm.jsp" />
 	</definition>
- 
+	<definition name="/user/update" extends="main">
+		<put-attribute name="title" value="회원정보 수정"></put-attribute>
+		<put-attribute name="body"
+					   value="/WEB-INF/views/login/updateForm.jsp" />
+	</definition>
+	<definition name="/user/delete" extends="main">
+		<put-attribute name="title" value="회원탈퇴"></put-attribute>
+		<put-attribute name="body"
+					   value="/WEB-INF/views/login/deleteForm.jsp" />
+	</definition>
+	<definition name="/user/list" extends="main">
+		<put-attribute name="title" value="회원목록"></put-attribute>
+		<put-attribute name="body"
+					   value="/WEB-INF/views/login/list.jsp" />
+	</definition>
+	<definition name="/user/read" extends="main">
+		<put-attribute name="title" value="회원정보"></put-attribute>
+		<put-attribute name="body"
+					   value="/WEB-INF/views/login/read.jsp" />
+	</definition>
+
 </tiles-definitions>

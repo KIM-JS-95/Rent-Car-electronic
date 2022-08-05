@@ -6,10 +6,10 @@
         <c:set var="str">Admin</c:set>
       </c:when>
       <c:when test="${not empty sessionScope.id && sessionScope.grade != 'A'}">
-        <c:set var='str'>안녕하세요 ${sessionScope.id } 님!</c:set>
+        <c:set var='str'>Logout</c:set>
       </c:when>
       <c:otherwise>
-        <c:set var="str">Log In</c:set>
+        <c:set var="str">Login</c:set>
       </c:otherwise>
     </c:choose>
 
@@ -75,8 +75,7 @@
                 </li>
                 <div class="dropdown-content">
                   <a href="/user/login">Login</a>
-                  <a href="#">My Page</a>
-                  <a href="#">Link 3</a>
+                  <a href="/user/agree">Join</a>
                 </div>
               </div>
             </c:when>
@@ -88,8 +87,7 @@
                     class="item__text">Admin</span></li>
                 <div class="dropdown-content">
                   <a href="#">차량관리</a>
-                  <a href="#">유저관리</a>
-                  <a href="#">Link 3</a>
+                  <a href="/admin/user/list">회원 목록</a>
                   <a href="/user/logout">Logout</a>
                 </div>
               </div>
@@ -101,8 +99,7 @@
                 <li class="navigation__item"><span class="item__icon"><span class="icon__emoji">🙋‍♂️</span></span><span
                     class="item__text">${str}</span></li>
                 <div class="dropdown-content">
-                  <a href="#">My Page</a>
-                  <a href="#">Link 3</a>
+                  <a href="/member/mypage">My Page</a>
                   <a href="/user/logout">Logout</a>
                 </div>
               </div>
