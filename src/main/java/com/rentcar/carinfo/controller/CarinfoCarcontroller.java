@@ -1,7 +1,6 @@
 package com.rentcar.carinfo.controller;
 
 
-
 import com.rentcar.utility.Ncloud.service.AwsS3Service;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -47,34 +46,12 @@ public class CarinfoCarcontroller {
 
 
     @PostMapping("/updateFile")
-<<<<<<< HEAD
-    public String updateFile(MultipartFile filenameMF, String oldfile, String carnumber) throws IOException {
-
-        String basePath = UploadCon.getUploadDir();
-        if (oldfile != null && !oldfile.equals("default.jpg")) {
-            Utility.deleteFile(basePath, oldfile);
-        }
-=======
     public String updateFile(MultipartFile filenameMF, CarinfoDTO dto, HttpServletRequest request
-    )throws IOException{
+    ) throws IOException {
 
-//        String basePath = UploadCon.getUploadDir();
-//        if(carimgae != null && !carimgae.equals("default.jpg")){
-//            Utility.deleteFile(basePath, carimgae);
-//        }
->>>>>>> 51f89d8ea917ad23762a96237ee26c40778e14e2
-
-//        Map map = new HashMap();
-//        map.put("carnumber", carnumber);
-//        map.put("carimage", Utility.saveFileSpring(filenameMF, basePath));
-
-<<<<<<< HEAD
-        int cnt = service.updateFile(map);
-        if (cnt == 1) {
-=======
         int cnt = service.updateFile(dto);
-        if(cnt == 1){
->>>>>>> 51f89d8ea917ad23762a96237ee26c40778e14e2
+        if (cnt == 1) {
+
             return "redirect:/carinfo/list";
         } else {
             return "error";
@@ -83,16 +60,10 @@ public class CarinfoCarcontroller {
 
     @GetMapping("/updateFile/{carnumber}")
     public String updateFileForm(@PathVariable("carnumber") String carnumber,
-<<<<<<< HEAD
-                                 @PathVariable("oldfile") String oldfile,
+
                                  Model model) {
-        model.addAttribute("carnumber", carnumber);
-        model.addAttribute("oldfile", oldfile);
-=======
-                                 Model model){
         CarinfoDTO dto = service.read(carnumber);
         model.addAttribute("dto", dto);
->>>>>>> 51f89d8ea917ad23762a96237ee26c40778e14e2
         return "/carinfo/updateFile";
     }
 
@@ -105,13 +76,9 @@ public class CarinfoCarcontroller {
     }
 
     @PostMapping("/update")
-<<<<<<< HEAD
     public String update(CarinfoDTO dto) {
-        //log.info("dto:"+dto);
-=======
-    public String update(CarinfoDTO dto){
-        log.info("dto:"+dto);
->>>>>>> 51f89d8ea917ad23762a96237ee26c40778e14e2
+        log.info("dto:" + dto);
+
         int cnt = service.update(dto);
         log.info("cnt:" + cnt);
         if (cnt == 1) {
@@ -137,48 +104,17 @@ public class CarinfoCarcontroller {
         return "/carinfo/read";
     }
 
-<<<<<<< HEAD
-    @PostMapping("/create")
-    public String crate(CarinfoDTO dto,
-                        CaroptionDTO cdto,
-                        HttpServletRequest request) throws IOException {
-        System.out.println(dto);
-        String upDir = UploadCon.getUploadDir();
-        String fname = Utility.saveFileSpring(dto.getFilenameMF(), upDir);
-        int size = (int) dto.getFilenameMF().getSize();
-
-        if (size > 0) {
-            dto.setCarimage(fname);
-        } else {
-            dto.setCarimage("default.jpg");
-        }
-        log.info("dto:" + dto);
-        log.info("cdto" + cdto);
-        if (service.create(dto) > 0 && cservice.create(cdto) > 0) {
-            return "redirect:./list";
-        } else {
-=======
 
     @PostMapping("/create")
-    public String create( CarinfoDTO dto, HttpServletRequest request
-                         )throws IOException{
+    public String create(CarinfoDTO dto, HttpServletRequest request
+    ) throws IOException {
 
         System.out.println(dto);
-        log.info("dto: "+ dto);
-//        String upDir = UploadCon.getUploadDir();
-//        String fname = Utility.saveFileSpring(dto.getFilenameMF(), upDir);
-//        int size = (int)dto.getFilenameMF().getSize();
-//
-//        if(size > 0){
-//            dto.setCarimage(fname);
-//        }else{
-//            dto.setCarimage("default.jpg");
-//        }
+        log.info("dto: " + dto);
 
-        if(service.create(dto) > 0 ){
+        if (service.create(dto) > 0) {
             return "/carinfo/optcreate";
-        }else{
->>>>>>> 51f89d8ea917ad23762a96237ee26c40778e14e2
+        } else {
             return "error";
         }
 
@@ -190,17 +126,6 @@ public class CarinfoCarcontroller {
                 "/carinfo/create";
     }
 
-//    @PostMapping("/resource")
-//    public AwsS3 upload(@RequestPart("filenameMF")
-//                        MultipartFile multipartFile) throws IOException {
-//        AwsS3 a3 = awsS3Service.upload(multipartFile,"carinfo");
-//        System.out.println(a3);
-//        System.out.println(a3.getPath());
-//        System.out.println(a3.getKey());
-//
-//        return null;
-//
-//    }
 
     @RequestMapping("/list")
     public String list(HttpServletRequest request) {
