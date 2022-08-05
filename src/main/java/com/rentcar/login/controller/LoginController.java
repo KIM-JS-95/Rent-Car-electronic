@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.rentcar.member.model.MemberDTO;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.slf4j.Logger;
@@ -28,16 +29,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.rentcar.login.model.LoginDTO;
 import com.rentcar.login.service.LoginService;
 import com.rentcar.utility.UploadLicense;
 import com.rentcar.utility.Utility;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class LoginController {
@@ -49,118 +48,128 @@ public class LoginController {
 
 
 
-  @Value("${login.url}")
-  private String apiURL;
 
-  @Value("${login.secret-key}")
-  private String secretKey;
+//  @PostMapping("/user/delete")
+//  public String delete(LoginDTO dto, HttpSession session, RedirectAttributes ra){
+//
+//    // 세션에 있는 user를 가져와 user 변수에 넣음
+//    LoginDTO user = (LoginDTO) session.getAttribute("user");
+//
+//    // 세션에있는 비밀번호
+//    String sessionPwd = user.getPasswd();
+//
+//    // dto로 들어오는 비밀번호
+//    String dtoPwd = dto.getPasswd();
+//
+//    if(!(sessionPwd.equals(dtoPwd))) {
+//      ra.addFlashAttribute("msg", false);
+//      return "redirect:/user/delete";
+//    }
+//    service.delete(dto);
+//
+//    session.invalidate();
+//
+//    return "redirect:/";
+//
+//
+//  }
 
+  @GetMapping("/user/delete")
+  public String delete(String id, HttpSession session, Model model){
 
-  //ocr
-  @PostMapping("/license")
-  @ResponseBody
-  public ResponseEntity<Map> licInfo(MultipartFile fname) {
-
-    String upDir = UploadLicense.getUploadDir();
-    String fname2 = Utility.saveFileSpring(fname, upDir);
-
-    String imageFile = UploadLicense.getUploadDir() + "\\" + fname2;
-
-    Map map = new HashMap();
-
-    try {
-      URL url = new URL(apiURL);
-      HttpURLConnection con = (HttpURLConnection) url.openConnection();
-      con.setUseCaches(false);
-      con.setDoInput(true);
-      con.setDoOutput(true);
-      con.setReadTimeout(30000);
-      con.setRequestMethod("POST");
-      String boundary = "----" + UUID.randomUUID().toString().replaceAll("-", "");
-      con.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
-      con.setRequestProperty("X-OCR-SECRET", secretKey);
-
-      JSONObject json = new JSONObject();
-      json.put("version", "V2");
-      json.put("requestId", UUID.randomUUID().toString());
-      json.put("timestamp", System.currentTimeMillis());
-      JSONObject image = new JSONObject();
-      image.put("format", "jpg");
-      image.put("name", "demo");
-      JSONArray images = new JSONArray();
-      images.put(image);
-      json.put("images", images);
-      String postParams = json.toString();
-
-      con.connect();
-      DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-      long start = System.currentTimeMillis();
-      File file = new File(imageFile);
-      Utility.writeMultiPart(wr, postParams, file, boundary);
-      wr.close();
-
-      int responseCode = con.getResponseCode();
-      BufferedReader br;
-      if (responseCode == 200) {
-        br = new BufferedReader(new InputStreamReader(con.getInputStream()));
-      } else {
-        br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
-      }
-      String inputLine;
-      StringBuffer response = new StringBuffer();
-      while ((inputLine = br.readLine()) != null) {
-        response.append(inputLine);
-      }
-      br.close();
-      // System.out.println(response); // 문자열
-
-      // ---------------------------------------나온 결과값 보기 편하게 하기 위해
-      // String to Json Object
-      JSONObject jsonObj = new JSONObject(response.toString());
-      // System.out.println(jsonObj); https://jsonbeautifier.org/ 에서 확인
-      JSONArray jsonArr = (JSONArray) jsonObj.get("images");
-      // System.out.println(jsonArr); https://jsonbeautifier.org/ 에서 확인
-      JSONObject jsonObj2 = (JSONObject) jsonArr.get(0);
-      // System.out.println(jsonObj2); https://jsonbeautifier.org/ 에서 확인
-      JSONArray jsonArr2 = (JSONArray) jsonObj2.get("fields");
-      // System.out.println(jsonArr2); //https://jsonbeautifier.org/ 에서 확인
-      // System.out.println(" 단어 수 : " + jsonArr2.length());// 단어수
-
-      StringBuffer sb = new StringBuffer();
-      for (int i = 0; i < jsonArr2.length(); i++) {
-        sb.append(" " + jsonArr2.getJSONObject(i).get("inferText"));
-
-      }
-
-      // System.out.println(sb);
-
-      // ---- 운전면허증 사진에서 면허번호 추출하기
-      int hypLic = sb.indexOf("-"); // 면허번호에 있는 맨 처음의 하이픈 위치번호
-
-      String lic1 = sb.substring(hypLic - 2); // 맨처음 하이픈 앞의 두글자부터 추출 시작 //loginDTO엔 license로 저장되어있음
-      // System.out.println(lic1);
-
-      String lic = lic1.substring(0, 16);
-      System.out.println("면허번호: " + lic);
-
-      // ---- 운전면허증 사진에서 주민등록번호를 추출하기
-      int hypJum = sb.lastIndexOf("-"); // 마지막 -의 위치번호 //hypenJ : 주민번호에 있는 하이픈
-
-      String jumin1 = sb.substring(hypJum - 6); // - 기준 앞 6자리(생년월일)부터 시작 //jumin1 : 생년월일
-      // System.out.println(jumin1);
-
-      String jumin = jumin1.substring(0, 15); // 주민등록번호추출 (- 포함)
-      System.out.println("주민등록번호: " + jumin);
-
-      map.put("lic", lic);
-      map.put("jumin", jumin);
-
-    } catch (Exception e) {
-      System.out.println(e);
+    if (id == null) {
+      id = (String) session.getAttribute("id");
     }
-    return new ResponseEntity<Map>(map, HttpStatus.OK);
 
+    LoginDTO dto = service.read(id);
+
+    model.addAttribute("dto", dto);
+
+    log.info("dto: "+dto);
+
+    return "/user/delete";
   }
+
+
+  @GetMapping("/admin/user/read")
+  public String read(String id, Model model) {
+
+    LoginDTO dto = service.read(id);
+
+    //log.info("dto:"+dto);
+
+    model.addAttribute("dto", dto);
+
+    return "/user/read";
+  }
+
+
+    @RequestMapping("/admin/user/list")
+    public String list(HttpServletRequest request) {
+        // 검색
+        String col = Utility.checkNull(request.getParameter("col"));
+        String word = Utility.checkNull(request.getParameter("word"));
+
+
+        // 페이지
+        int nowPage = 1; // 현재 페이지
+        if (request.getParameter("nowPage") != null) {
+            nowPage = Integer.parseInt(request.getParameter("nowPage"));
+        }
+        int recordPerPage = 5; // 한페이지당 보여줄 레코드갯수
+
+        int sno = (nowPage - 1) * recordPerPage;
+        int eno = recordPerPage;
+
+        Map map = new HashMap();
+        map.put("col", col);
+        map.put("word", word);
+        map.put("sno", sno);
+        map.put("eno", eno);
+
+        int total = service.total(map);
+
+        List<LoginDTO> list = service.list(map);
+
+        String paging = Utility.paging(total, nowPage, recordPerPage, col, word);
+
+        request.setAttribute("list", list);
+        request.setAttribute("nowPage", nowPage);
+        request.setAttribute("col", col);
+        request.setAttribute("word", word);
+        request.setAttribute("paging", paging);
+
+        return "/user/list";
+    }
+
+
+@PostMapping("/user/update")
+  public String update(LoginDTO dto, Model model, RedirectAttributes ra){
+    int cnt = service.update(dto);
+
+    if (cnt == 1) {
+      model.addAttribute("id", dto.getId());
+
+      return "redirect:/member/mypage";
+    }else{
+      return "error";
+    }
+  }
+
+  @GetMapping("/user/update")
+    public String update(String id, HttpSession session, Model model) {
+
+      if (id == null) {
+        id = (String) session.getAttribute("id");
+      }
+
+      LoginDTO dto = service.read(id);
+
+      model.addAttribute("dto", dto);
+
+      return "/user/update";
+  }
+
 
   @GetMapping("/lic")
   public String licInfo() {
@@ -185,17 +194,8 @@ public class LoginController {
   @PostMapping("/user/create")
   public String create(LoginDTO dto, HttpServletRequest request) throws IOException {
 
-    String upDir = UploadLicense.getUploadDir();
-    String fname = Utility.saveFileSpring(dto.getFnameMF(), upDir);
-
-    int size = (int) dto.getFnameMF().getSize();
-    if (size > 0) {
-      dto.setFname(fname);
-    } else {
-      return "error";
-    }
-
-    if (service.create(dto) > 0) {
+    log.info("dto: "+dto);
+      if (service.create(dto) > 0) {
       return "redirect:/";
     } else {
       return "error";
