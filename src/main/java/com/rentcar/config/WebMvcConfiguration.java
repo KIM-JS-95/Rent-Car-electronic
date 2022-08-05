@@ -2,7 +2,6 @@ package com.rentcar.config;
 
 
 import com.rentcar.utility.UploadList;
-import com.rentcar.utility.UploadCon;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -13,6 +12,7 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
 
+<<<<<<< HEAD
 
         registry.addResourceHandler("/ckstorage/files/**")
                 .addResourceLocations("file:///"+ UploadList.getUploadDir()+"/files/");
@@ -25,5 +25,7 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
 
         registry.addResourceHandler("/summernoteImage/**")
                 .addResourceLocations("file:///C:/summernote_image/");
+=======
+>>>>>>> 0af3136a3b4993feb6532eb679e452d0b97eaa73
     }
 }

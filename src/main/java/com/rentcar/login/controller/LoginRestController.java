@@ -38,6 +38,7 @@ public class LoginRestController {
 
     @Value("${login.url}")
     private String apiURL;
+
     @Value("${login.secret-key}")
     private String secretKey;
 
