@@ -73,7 +73,7 @@
             <c:when test="${empty sessionScope.id }">
               <div class="dropdown">
                 <li class="navigation__item"><span class="item__icon"><span class="icon__emoji">🙋‍♂️</span></span>
-                  <span class="item__text"> <a id="grade">${str}</span></li>
+                  <span class="item__text"><a id="grade">${str}</span></li>
                 <div class="dropdown-content">
                   <a href="/user/login">Login</a>
                   <a href="#">My Page</a>
