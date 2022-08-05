@@ -67,18 +67,22 @@
             border-color: #000000 !important;
             color: #000000 !important;
           }
+          .option>span {
+            color: white;
+            background-color: #478ac9;
+            border-style: solid;
+            border-radius: 10px !important;
+            border-color: #478ac9 !important;
+            opacity: 0.4;
+          }
 
           .option>span.on {
-            color: #000000;
+            color: white;
             background-color: #478ac9;
             border-style: solid;
             border-radius: 10px !important;
             border-color: #478ac9 !important;
 
-          }
-
-          .option>span.off {
-            color: #000000;
           }
 
           .plusbutton {

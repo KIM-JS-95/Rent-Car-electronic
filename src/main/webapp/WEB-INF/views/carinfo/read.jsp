@@ -56,12 +56,12 @@
                 <h3> C a r O p t i o n </h3>
                 <br>
                 <c:choose>
-                  <c:when test="${empty dto.cdto.bluetooth}">블루투스</c:when>
+                  <c:when test="${empty dto.cdto.bluetooth}"><span>블루투스</span></c:when>
                   <c:otherwise> <span class="on">${dto.cdto.bluetooth}</span> </c:otherwise>
                 </c:choose>
 
                 <c:choose>
-                  <c:when test="${empty dto.cdto.rear_sensor}">후방센서 </c:when>
+                  <c:when test="${empty dto.cdto.rear_sensor}"><span>후방센서</span> </c:when>
                   <c:otherwise> <span class="on">${dto.cdto.rear_sensor}</span> </c:otherwise>
                 </c:choose>
 
