@@ -18,4 +18,6 @@ public interface LoginService {
 
   String idFind(Map<String, String> map);
 
+  String pwFind(Map<String, String> map);
+
 }

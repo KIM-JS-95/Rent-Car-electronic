@@ -11,6 +11,7 @@ public class UploadList {
         String path = "";
         if (File.separator.equals("\\")) {
             path = "C:/project/Rent-Car-electtronic/storage/";
+
             System.out.println("Windows 10: " + path);
 
         } else {

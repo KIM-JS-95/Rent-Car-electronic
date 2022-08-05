@@ -192,5 +192,4 @@ public class CarinfoCarcontroller {
 
         return "/carinfo/list";
     }
-
 }

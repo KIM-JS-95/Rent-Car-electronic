@@ -9,6 +9,13 @@
   #red{
     color:red;
   }
+
+    .container {
+      width: 950px;
+      margin: 0 auto;
+      position: relative;
+    }
+
   </style>
 </head>
 <body> 
