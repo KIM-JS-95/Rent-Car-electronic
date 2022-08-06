@@ -4,10 +4,9 @@
 !**/src/test/**/build/
 
 /src/main/resources/*.properties
-
-
 /src/main/resources/application.properties
 /src/main/resources/kakao.properties
+
 
 
 ./proxy
@@ -20,12 +19,3 @@
 out/
 !src/main/main/**/out/
 !**/src/test/**/out/
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-### VS Code ###
-.vscode/
-
