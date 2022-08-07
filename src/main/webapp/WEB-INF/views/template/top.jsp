@@ -42,7 +42,7 @@
                 class="item__text">Board</span></li>
             <div class="dropdown-content">
               <a href="/notice/list">공지사항</a>
-              <a href="/contnets/list">자유게시판</a>
+              <a href="/contents/list">자유게시판</a>
               <a href="#">xx</a>
             </div>
           </div>

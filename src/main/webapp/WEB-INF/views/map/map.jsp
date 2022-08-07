@@ -40,8 +40,7 @@
 </div>
     <div class="map_info">고객의 현재 위치 기준 2km 이내의 충전소 정보를 표시합니다.</div>
 
-        <script type="text/javascript"
-            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6eae01749ed46288f45cd68bb87a3238&libraries=services"></script>
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6eae01749ed46288f45cd68bb87a3238&libraries=services"></script>
 
     </body>
 
