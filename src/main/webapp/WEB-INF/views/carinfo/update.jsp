@@ -6,40 +6,10 @@
     <head>
       <title>Car Update</title>
       <meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="/css/carinfo/update.css">
     </head>
 
-    <style>
-      .container {
-        display: flex;
-        justify-content: center;
-      }
 
-      .img {
-        margin-right: 50%;
-      }
-
-      .update {
-        font-weight: 700;
-        font-size: 1.2rem;
-        margin: -350px 0 0px 500px;
-        font-family: Roboto, sans-serif !important;
-
-      }
-
-      .h1 {
-        margin-left: 38%;
-        margin-bottom: 50px;
-      }
-
-      .button {
-        margin-left: 38%;
-        margin-top: 30px;
-      }
-
-      .cancel {
-        margin-left: 357px;
-      }
-    </style>
 
     <body>
 

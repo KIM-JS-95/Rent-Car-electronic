@@ -56,22 +56,22 @@
                 <h3> C a r O p t i o n </h3>
                 <br>
                 <c:choose>
-                  <c:when test="${empty dto.cdto.bluetooth}"><span>블루투스</span></c:when>
+                  <c:when test="${empty dto.cdto.bluetooth}"><span class="off">블루투스</span></c:when>
                   <c:otherwise> <span class="on">${dto.cdto.bluetooth}</span> </c:otherwise>
                 </c:choose>
 
                 <c:choose>
-                  <c:when test="${empty dto.cdto.rear_sensor}"><span>후방센서</span> </c:when>
+                  <c:when test="${empty dto.cdto.rear_sensor}"><span class="off">후방센서</span> </c:when>
                   <c:otherwise> <span class="on">${dto.cdto.rear_sensor}</span> </c:otherwise>
                 </c:choose>
 
                 <c:choose>
-                  <c:when test="${empty dto.cdto.rear_camera}">후방카메라 </c:when>
+                  <c:when test="${empty dto.cdto.rear_camera}"><span class="off">후방카메라</span> </c:when>
                   <c:otherwise> <span class="on">${dto.cdto.rear_camera}</span> </c:otherwise>
                 </c:choose>
 
                 <c:choose>
-                  <c:when test="${empty dto.cdto.black_box}">블랙박스 </c:when>
+                  <c:when test="${empty dto.cdto.black_box}"><span class="off">블랙박스</span> </c:when>
                   <c:otherwise> <span class="on">${dto.cdto.black_box}</span>
                   </c:otherwise>
                 </c:choose>
@@ -79,22 +79,22 @@
                 <br><br>
 
                 <c:choose>
-                  <c:when test="${empty dto.cdto.heated_seat}">열선시트</c:when>
+                  <c:when test="${empty dto.cdto.heated_seat}"><span class="off">열선시트</span></c:when>
                   <c:otherwise> <span class="on">${dto.cdto.heated_seat}</span> </c:otherwise>
                 </c:choose>
 
                 <c:choose>
-                  <c:when test="${empty dto.cdto.heated_handle}">열선핸들</c:when>
+                  <c:when test="${empty dto.cdto.heated_handle}"><span class="off">열선핸들</span></c:when>
                   <c:otherwise> <span class="on">${dto.cdto.heated_handle}</span> </c:otherwise>
                 </c:choose>
 
                 <c:choose>
-                  <c:when test="${empty dto.cdto.ventilated_seat}">통풍시트 </c:when>
+                  <c:when test="${empty dto.cdto.ventilated_seat}"><span class="off">통풍시트</span> </c:when>
                   <c:otherwise> <span class="on">${dto.cdto.ventilated_seat}</span> </c:otherwise>
                 </c:choose>
 
                 <c:choose>
-                  <c:when test="${empty dto.cdto.navigation}">네비게이션 </c:when>
+                  <c:when test="${empty dto.cdto.navigation}"><span class="off">네비게이션</span> </c:when>
                   <c:otherwise> <span class="on">${dto.cdto.navigation}</span> </c:otherwise>
                 </c:choose>
 
@@ -102,27 +102,27 @@
                 <br><br>
 
                 <c:choose>
-                  <c:when test="${empty dto.cdto.non_smoking_vehicle}">금연차량 </c:when>
+                  <c:when test="${empty dto.cdto.non_smoking_vehicle}"><span class="off">금연차량</span> </c:when>
                   <c:otherwise> <span class="on">${dto.cdto.non_smoking_vehicle}</span> </c:otherwise>
                 </c:choose>
 
                 <c:choose>
-                  <c:when test="${empty dto.cdto.smart_key}">스마트키 </c:when>
+                  <c:when test="${empty dto.cdto.smart_key}"><span class="off">스마트키</span> </c:when>
                   <c:otherwise> <span class="on">${dto.cdto.smart_key}</span> </c:otherwise>
                 </c:choose>
 
                 <c:choose>
-                  <c:when test="${empty dto.cdto.sunroof}"> 썬루프</c:when>
+                  <c:when test="${empty dto.cdto.sunroof}"> <span class="off">썬루프</span></c:when>
                   <c:otherwise> <span class="on">${dto.cdto.sunroof}</span> </c:otherwise>
                 </c:choose>
 
                 <c:choose>
-                  <c:when test="${empty dto.cdto.rear_warning_light}"> 후방경고등</c:when>
+                  <c:when test="${empty dto.cdto.rear_warning_light}"><span class="off">후방경고등</span></c:when>
                   <c:otherwise> <span class="on">${dto.cdto.rear_warning_light}</span> </c:otherwise>
                 </c:choose>
 
                 <c:choose>
-                  <c:when test="${empty dto.cdto.lane_departure_prevention}">차선방지이탈 </c:when>
+                  <c:when test="${empty dto.cdto.lane_departure_prevention}"><span class="off">차선방지이탈</span> </c:when>
                   <c:otherwise> <span class="on">${dto.cdto.lane_departure_prevention}</span> </c:otherwise>
                 </c:choose>
 
@@ -366,16 +366,6 @@
                 searchAddrFromCoords(map.getCenter(), displayCenterInfo);
               });
 
-              function searchAddrFromCoords(coords, callback) {
-                // 좌표로 행정동 주소 정보를 요청합니다
-                geocoder.coord2RegionCode(coords.getLng(), coords.getLat(), callback);
-              }
-
-              function searchDetailAddrFromCoords(coords, callback) {
-                // 좌표로 법정동 상세 주소 정보를 요청합니다
-                geocoder.coord2Address(coords.getLng(), coords.getLat(), callback);
-              }
-
               // 지도 좌측상단에 지도 중심좌표에 대한 주소정보를 표출하는 함수입니다
               function displayCenterInfo(result, status) {
                 if (status === kakao.maps.services.Status.OK) {
@@ -389,7 +379,25 @@
                     }
                   }
                 }
-              }
+              } //displayCenteerInfo end
+              // 이미지 지도에서 마커가 표시될 위치입니다 
+var markerPosition  = new kakao.maps.LatLng('${dto.x}', '${dto.y}'); 
+
+// 이미지 지도에 표시할 마커입니다
+// 이미지 지도에 표시할 마커는 Object 형태입니다
+var marker = {
+    position: markerPosition
+};
+
+var staticMapContainer  = document.getElementById('staticMap'), // 이미지 지도를 표시할 div  
+    staticMapOption = { 
+        center: new kakao.maps.LatLng('${dto.x}', '${dto.y}'), // 이미지 지도의 중심좌표
+        level: 3, // 이미지 지도의 확대 레벨
+        marker: marker // 이미지 지도에 표시할 마커 
+    };    
+
+// 이미지 지도를 생성합니다
+var staticMap = new kakao.maps.StaticMap(staticMapContainer, staticMapOption);
             </script>
 
           </div>
