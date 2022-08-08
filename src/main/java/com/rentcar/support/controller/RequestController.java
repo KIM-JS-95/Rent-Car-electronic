@@ -23,7 +23,7 @@ import java.util.Map;
 
 @Slf4j
 @Controller
-@RequestMapping("/request")
+@RequestMapping("/admin/request")
 public class RequestController {
 
     final int recordPerPage = 3;// 한페이지당 보여줄 레코드갯수

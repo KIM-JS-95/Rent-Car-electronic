@@ -40,7 +40,7 @@
                         <form class="form-inline" action="/support/list">
                             <div class="form-group">
 
-                                <select class="my-select-menu" name="col">
+                                <select class="form-control" name="col">
                                     <option <c:if test="${col=='carnum'}"> selected </c:if>
                                         >차량번호</option>
 
@@ -56,9 +56,9 @@
                                 <input type="text" class="form-control" placeholder="Enter 검색어" name="word"
                                     value="${word}">
                             </div>
-                            <div style="left: 0px;">
-                                <button type="submit" class="btn btn-default">검색</button>
-                                <button onclick="createwindow();">등록</button>
+                            <div style="position: relative; bottom: 10px;">
+                                <button type="submit" style="" class="btn btn-default">검색</button>
+                                <button onclick="createwindow();" class="btn btn-default">등록</button>
                             </div>
                         </form>
                     </div>

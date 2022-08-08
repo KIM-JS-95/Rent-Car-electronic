@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,17 +24,17 @@
     <meta name="googlebot" content="index, follow">
     <meta name="city" content="New Delhi">
     <meta name="country" content="india">
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet"> -->
     <link href="/css/footer/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="/css/footer/main.css" rel="stylesheet" type="text/css" />
-    <!-- END GLOBAL MANDATORY STYLES -->
-    <link href="/css/footer/select2.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- <link href="/css/footer/select2.min.css" rel="stylesheet" type="text/css"/>
     <link href="/css/footer/chatBot.css" rel="stylesheet" type="text/css"/>
-    <link href="/css/footer/timeline.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/footer/timeline.css" rel="stylesheet" type="text/css"/> -->
 </head>
-<body>
-<!-- Chat bot UI start -->
+<!--  <body>
+
 <div class="chat-screen">
     <div class="chat-header">
         <div class="chat-header-title">
@@ -144,8 +145,7 @@
 
   </script>
 <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="257be86a981729866f2fa61c-|49" defer=""></script>
-<!-- Time line Html Ends -->
-<!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+
 <script src="/js/footer/jquery-3.1.1.min.js"></script>
 <script src="/js/footer/popper.min.js"></script>
 <script src="/js/footer/bootstrap.min.js"></script>
@@ -179,6 +179,6 @@
     });
 
 </script>
-</body>
+</body>  -->
 
 </html>
