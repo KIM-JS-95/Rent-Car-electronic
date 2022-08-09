@@ -20,6 +20,7 @@
   }
 
   </style>
+
     </head>
     <body>
 
@@ -48,8 +49,9 @@
         <h1>${dto.title}</h1>
 
         <br><br><br>
+        <article>
         <h3>${dto.content}</h3>
-
+</article>
           <br><br><br>
           <div style="display: flex;   justify-content : center;">
           <button id="btn1" style="border-radius: 30px;"><img src="/images/SJ/free-icon-thumb-up-889221.png" style="height:130px;"></button>
@@ -87,7 +89,7 @@
 
 
 
-    <a >${list.content}</a>
+    <a id="contents">${list.content}</a>
     <div style="display: inline-block; margin: 0 5px;  float: right;">
    <button id='delete' class='delete' style="width:20; height:20;">삭 제</button>
     </div>
@@ -117,6 +119,7 @@
              <th>
              <button id='addreviewBtn' class='btn btn-primary btn-xs pull-right' type="button" style="width:100px; height:70px;" >등 록</button>
 
+
              </th>
              </table>
 
@@ -145,6 +148,22 @@
 
 
  <script src="/js/list/read.js" defer></script>
+  <script>
 
+var imgs = document.querySelectorAll('img');
+       console.log(imgs);
+       for(var i=0; i<imgs.length; i++){
+       var img = imgs[i];
+       console.log(img);
+       var img = img.src;
+       console.log(img);
+       var key = img.substring(46);
+       console.log(key);
+       console.log(key.length);
+       if(key.length>40){
+
+       }
+}
+  </script>
     </body>
     </html>

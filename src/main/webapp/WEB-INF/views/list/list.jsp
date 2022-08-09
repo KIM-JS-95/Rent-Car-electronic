@@ -6,6 +6,7 @@
 <!DOCTYPE html> 
 <html> 
 <head>
+ <script src="https://code.jquery.com/jquery-latest.min.js"></script>
  <script src="/js/list/list.js" defer></script>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
@@ -39,7 +40,7 @@ text-align: center;
 }
   </style>
 
- <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
 </head>
 <body>
 <div class="container">
@@ -69,7 +70,6 @@ text-align: center;
       <input type="text" class="form-control" placeholder="Enter 검색어"
        id="word"   name="word" value="${word}">
 
-      <!--        -------------------------------------------------------------- -->
 
       <span >
  <img src="/images/SJ/mic.png" style="height:25px;" id="rcdStart" class="blink">
@@ -79,7 +79,6 @@ text-align: center;
 
 
 
-          <!--        -------------------------------------------------------------- -->
 
 
 
