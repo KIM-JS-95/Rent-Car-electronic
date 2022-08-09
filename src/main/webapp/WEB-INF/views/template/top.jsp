@@ -61,7 +61,7 @@
                 class="item__text">지원</span></li>
             <div class="dropdown-content">
               <a href="/map/map">충전소 조회</a>
-              <a href="/request/create">지원 요청</a>
+              <a href="/user/request/create">지원 요청</a>
               <a href="/">xx</a>
             </div>
           </div>
@@ -83,16 +83,22 @@
 
             <c:when test="${not empty sessionScope.id && sessionScope.grade == 'A'}">
               <div class="dropdown">
-                <li class="navigation__item"><span class="item__icon"><span class="icon__emoji">👨‍💻</span></span><span
-                    class="item__text">Admin</span></li>
-                <div class="dropdown-content">
-                    <a href="/admin/carinfo/list">차량리스트</a>
-                  <a href="/admin/user/list">회원목록</a>
-                  <a href="/booking/list">예약 현황</a>
-                  <a href="/map/facilities/create">가게 등록</a>
-                  <a href="/user/logout">Sign Out</a>
+                <li class="navigation__item">
+                    <span class="item__icon">
+                    <span class="icon__emoji">👨‍💻</span>
+                    </span>
+                    <span class="item__text">Admin</span>
+                </li>
+                    <div class="dropdown-content">
+                      <a href="/admin/carinfo/list">차량리스트</a>
+                      <a href="/admin/user/list">회원목록</a>
+                      <a href="/booking/list">예약 현황</a>
+                      <a href="/map/facilities/create">가게 등록</a>
 
-                </div>
+                      <a href="/admin/support/list">지원차량</a>
+                      <a href="/admin/request/list">지원요청</a>
+                      <a href="/user/logout">Sign Out</a>
+                    </div>
               </div>
             </c:when>
 

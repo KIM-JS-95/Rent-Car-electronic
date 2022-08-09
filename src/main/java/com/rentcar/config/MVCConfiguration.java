@@ -1,17 +1,21 @@
 package com.rentcar.config;
 
+import com.rentcar.config.error.AdminInterceptor;
+import com.rentcar.config.error.UserInterceptor;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import javax.servlet.http.HttpServletRequest;
+@Configuration
+public class MVCConfiguration implements WebMvcConfigurer {
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
 
-//@Configuration
-//public class MVCConfiguration implements WebMvcConfigurer {
-//    @Override
-//    public void addInterceptors(InterceptorRegistry registry) {
-//
-//        registry.addInterceptor(new AdminInterceptor().configure(HttpSecurity http, HttpServletRequest request));
-//
-//}
+
+        registry.addInterceptor(new UserInterceptor())
+                .addPathPatterns("/user/**").excludePathPatterns("/user/login","/user/logout");
+
+        registry.addInterceptor(new AdminInterceptor())
+                .addPathPatterns("/admin/**");
+    }
+}

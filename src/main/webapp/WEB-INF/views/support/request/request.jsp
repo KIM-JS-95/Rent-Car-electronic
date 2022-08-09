@@ -10,6 +10,8 @@
         <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <link rel="stylesheet" type="text/css" href="/css/map/map.css">
         <link rel="stylesheet" type="text/css" href="/css/support/request.css">
 
     </head>
@@ -35,17 +37,17 @@
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label class="label" for="name">Full Name</label>
+                                                        <label class="label" for="name">User Id</label>
                                                         <input type="text" class="form-control" name="mname" id="mname"
                                                             placeholder="Name">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <div class="form-group">
+                                                    <!-- <div class="form-group">
                                                         <label class="label" for="email">Email Address</label>
                                                         <input type="email" class="form-control mb-5" name="email"
                                                             id="email" placeholder="Email">
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                                 <div class="col-md-12">
                                                     <div class="form-group">
@@ -65,7 +67,8 @@
                                                 <div class="col-md-12">
                                                     <div class="form-group">
 
-                                                        <button class="btn btn-default sumbit" style="color: rebeccapurple; width: 100%; height: 50px; margin-top: 5%;" onclick="help()">
+                                                        <button class="btn btn-default sumbit" 
+                                                        style="color: rebeccapurple; width: 100%; height: 50px; margin-top: 5%;" onclick="help()">
                                                             <span class="btnText">Submit</span>
                                                         </button>
 
@@ -123,8 +126,7 @@
 
                 });
 
-            } else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
-
+            } else {
                 var locPosition = new kakao.maps.LatLng(33.450701, 126.570667),
                     message = 'geolocation을 사용할수 없어요..'
 
@@ -161,22 +163,20 @@
                 const lat = position.coords.latitude;
                 const lng = position.coords.longitude;
 
-                const name = document.getElementById("reason").value;
-                const email = document.getElementById("email").value;
+                const name = document.getElementById("mname").value;
                 const carnum = document.getElementById("carnum").value;
                 const reason = document.getElementById("reason").value;
 
 
                 data = {
+                    name:name,
+                    carinfo_carnum: carnum,
+                    reason: reason,
                     rx: lat,
                     ry: lng,
-                    carnum: carnum,
-                    reason: reason
                 };
 
-                console.log(data);
-
-                var url = "/request/help";
+                var url = "/user/request/help";
                 const response = await fetch(url, {
                     method: 'POST',
                     headers: {
@@ -184,14 +184,11 @@
                     },
                     body: JSON.stringify(data)
                 })
-                    .then((res) => {
-                        if (res.status == 200) {
-                            window.location("/");
-                        }
-                    }
-                    ).catch(() => {
-                        alert("잠시 후 다시 이용해 주세요")
-                    });
+                    .then((res) => res.json())
+                    .then((json)=>alert(json.result))
+                    .catch(() => {
+                        alert("잠시 후 다시 이용해 주세요");
+                    }).finally(window.location="/");
             }
 
 

@@ -10,26 +10,6 @@
                     <title>Bootstrap Example</title>
                     <meta charset="utf-8">
 
-                    <script type="text/javascript">
-                        function deletefun(carnum) {
-                            alert(carnum + " 차량을 삭제 하시겠습니까?")
-
-                            let response = fetch(`./delete/` + encodeURI(encodeURIComponent(carnum)))
-                            .then((res) => {if(res.status==200){
-                                alert("삭제하였습니다.");
-                                location.reload();
-                            }});
-                            
-                        }
-
-                        function createwindow() {
-                            let windowObjectReference;
-                            let windowFeatures = "left=100,top=100,width=320,height=900, width=640";
-                            windowObjectReference = window.open("./create", "mozillaTab", windowFeatures);
-
-                        }
-                    </script>
-
                     <link rel="stylesheet" type="text/css" href="/css/support/style.css">
                 </head>
 
@@ -37,7 +17,7 @@
 
 
                     <div class="container">
-                        <form class="form-inline" action="/support/list">
+                        <form class="form-inline">
                             <div class="form-group">
 
                                 <select class="form-control" name="col">
@@ -121,6 +101,25 @@
                     </div>
                     </div>
 
+                    <script type="text/javascript">
+                        function deletefun(carnum) {
+                            alert(carnum + " 차량을 삭제 하시겠습니까?")
+
+                            let response = fetch(`./delete/` + encodeURI(encodeURIComponent(carnum)))
+                            .then((res) => {if(res.status==200){
+                                alert("삭제하였습니다.");
+                                location.reload();
+                            }});
+                            
+                        }
+
+                        function createwindow() {
+                            let windowObjectReference;
+                            let windowFeatures = "left=100,top=100,width=320,height=900, width=640";
+                            windowObjectReference = window.open("./create", "mozillaTab", windowFeatures);
+
+                        }
+                    </script>
                 </body>
 
                 </html>
