@@ -139,7 +139,7 @@
     <main class="main">
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                
+
                 <div class="swiper-slide">
                     <div class="main__photo"
                         style="background-image: url(https://source.unsplash.com/random/1000×1000/?trip,car);">
@@ -166,7 +166,7 @@
             <h3 class="main__title"> 여러분의 아늑한 여행을 <p>도와드립니다.</p></h3>
             <div id="quote">
                 <span id="quote1"></span>
-                 <span id="quote2"></span> 
+                 <span id="quote2"></span>
             </div>
 
             <div class="navigation">
@@ -197,7 +197,7 @@
                     </span> -->
                 </div>
             </div>
-            
+
         </div>
 
     </main>
