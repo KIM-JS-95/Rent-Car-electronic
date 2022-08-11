@@ -293,9 +293,9 @@ public class LoginController {
     return "/user/login";
   }
 
-  @GetMapping("/")
-  public String home() {
-
-    return "/home";
-  }
+//  @GetMapping("/")
+//  public String home() {
+//
+//    return "/home";
+//  }
 }

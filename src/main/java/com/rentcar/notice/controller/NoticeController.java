@@ -63,10 +63,24 @@ public class NoticeController {
 
     private static final Logger log = LoggerFactory.getLogger(NoticeController.class);
 
-    @GetMapping
-    public String home() {
+    @GetMapping("/")
+    public String home(){
 
         return "/home";
+    }
+
+    @GetMapping("/home2")
+    public String home(HttpServletRequest request) {
+
+
+        List<NoticeDTO> mainNoticeList = service.mainNoticeList();
+
+        log.info("mainNoticeList : "+mainNoticeList);
+
+        // request에 Model사용 결과 담는다
+        request.setAttribute("mainNoticeList", mainNoticeList);
+
+        return "/home2";
     }
 
     @GetMapping("/notice/fileDown")
@@ -172,26 +186,8 @@ public class NoticeController {
 //        response.getOutputStream().close();
     }
 
-
-//    @PostMapping(value = "/notice/deletefile", produces = "application/json")
-//    public ResponseEntity deleteFile(@RequestBody Map<Object, Object> objectMap) {
-//        System.out.println("objectMap   )    " + objectMap);
-//        Map<Object, Object> map = new HashMap<>();
-//
-//        int noticeno = (int) map.get("noticeno");
-//        String oldFile = (String) map.get("oldfile");
-//
-//        String upDir = UploadNotice.getUploadDir();
-//
-//        service.deleteFile(noticeno);
-//
-//        Utility.deleteFile(upDir, oldFile);
-//
-//        return null;
-//    }
-
     @ResponseBody
-    @PostMapping("/notice/deletefile")
+    @PostMapping("/admin/notice/deletefile")
     public String deleteFile(@RequestBody NoticeDTO dto) {
 
         log.info("noticeno : " + dto.getNoticeno());
@@ -210,7 +206,7 @@ public class NoticeController {
 
 //        Utility.deleteFile(upDir, oldFile);
 
- //       service.deleteFile(dto.getNoticeno());
+//        service.deleteFile(dto.getNoticeno());
 //        awsS3Service.remove(awsS3Service.upload(dto.getFnameMF(), "notice"));
 
 //        try {
@@ -255,35 +251,70 @@ public class NoticeController {
 //            return "error";
 //        }
 
-        return "/notice/update";
+        return "/admin/notice/update";
 
     }
 
-    @GetMapping("/notice/update")
+    @GetMapping("/admin/notice/update")
     public String update(int noticeno, Model model) {
 
         model.addAttribute("dto", service.read(noticeno));
 
-        return "/notice/update";
+        return "/admin/notice/update";
     }
 
-    @PostMapping("/notice/update")
-    public String update(NoticeDTO dto) {
+    @ResponseBody
+    @PostMapping("/admin/notice/update")
+    public String update(NoticeDTO dto) throws IOException {
+
+        log.info("dto : " + dto.getNoticeno());
+        log.info("dto : " + dto.getContent());
+        log.info("dto : " + dto.getTitle());
+        log.info("dto : " + dto.getWname());
+        log.info("dto : " + dto.getFnameMF());
+        log.info("dto : " + dto.getPasswd());
+
         Map map = new HashMap();
         map.put("noticeno", dto.getNoticeno());
         map.put("passwd", dto.getPasswd());
+
+        log.info("map : " + map);
+
         int pcnt = service.passwd(map);
+
+        log.info("pcnt : " + pcnt);
 
         int cnt = 0;
         if (pcnt == 1) {
 
+            MultipartFile multipartFile = dto.getFnameMF();
+            if (dto.getFnameMF() != null && !dto.getFnameMF().equals("")) {
+
+                String bucketName = "imagetest";
+                String objectName = service.read(dto.getNoticeno()).getKey();
+
+                // delete object
+                try {
+                    amazonS3.deleteObject(bucketName, objectName);
+                    System.out.format("Object %s has been deleted.\n", objectName);
+                } catch (AmazonS3Exception e) {
+                    e.printStackTrace();
+                } catch(SdkClientException e) {
+                    e.printStackTrace();
+                }
+
+                // 파일명으로 저장된다.
+                dto.setFname(multipartFile.getOriginalFilename());
+                AwsS3 S3 = awsS3Service.upload(dto.getFnameMF(), "notice");
+                dto.setKey((String) S3.getKey());
+            }
             cnt = service.update(dto);
         }
 
         if (pcnt != 1) {
             return "passwdError";
         } else if (cnt == 1) {
-            return "redirect:./list";
+            return "/user/notice/list";
         } else {
             return "error";
 
@@ -291,7 +322,7 @@ public class NoticeController {
 
     }
 
-    @PostMapping("/notice/delete")
+    @PostMapping("/admin/notice/delete")
     public String delete(HttpServletRequest request, int noticeno, String passwd, String oldfile) {
 
 
@@ -327,25 +358,25 @@ public class NoticeController {
         if (pcnt != 1) {
             return "passwdError";
         } else if (cnt == 1) {
-            return "redirect:./list";
+            return "/user/notice/list";
         } else {
             return "error";
         }
 
     }
 
-    @GetMapping("/notice/delete")
+    @GetMapping("/admin/notice/delete")
     public String delete(int noticeno) {
         return "/notice/delete";
     }
 
-    @GetMapping("/notice/create")
+    @GetMapping("/admin/notice/create")
     public String create() {
 
-        return "/notice/create";
+        return "/admin/notice/create";
     }
     @ResponseBody
-    @PostMapping("/notice/create")
+    @PostMapping("/admin/notice/create")
     public String create(NoticeDTO dto) throws IOException {
 
         log.info("dto: " + dto.getContent());
@@ -353,28 +384,7 @@ public class NoticeController {
         log.info("dto: " + dto.getWname());
         log.info("dto: " + dto.getFnameMF());
 
-// 로컬 저장 소스
-
-//        String upDir = UploadNotice.getUploadDir();
-//        if(dto.getFnameMF() != null && !dto.getFnameMF().equals("")) {
-//            String fname = Utility.saveFileSpring(dto.getFnameMF(), upDir);
-//
-//            log.info("fname:" + fname);
-//
-//
-//            dto.setFname(fname);
-//
-//        }
-//        if (service.create(dto) > 0) {
-//            return "ok";
-//        } else {
-//            return "error";
-//        }
-
 // AWS 사용
-
-        //String fname = dto.getFname(dto.getFnameMF());
-
 
         MultipartFile multipartFile = dto.getFnameMF();
         if (dto.getFnameMF() != null && !dto.getFnameMF().equals("")) {
@@ -382,16 +392,17 @@ public class NoticeController {
             dto.setFname(multipartFile.getOriginalFilename());
             AwsS3 S3 = awsS3Service.upload(dto.getFnameMF(), "notice");
             dto.setKey((String) S3.getKey());
+
         }
 
         if (service.create(dto) > 0) {
-            return "/notice/list";
+            return "/user/notice/list";
         } else {
             return "error";
         }
     }
 
-    @GetMapping("/notice/read")
+    @GetMapping("/user/notice/read")
     public String read(int noticeno, Model model) {
 
         NoticeDTO dto = service.read(noticeno);
@@ -402,10 +413,10 @@ public class NoticeController {
 
         model.addAttribute("dto", dto);
 
-        return "/notice/read";
+        return "/user/notice/read";
     }
 
-    @RequestMapping("/notice/list")
+    @RequestMapping("/user/notice/list")
     public String list(HttpServletRequest request) {
         // 검색관련------------------------
         String col = Utility.checkNull(request.getParameter("col"));
@@ -420,7 +431,7 @@ public class NoticeController {
         if (request.getParameter("nowPage") != null) {
             nowPage = Integer.parseInt(request.getParameter("nowPage"));
         }
-        int recordPerPage = 3;// 한페이지당 보여줄 레코드갯수
+        int recordPerPage = 10;// 한페이지당 보여줄 레코드갯수
 
         // DB에서 가져올 순번-----------------
         int sno = ((nowPage - 1) * recordPerPage);
@@ -450,7 +461,7 @@ public class NoticeController {
         request.setAttribute("paging", paging);
 
         // view페이지 리턴
-        return "/notice/list";
+        return "/user/notice/list";
 
     }
 

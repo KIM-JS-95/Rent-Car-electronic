@@ -11,7 +11,7 @@
  
 <script type="text/javascript">
     function updateM(){
-      var url = "./update";
+      var url = "/admin/notice/update";
       url += "?noticeno=${dto.noticeno}";
       location.href=url;
     }

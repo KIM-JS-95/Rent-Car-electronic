@@ -12,7 +12,7 @@
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
    <script type="text/javascript">
      function read(noticeno){
-       var url = "read";
+       var url = "/user/notice/read";
        url += "?noticeno="+noticeno;
        url += "&col=${col}";
        url += "&word=${word}";
@@ -36,7 +36,7 @@
 <div class="container">
  
    <h2>공지 사항</h2>
-  <form class="form-inline" action="./list">
+  <form class="form-inline" action="/user/notice/list">
     <div class="form-group">
       <select class="form-control" name="col">
         <option value="wname"
@@ -62,7 +62,7 @@
     </div>
     <button type="submit" class="btn btn-default" >검색</button>
 
-    <button type="button" class="btn btn-default" onclick="location.href='/notice/create'">등록</button>
+    <button type="button" class="btn btn-default" onclick="location.href='/admin/notice/create'">등록</button>
 
   </form>
   
@@ -90,11 +90,9 @@
     <td>${dto.noticeno}</td>
     <td>
     <a href="javascript:read('${dto.noticeno}')">${dto.title}</a>
- 
-    <c:if test="${util:newImg(fn:substring(dto.wdate,0,10)) }">
-         <img src="/images/new.gif">
-    </c:if>
- 
+
+         <c:if test="${util:newImg(fn:substring(dto.wdate,0,10)) }"> <img src="/images/icons/new.gif"> </c:if>
+
     </td>
     <td>${dto.wname}</td>
     <td>${dto.wdate}</td>
