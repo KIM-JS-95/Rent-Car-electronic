@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 @Controller
-@RequestMapping("/carinfo")
+//@RequestMapping("/carinfo")
 public class CaroptionController {
     private static final Logger log = LoggerFactory.getLogger(CarinfoCarcontroller.class);
     @Autowired
@@ -29,7 +29,7 @@ public class CaroptionController {
     @Qualifier("com.rentcar.carinfo.service.CarinfoServiceImpl")
     private CarinfoService cservice;
 
-    @PostMapping("/optcreate")
+    @PostMapping("/carinfo/optcreate")
     public String create(CaroptionDTO dto, HttpServletRequest request)throws IOException {
         log.info("dto: "+ dto);
 
@@ -39,25 +39,18 @@ public class CaroptionController {
             return "error";
         }
     }
-//@PostMapping("/optcreate")
-//public Boolean create(CaroptionDTO dto, HttpServletRequest request)throws IOException {
-//
-//    Boolean answer = service.create(dto);
-//    return answer;
 
-//}
-
-    @GetMapping("/optupdate/{carnumber}")
+    @GetMapping("/admin/carinfo/optupdate/{carnumber}")
     public String update(@PathVariable("carnumber") String carnumber){
         return "/carinfo/optupdate";
     }
 
-    @PostMapping("/optupdate")
+    @PostMapping("/carinfo/optupdate")
     public String update(CaroptionDTO dto) {
         int cnt = service.update(dto);
         log.info("cnt: " + cnt);
         if (cnt == 1) {
-            return "null";
+            return "/user/carinfo/list";
         } else {
             return "error";
         }
