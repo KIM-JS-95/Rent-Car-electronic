@@ -16,10 +16,10 @@
       <div class="container">
 
 
-        <form class="form-horizontal" 
-        action="/carinfo/update" 
+        <form class="form-horizontal"
+        action="/carinfo/update"
         method="post">
-        
+
         <input type="hidden" class="form-control" id="carnumber" name="carnumber" value="${dto.carnumber}">
           <h1 class="h1">차 정보 수정</h1>
           <img class="img" src="${dto.carimage}" style="width:400px;" , height="323px;" ,
@@ -84,8 +84,8 @@
           </div>
           <div class="button">
 
-            <button><a href="javascript:history.back()">
-                <img class='btn'>뒤로</a></button>
+            <a href="javascript:history.back()">
+                뒤로</a>
             <button class="btn btn-default">수정</button>
             <button type="reset" class="btn btn-default">취소</button>
           </div>

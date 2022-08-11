@@ -23,14 +23,8 @@
         function createwindow() {
           let windowObjectReference;
           let windowFeatures = "left=100,top=100,width=320,height=900, width=640";
-          windowObjectReference = window.open("./create", "mozillaTab", windowFeatures);
+          windowObjectReference = window.open("/admin/carinfo/create", "mozillaTab", windowFeatures);
         }
-
-        // function update() {
-        //                   let windowObjectReference;
-        //                   let windowFeatures = "left=100,top=100,width=320,height=900, width=640";
-        //                   windowObjectReference = window.open("./update/${dto.carnumber}", "mozillaTab", windowFeatures);
-        //                 }
 
       </script>
       <style>
@@ -82,9 +76,9 @@
             <input type="text" class="form-control" placeholder="Enter 검색어" name="word" value="${word}">
           </div>
           <button type="submit" class="check">검색</button>
-          <!-- car create 버튼 나중에 유저는 안보이게 하고 관리자만 볼 수 있게 수정 필요 -->
+          <c:if test="${sessionScope.grade == 'A'}">
           <button onclick="createwindow()">Car Create</button>
-        
+          </c:if>
           
           </form>
 
@@ -111,18 +105,12 @@
                     <!-- <b>차 렌트비용(시간당) : ${dto.rentcost}</b> -->
                   </p>
                   
-                  
-                  <button>
-                  <a href="./update/${dto.carnumber}">Car Info Update
-                    <span class="glyphicon glyphicon-edit"></span>
-                  </a></button>
-                
-
+                  <c:if test="${sessionScope.grade == 'A'}">
                   <button>
                   <a href="javascript:del('${dto.carnumber}')">Car Delete
                     <span class="glyphicon glyphicon-trash"></span>
                   </a></button>
-                
+                </c:if>
                 </div>
 
               </c:forEach>

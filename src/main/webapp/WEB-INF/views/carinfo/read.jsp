@@ -17,14 +17,21 @@
           function optupdate() {
             let windowObjectReference;
             let windowFeatures = "left=100, top=100, width=320, height=900, width=640";
-            windowObjectReference = window.open("/carinfo/optupdate/${carnumber}", "mozillaTab", windowFeatures);
+            windowObjectReference = window.open("/admin/carinfo/optupdate/${carnumber}", "mozillaTab", windowFeatures);
+          }
+          function mapupdate() {
+            let windowObjectReference;
+            let windowFeatures = "left=100, top=100, width=320, height=900, width=640";
+            windowObjectReference = window.open("/admin/carinfo/mapupdate/${carnumber}", "mozillaTab", windowFeatures);
           }
 
           function reservation() {
             if ('${dto.rentstatus}' == '0') {
               alert('예약가능 합니다.');
+              let url = "/carinfo/list"
+              location.href = url;
             } else {
-              alert("예약이 불가능 합니다.");
+              alert("이미 예약이 되어 있어 예약이 불가능 합니다.");
             };
           };
 
@@ -134,14 +141,17 @@
               <div>
                 <a class="res" id="reserv" href="javascript:reservation()" value="${dto.rentstatus}">RESERVATION</a>
               </div>
+              <c:if test="${sessionScope.grade == 'A'}">
+                <div class="Abtn">
+                  <button><a href="/admin/carinfo/update/${dto.carnumber}">정보 수정</a></button>
 
-              <div class="Abtn">
-                <button>
-                  <a href="/carinfo/update/${dto.carnumber}">정보 수정</a></button>
-                <button onclick="optupdate()">옵션 수정</button>
-                <button>
-                  <a href="/carinfo/updateFile/${dto.carnumber}">사진 수정</a></button>
-              </div>
+                  <button onclick="optupdate()">옵션 수정</button>
+
+                  <button><a href="/admin/carinfo/updateFile/${dto.carnumber}">사진 수정</a></button>
+
+                  <button onclick="mapupdate()">차위치수정</button>
+                </div>
+              </c:if>
               </p>
             </div>
           </div>
@@ -319,11 +329,8 @@
                   </tbody>
                 </table>
               </div>
-
-
             </div>
             <!-- //차량/보험 -->
-
             <!-- 업체정보 -->
             <div id="tabContent06"></div>
             <div id="tebContents04" class="anchorTab"></div>
@@ -332,85 +339,47 @@
                 <h4 class="titDep4" compName>차 위치</h4><br>
               </div>
             </div>
-
             <div class="map_wrap">
-
               <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
-
               <div class="hAddr">
                 <span class="title">${dto.carpoint}<br>
                 </span>
-
               </div>
             </div>
-
             <script type="text/javascript"
               src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6eae01749ed46288f45cd68bb87a3238&libraries=services"></script>
-
-            <!-- SHow up Map layout and Poiner -->
-            <!-- <script src="/js/carinfo/map_read.js"></script> -->
             <script>
-              var address_result;
-
               var mapContainer = document.getElementById('map'), // 지도를 표시할 div
                 mapOption = {
                   center: new kakao.maps.LatLng('${dto.x}', '${dto.y}'), // 지도의 중심좌표
-                  level: 1 // 지도의 확대 레벨
+                  level: 4 // 지도의 확대 레벨
                 };
+              var map = new kakao.maps.Map(mapContainer, mapOption);
+              var imageSrc = 'https://kr.object.ncloudstorage.com/imagetest/carinfo/5b30ba63-3c38-4d93-b519-6898f2f0a840icon-charging-station-7144586.png', // 마커이미지의 주소입니다
+                imageSize = new kakao.maps.Size(26, 40), // 마커이미지의 크기입니다
+                imageOption = { offset: new kakao.maps.Point(27, 69) }; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 
-              var map = new kakao.maps.Map(mapContainer, mapOption);// 주소 - 좌표 변환 객체를 생성
+              // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+              var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+                markerPosition = new kakao.maps.LatLng('${dto.x}', '${dto.y}'); // 마커가 표시될 위치입니다
 
-              searchAddrFromCoords(map.getCenter(), displayCenterInfo); // 현재 지도 중심좌표로 주소를 검색하새 지도 좌측 상단에 표시
-
-              kakao.maps.event.addListener(map, 'idle', function () {
-                searchAddrFromCoords(map.getCenter(), displayCenterInfo);
+              // 마커를 생성합니다
+              var marker = new kakao.maps.Marker({
+                position: markerPosition,
+                image: markerImage // 마커이미지 설정
               });
 
-              // 지도 좌측상단에 지도 중심좌표에 대한 주소정보를 표출하는 함수입니다
-              function displayCenterInfo(result, status) {
-                if (status === kakao.maps.services.Status.OK) {
-                  var infoDiv = document.getElementById('centerAddr');
-
-                  for (var i = 0; i < result.length; i++) {
-                    // 행정동의 region_type 값은 'H' 이므로
-                    if (result[i].region_type === 'H') {
-                      infoDiv.innerHTML = result[i].address_name;
-                      break;
-                    }
-                  }
-                }
-              } //displayCenteerInfo end
-              // 이미지 지도에서 마커가 표시될 위치입니다 
-var markerPosition  = new kakao.maps.LatLng('${dto.x}', '${dto.y}'); 
-
-// 이미지 지도에 표시할 마커입니다
-// 이미지 지도에 표시할 마커는 Object 형태입니다
-var marker = {
-    position: markerPosition
-};
-
-var staticMapContainer  = document.getElementById('staticMap'), // 이미지 지도를 표시할 div  
-    staticMapOption = { 
-        center: new kakao.maps.LatLng('${dto.x}', '${dto.y}'), // 이미지 지도의 중심좌표
-        level: 3, // 이미지 지도의 확대 레벨
-        marker: marker // 이미지 지도에 표시할 마커 
-    };    
-
-// 이미지 지도를 생성합니다
-var staticMap = new kakao.maps.StaticMap(staticMapContainer, staticMapOption);
+              // 마커가 지도 위에 표시되도록 설정합니다
+              marker.setMap(map);
             </script>
-
           </div>
-
         </div>
         </div>
         <!-- //업체정보 -->
         </div>
         </div>
         <p class="button">
-          <button>
-            <a href="javascript:history.back()">
-              뒤로</a></button>
+              <input type="button" value="TOP" onClick="javascript:window.scrollTo(0,0)"/>
         </p>
         </div>
 

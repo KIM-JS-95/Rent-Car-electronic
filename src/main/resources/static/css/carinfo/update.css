@@ -2,11 +2,9 @@
         display: flex;
         justify-content: center;
       }
-
       .img {
         margin-right: 50%;
       }
-
       .update {
         font-weight: 700;
         font-size: 1.2rem;
@@ -14,17 +12,14 @@
         font-family: Roboto, sans-serif !important;
 
       }
-
       .h1 {
         margin-left: 38%;
         margin-bottom: 50px;
       }
-
       .button {
         margin-left: 38%;
         margin-top: 30px;
       }
-
       .cancel {
         margin-left: 357px;
       }
