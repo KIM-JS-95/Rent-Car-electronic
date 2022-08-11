@@ -2,6 +2,7 @@
 $(function(){
 
 
+<<<<<<< HEAD
 $("#btn_update").click(function(){ //글 삭제
 
 	var url = "/contents/list/update";
@@ -19,10 +20,14 @@ $("#btn_update").click(function(){ //글 삭제
 
 
 $("#btn_delete").click(function(){ //글 삭제
+=======
+$("#btn").click(function(){ //글 삭제
+>>>>>>> 6a34f9b4afab89cc31c37bf2d6b014dbe52e5e48
 
 	console.log(listno);
 
 
+<<<<<<< HEAD
 
 
 
@@ -43,6 +48,12 @@ $.ajax({
 
 
 
+=======
+		fetch(`/list/delete`,{method: 'post'})
+                       .then(response => response.text())
+                        .then(location.href="/contents/list")
+                       .catch(console.log);
+>>>>>>> 6a34f9b4afab89cc31c37bf2d6b014dbe52e5e48
 
 });
 
@@ -77,6 +88,7 @@ fetch(`/review/${rnum}`,{method: 'delete'})
                .then(response => response.text())
                .then(location.reload())
                .catch(console.log);
+<<<<<<< HEAD
 
         		});
 
@@ -88,6 +100,15 @@ fetch(`/review/${rnum}`,{method: 'delete'})
 
 	 var content = document.querySelector("#review11").value;
            	console.log(content);
+=======
+        		});
+
+	$("#addreviewBtn").click(function(){
+
+
+	 var content = document.querySelector("#content").value;
+
+>>>>>>> 6a34f9b4afab89cc31c37bf2d6b014dbe52e5e48
   	var data = {
 		"content" : content,
 		"listno" : listno

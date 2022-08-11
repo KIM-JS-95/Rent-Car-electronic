@@ -1,5 +1,4 @@
-
- $(document).ready(function () {
+$(document).ready(function () {
   var fontList = ['맑은 고딕','굴림','돋움','바탕','궁서','NotoSansKR','Arial','Courier New','Verdana','Tahoma','Times New Roamn'];
         $('#summernote').summernote({
           height: 1000,                 // 에디터 높이
@@ -110,51 +109,3 @@
         }
 
       }
-
-
-//   function uploadResource(file, editor) {
-//          data = new FormData();
-//          data.append("file", file);
-//          console.log(data);
-//          $.ajax({
-//            data: data,
-//            type: "POST",
-//            url: "/s3/resource",
-//            contentType: false,
-//            processData: false,
-//            success: function (data) {
-//              //항상 업로드된 파일의 url이 있어야 한다.
-//              $('#summernote').summernote('insertImage', data.path);
-//              console.log("data.path = "+data.path)
-//var idx = data.path;
-//console.log("idx = "+idx)
-//  $.ajax({
-//            data: idx,
-//            type: "get",
-//            url: "/s3/resource/${idx}",
-//            contentType: false,
-//            processData: false,
-//            success: function (data) {
-//              //항상 업로드된 파일의 url이 있어야 한다.
-//             alert("성공");
-//
-//            },
-//            error: function () {
-//              alert("1111에러입니다");
-//            }
-//          })
-//
-//
-//
-//
-//
-//
-//
-//            },
-//            error: function () {
-//              alert("2222222에러입니다");
-//            }
-//          })
-//
-//
-//          }

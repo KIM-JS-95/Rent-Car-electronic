@@ -23,7 +23,11 @@
     </definition>
     <definition name="/list/read" extends="main">
         <put-attribute name="title" value="list 조회" ></put-attribute>
+<<<<<<< HEAD
         <put-attribute name="body" value="/WEB-INF/views/list/read.jsp" />
+=======
+        <put-attribute name="body" value="/WEB-INF/views/list/readdd.jsp" />
+>>>>>>> 6a34f9b4afab89cc31c37bf2d6b014dbe52e5e48
     </definition>
     <definition name="/list/update" extends="main">
         <put-attribute name="title" value="list 수정" ></put-attribute>

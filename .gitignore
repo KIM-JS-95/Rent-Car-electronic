@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6a34f9b4afab89cc31c37bf2d6b014dbe52e5e48
 !gradle/wrapper/gradle-wrapper.jar
 !src/main/main/**/build/
 !**/src/test/**/build/
