@@ -11,9 +11,9 @@ public class MVCConfiguration implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
 
-
         registry.addInterceptor(new UserInterceptor())
-                .addPathPatterns("/user/**").excludePathPatterns("/user/login","/user/logout");
+                .addPathPatterns("/user/**")
+                .excludePathPatterns("/exception/**");
 
         registry.addInterceptor(new AdminInterceptor())
                 .addPathPatterns("/admin/**");

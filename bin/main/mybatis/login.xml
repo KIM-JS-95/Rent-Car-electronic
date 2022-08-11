@@ -1,19 +1,23 @@
-<?xml version="1.0" encoding="UTF-8" ?> 
- 
+<?xml version="1.0" encoding="UTF-8" ?>
+
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.rentcar.login.mapper.LoginMapper">
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 075891db93b8c540f48f8f0b541247a11113231f
+
+	<select id="passCheck" parameterType="Map" resultType="int">
+		select
+		count(id)
+		from user
+		where id = #{id}
+		and passwd = #{passwd}
+	</select>
+
 	<delete id="delete" parameterType="com.rentcar.login.model.LoginDTO">
 		delete from user
-		where id = #{id},
-		and passwd = #{passwd}
+		where id = #{id}
 	</delete>
 
 	<select id="total" parameterType="Map" resultType="int">
@@ -73,20 +77,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 6a34f9b4afab89cc31c37bf2d6b014dbe52e5e48
->>>>>>> 075891db93b8c540f48f8f0b541247a11113231f
 	<select id="pwFind" parameterType="Map" resultType="String">
-		select passwd 
+		select passwd
 		from user
 		where id = #{id}
 		and mname = #{mname}
 	</select>
 
 	<select id="idFind" parameterType="Map" resultType="String">
-		select id 
+		select id
 		from user
 		where mname = #{mname}
 		and email = #{email}
@@ -106,21 +105,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<insert id="create" parameterType="com.rentcar.login.model.LoginDTO">
-<<<<<<< HEAD
 		insert into user (id, passwd, mname, phone, email, jumin, license,
 		grade, pnt, fname, zipcode, address1,address2)
 		values (#{id}, #{passwd},#{mname}, #{phone}, #{email}, #{jumin}, #{license},
-=======
-<<<<<<< HEAD
-		insert into user (id, passwd, mname, phone, email, jumin, license,
-		grade, pnt, fname, zipcode, address1,address2)
-		values (#{id}, #{passwd},#{mname}, #{phone}, #{email}, #{jumin}, #{license},
-=======
-		insert into user (id, passwd, mname, phone, email, license, 
-		grade, pnt, fname, zipcode, address1,address2)
-		values (#{id}, #{passwd},#{mname}, #{phone}, #{email}, #{license},
->>>>>>> 6a34f9b4afab89cc31c37bf2d6b014dbe52e5e48
->>>>>>> 075891db93b8c540f48f8f0b541247a11113231f
 				'H', '0', #{fname}, #{zipcode}, #{address1}, #{address2})
 	</insert>
 
@@ -131,7 +118,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<select id="loginCheck" parameterType="Map" resultType="int">
-		select count(*) 
+		select count(*)
 		from user
 		where id = #{id}
 		and passwd = #{passwd}

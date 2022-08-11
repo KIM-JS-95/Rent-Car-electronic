@@ -31,7 +31,7 @@
 
     <definition name="/error404" extends="baseEmpty">
         <put-attribute name="title" value="404error"></put-attribute>
-        <put-attribute name="body" value="/WEB-INF/views/error/index.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/error/403.jsp" />
     </definition>
 
 </tiles-definitions>
