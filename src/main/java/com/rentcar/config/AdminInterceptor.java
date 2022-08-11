@@ -18,7 +18,7 @@ public class AdminInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         HttpSession session = request.getSession(true);
-// 회원 로그인시 "grade" 세션 변수 생성, "A" 할당
+    // 회원 로그인시 "grade" 세션 변수 생성, "A" 할당
         String grade = Utility.checkNull((String) session.getAttribute("grade"));
         System.out.println("session.getAttribute(\"grade\"): " + grade);
         System.out.println("preHandle executed.");
@@ -26,7 +26,7 @@ public class AdminInterceptor extends HandlerInterceptorAdapter {
             System.out.println("접속 권한 있음: " + grade);
             return true; // 요청 페이지로 계속 진행
         } else {
-// 에러 출력또는 로그인 페이지로 이동
+        // 에러 출력또는 로그인 페이지로 이동
             response.sendRedirect("/user/login");
             return false;
         }

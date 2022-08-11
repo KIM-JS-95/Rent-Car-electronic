@@ -41,6 +41,7 @@ public class CarinfoCarcontroller {
     public String mapupdate(@PathVariable ("carnumber") String carnumber) {
         return "/carinfo/mapupdate";
     }
+
     @PostMapping("/carinfo/mapupdate")
     public String mapupdate(CarinfoDTO dto) {
         int cnt = service.mapupdate(dto);
@@ -51,7 +52,10 @@ public class CarinfoCarcontroller {
         }
     }
 
-
+    @GetMapping("/admin/carinfo/optupdate/{carnumber}")
+    public String update(@PathVariable("carnumber") String carnumber){
+        return "/carinfo/optupdate";
+    }
 
     @PostMapping("/carinfo/updateFile")
     public String updateFile(MultipartFile filenameMF, CarinfoDTO dto, HttpServletRequest request
@@ -59,7 +63,7 @@ public class CarinfoCarcontroller {
 
         int cnt = service.updateFile(dto);
         if (cnt == 1) {
-            return "redirect:/carinfo/list";
+            return "/user/carinfo/list";
         } else {
             return "error";
         }
@@ -84,7 +88,7 @@ public class CarinfoCarcontroller {
     public String update(CarinfoDTO dto) {
         int cnt = service.update(dto);
         if (cnt == 1) {
-            return "redirect:/carinfo/list";
+            return "/user/carinfo/list";
         } else {
             return "error";
         }
