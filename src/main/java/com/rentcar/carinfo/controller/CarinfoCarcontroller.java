@@ -131,7 +131,8 @@ public class CarinfoCarcontroller {
     }
 
 
-    @RequestMapping("/user/carinfo/list")
+    // /user/carinfo/list  --> /carinfo/list
+    @RequestMapping("/carinfo/list")
     public String list(HttpServletRequest request) {
         // 검색관련------------------------
         String col = Utility.checkNull(request.getParameter("col"));

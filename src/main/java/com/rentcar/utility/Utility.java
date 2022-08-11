@@ -49,7 +49,6 @@ public class Utility {
 
 
 
-
     /**
      * 오늘,어제,그제 날짜 가져오기
      *
@@ -218,7 +217,7 @@ public class Utility {
                 if (os.equals("mac os x")) { // Mac
                     System.out.println("맥");
                     serverFullPath = basePath + "/" + filename;
-                } else if (os.equals("windows 11")) {
+                } else if (os.equals("windows 10")) {
                     System.out.println("os: " + os);
                     serverFullPath = basePath + "\\" + filename;
                 } else if (os.equals("linux")) {
@@ -246,7 +245,7 @@ public class Utility {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-           // System.out.println("filename="+ filename);
+
         }
 
         return filename;
