@@ -42,7 +42,11 @@
                 class="item__text">Board</span></li>
             <div class="dropdown-content">
               <a href="/notice/list">공지사항</a>
+<<<<<<< HEAD
               <a href="/contents/list">자유게시판</a>
+=======
+              <a href="/user/contents/list">자유게시판</a>
+>>>>>>> 075891db93b8c540f48f8f0b541247a11113231f
               <a href="#">xx</a>
             </div>
           </div>
@@ -101,7 +105,7 @@
                 <li class="navigation__item"><span class="item__icon"><span class="icon__emoji">🙋‍♂️</span></span><span
                     class="item__text">${str}</span></li>
                 <div class="dropdown-content">
-                  <a href="/member/mypage">My Page</a>
+                  <a href="/user/member/mypage">My Page</a>
                   <a href="/user/logout">Logout</a>
                 </div>
               </div>

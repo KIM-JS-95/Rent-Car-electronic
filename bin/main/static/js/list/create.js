@@ -21,9 +21,15 @@
                               ['codeview'],
                           ],
           callbacks: {	//여기 부분이 이미지를 첨부하는 부분
+<<<<<<< HEAD
             onImageUpload: function (files) {
               uploadResource(files[0], this);
               console.log("files ="+files[0]);
+=======
+            onImageUpload: function (file) {
+              uploadResource(file[0], this);
+              console.log("file ="+file[0]);
+>>>>>>> 075891db93b8c540f48f8f0b541247a11113231f
             },
             onPaste: function (e) {
               var clipboardData = e.originalEvent.clipboardData;
@@ -55,7 +61,11 @@
               console.log("datakey = "+data.key)
               $('#summernote').summernote('insertImage', data.path);
               console.log("data.path = "+data.path)
+<<<<<<< HEAD
               document.querySelector("#data_key").value = data.key;
+=======
+
+>>>>>>> 075891db93b8c540f48f8f0b541247a11113231f
             },
             error: function () {
               alert("2222222에러입니다");

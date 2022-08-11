@@ -1,9 +1,9 @@
-package com.rentcar.notice.model.review.controller;
+package com.rentcar.review.controller;
 
 
 import com.rentcar.list.service.ListServiceImpl;
-import com.rentcar.notice.model.review.model.ReviewDTO;
-import com.rentcar.notice.model.review.service.ReviewServiceImpl;
+import com.rentcar.review.model.ReviewDTO;
+import com.rentcar.review.service.ReviewServiceImpl;
 
 import com.rentcar.utility.Utility;
 import org.slf4j.Logger;
@@ -63,7 +63,7 @@ public class ReviewController {
     public ResponseEntity<String> create(@RequestBody ReviewDTO vo) {
 
         log.info("ReviewDTO:contents " + vo.getContent());
-//      log.info("ReviewDTO:id " + vo.getId());
+      log.info("ReviewDTO:id " + vo.getId());
         log.info("ReviewDTO:listno " + vo.getListno());
         System.out.println("vo:  " + vo);
        // vo.setContent(vo.getContent().replaceAll("/n/r", "<br>"));

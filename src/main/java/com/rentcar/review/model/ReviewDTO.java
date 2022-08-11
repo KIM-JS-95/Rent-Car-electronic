@@ -1,5 +1,5 @@
 
-package com.rentcar.notice.model.review.model;
+package com.rentcar.review.model;
 
 
 import lombok.Data;

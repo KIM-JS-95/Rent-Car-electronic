@@ -1,6 +1,6 @@
-package com.rentcar.notice.model.review.mapper;
+package com.rentcar.review.mapper;
  
-import com.rentcar.notice.model.review.model.ReviewDTO;
+import com.rentcar.review.model.ReviewDTO;
 
 import java.util.List;
 import java.util.Map;
