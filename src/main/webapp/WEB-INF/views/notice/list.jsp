@@ -92,7 +92,7 @@
     <a href="javascript:read('${dto.noticeno}')">${dto.title}</a>
  
     <c:if test="${util:newImg(fn:substring(dto.wdate,0,10)) }">
-         <img src="/images/new.gif">
+         <img src="/images/icons/new.gif">
     </c:if>
  
     </td>
