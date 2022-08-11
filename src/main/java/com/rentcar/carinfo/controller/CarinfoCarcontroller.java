@@ -73,7 +73,7 @@ public class CarinfoCarcontroller {
     }
 
 
-    @GetMapping("/carinfo/delete/{carnumber}")
+    @GetMapping("/user/carinfo/delete/{carnumber}")
     public String delete(@PathVariable String carnumber) {
         int flag = service.delete(carnumber);
         if (flag != 1) return "error";
@@ -97,8 +97,7 @@ public class CarinfoCarcontroller {
         return "/carinfo/update";
     }
 
-    @GetMapping("/carinfo/read/{carnumber}")
-    // /user/carinfo/read/{carnumber}
+    @GetMapping("/user/carinfo/read/{carnumber}")
     public String read(@PathVariable("carnumber") String carnumber, Model model) {
         CarinfoDTO dto = service.read(carnumber);
 
@@ -126,7 +125,7 @@ public class CarinfoCarcontroller {
     }
 
 
-    @RequestMapping("/carinfo/list")
+    @RequestMapping("/user/carinfo/list")
     public String list(HttpServletRequest request) {
         // 검색관련------------------------
         String col = Utility.checkNull(request.getParameter("col"));
