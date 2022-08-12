@@ -9,6 +9,15 @@
             <meta charset="utf-8">
             <script src="https://code.jquery.com/jquery-latest.min.js"></script>
             <link rel="stylesheet" type="text/css" href="/css/list/list.css" />
+            <style>
+              .pagination{
+                justify-content: center;
+                display: flex;
+              }
+              .pagination .active{
+                width: 20px;
+              }
+            </style>
           </head>
 
         <body>
@@ -92,9 +101,11 @@
 
               </tbody>
             </table>
+
             <div>
               ${paging}
             </div>
+
           </div>
 
 
