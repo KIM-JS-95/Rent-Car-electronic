@@ -35,7 +35,7 @@
 </head>
 
 <body>
-    <div style="display:none;">CREDITS_HERE</div>
+    <div style="display:none;">1</div>
 </body>
 
 <body>
