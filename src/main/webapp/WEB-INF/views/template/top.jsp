@@ -63,7 +63,6 @@
             <div class="dropdown-content">
               <a href="/map/map">충전소 조회</a>
               <a href="/user/request/create">지원 요청</a>
-              <a href="/">xx</a>
             </div>
           </div>
 
@@ -97,7 +96,7 @@
 
                       <a href="/admin/support/list">지원차량</a>
                       <a href="/admin/request/list">지원요청</a>
-                      <a href="/user/logout">Sign Out</a>
+                      <a href="/exception/user/logout">Sign Out</a>
                     </div>
               </div>
             </c:when>

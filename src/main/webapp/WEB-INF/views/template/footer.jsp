@@ -33,13 +33,13 @@
     <link href="/css/footer/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="/css/footer/main.css" rel="stylesheet" type="text/css" />
 
-    <!-- <link href="/css/footer/select2.min.css" rel="stylesheet" type="text/css"/>
-    <link href="/css/footer/chatBot.css" rel="stylesheet" type="text/css"/>
-    <link href="/css/footer/timeline.css" rel="stylesheet" type="text/css"/> -->
+    <!-- <link href="/css/footer/select2.min.css" rel="stylesheet" type="text/css"/> -->
+    <!-- <link href="/css/footer/chatBot.css" rel="stylesheet" type="text/css"/> -->
+    <!-- <link href="/css/footer/timeline.css" rel="stylesheet" type="text/css"/> -->
 </head>
 
 <body>
-
+    <div style="display:none;">CREDITS_HERE</div>
 </body>
 
 <body>
