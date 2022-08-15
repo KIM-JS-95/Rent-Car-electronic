@@ -23,7 +23,7 @@
         <body>
           <div class="container">
 
-            <h1 class="col-sm-offset-2 col-sm-10">공자사항</h1>
+            <h1 class="col-sm-offset-2 col-sm-10">공지사항</h1>
             
             <form class="form-inline" action="/user/notice/list">
               <div class="form-group">
