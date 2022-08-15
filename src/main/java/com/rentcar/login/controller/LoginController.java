@@ -239,10 +239,12 @@ public class LoginController {
                 cookie = new Cookie("c_id", c_id); // c_id=> Y
                 cookie.setMaxAge(60 * 60 * 24 * 365);// 1년
                 cookie.setSecure(true);
+                cookie.setPath("/");
                 response.addCookie(cookie);// client 컴퓨터에 쿠키 저장
 
                 cookie = new Cookie("c_id_val", map.get("id"));
                 cookie.setMaxAge(60 * 60 * 24 * 365);
+                cookie.setPath("/");
                 cookie.setSecure(true);
                 response.addCookie(cookie);
             } else {
