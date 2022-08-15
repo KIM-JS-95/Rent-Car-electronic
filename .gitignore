@@ -6,9 +6,9 @@
 /src/main/resources/application.properties
 /src/main/resources/kakao.properties
 
-./build
-./proxy
-./init-letsencrypt.sh
+/build
+/proxy
+.init-letsencrypt.sh
 ### IntelliJ IDEA ###
 .idea
 *.iws
