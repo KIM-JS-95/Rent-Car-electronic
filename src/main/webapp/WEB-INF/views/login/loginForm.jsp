@@ -5,8 +5,8 @@
 <head>
   <title>로그인</title>
   <meta charset="utf-8">
-  
-<link rel="stylesheet" href="/css/login.css">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="stylesheet" href="/css/login.css">
   
   </head>
   <body>
