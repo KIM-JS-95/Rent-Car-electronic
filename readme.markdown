@@ -67,9 +67,9 @@
 
 
 
-	<meta name="gc:base" content="http://lab.lepture.com/github-cards/">
-	<meta name="gc:theme" content="medium">
-	<meta name="gc:client-id" content="client id string">
-	<meta name="gc:client-secret" content="client secret string">
+<meta name="gc:base" content="http://lab.lepture.com/github-cards/">
+<meta name="gc:theme" content="medium">
+<meta name="gc:client-id" content="client id string">
+<meta name="gc:client-secret" content="client secret string">
 <div class="github-card" data-github="KIM-JS-95" data-width="400" data-height="" data-theme="default"></div>
 <script src="http://cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
